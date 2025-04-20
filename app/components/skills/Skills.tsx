@@ -88,9 +88,9 @@ const Skills = () => {
         <div className='mt-32'>
             <SubTitle text='Skillstack' />
             <p className='mb-2'>
-                I'm still in the process of learning, but I'm actively exploring a wide range of technologies across both frontend and backend.
+                I&apos;m still in the process of learning, but I&apos;'m actively exploring a wide range of technologies across both frontend and backend.
                 <br />
-                I'm enjoying the journey and striving to grow little by little every day!
+                I&apos;m enjoying the journey and striving to grow little by little every day!
             </p>
             <span className='text-gray-400 text-xs'>まだまだ勉強中の身ですが、フロントエンド・バックエンド問わず幅広くチャレンジしています。
                 毎日少しずつでも成長できるように、楽しく学習を続けています！

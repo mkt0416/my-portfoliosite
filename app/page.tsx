@@ -21,7 +21,7 @@ const Page = () => {
                     </div>
                     <div className='text-center lg:text-left'>
                         <h1 className='text-3xl lg:text-5xl text-gray-600 font-bold mb-10'>Welcome to My portfoliosite!!</h1>
-                        <p className='text-lg text-gray-600 mb-10'> I'm a beginner web developer who is just starting to learn about clean code and thoughtful design.
+                        <p className='text-lg text-gray-600 mb-10'> I&apos;m a beginner web developer who is just starting to learn about clean code and thoughtful design.
                             <br />
                             I’m eager to improve and learn from more experienced developers.
                         </p>

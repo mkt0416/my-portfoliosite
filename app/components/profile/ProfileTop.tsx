@@ -14,9 +14,9 @@ const ProfileTop = () => {
                 className='flex-grow text-center lg:text-left max-lg:order-2'
             >
                 <h1 className='text-3xl md:text-5xl font-bold mb-5'>Makoto Saitoh</h1>
-                <p className='text-lg font-semibold'>I'm an aspiring web developer currently learning JavaScript, React, and Next.js.
+                <p className='text-lg font-semibold'>I&apos;m an aspiring web developer currently learning JavaScript, React, and Next.js.
                     <br />
-                    While I still have a lot to learn, I'm passionate about growing as a developer and working hard to
+                    While I still have a lot to learn, I&apos;m passionate about growing as a developer and working hard to
                     <br />
                     become a skilled and reliable engineer!
 

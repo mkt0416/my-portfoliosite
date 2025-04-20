@@ -42,7 +42,7 @@ const Certifications = () => {
         <div className='mt-32 mb-20'>
             <SubTitle text='Certifications' />
             <p className='mb-2'>
-                Besides learning programming, I’ve also taken the time to study and earn the following certifications.
+                Besides learning programming, I&apos;ve also taken the time to study and earn the following certifications.
             </p>
             <span className='text-gray-400 text-xs'>プログラミング学習に加えて、以下の資格についても勉強し取得しました。</span>
             <ul className='mt-10 space-y-6'>

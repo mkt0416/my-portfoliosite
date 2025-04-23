@@ -4,6 +4,8 @@ import PortfolioDetail from '@/app/components/portfolio/PortfolioDetail';
 import { getPortfolioDetail } from '@/app/lib/microcms';
 import React from 'react'
 
+export const revalidate = 0;
+
 type Props = {
     params: {
         slug: string;

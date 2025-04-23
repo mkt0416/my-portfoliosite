@@ -1,8 +1,9 @@
 
+import React from 'react'
 import Article from '@/app/components/blog/Article';
 import ButtonLink from '@/app/components/common/ButtonLink';
 import { getBlogDetail } from '@/app/lib/microcms';
-import React from 'react'
+
 
 type Props = {
     params: {

@@ -43,7 +43,7 @@ const BlogList = ({ data }: Props) => {
                     <div className='flex flex-col gap-10 lg:mt-14'>
                         <div>
                             <Date date={article.createdAt ?? article.publishedAt} />
-                            <h1 className='text-xl md:text-3xl font-bold'>{article.title}</h1>
+                            <h1 className='text-xl md:text-2xl font-bold'>{article.title}</h1>
                         </div>
                         <div className='flex items-center gap-5'>
                             <Link href={`/blog/category/${article.category.id}`}>

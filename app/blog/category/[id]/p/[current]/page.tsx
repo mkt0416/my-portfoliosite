@@ -24,7 +24,7 @@ const Page = async ({ params }: Props) => {
 
     const { contents: blog, totalCount } = await getBlogList({
         limit: BLOG_LIST_LIMIT,
-        offset: BLOG_LIST_LIMIT / (current - 1),
+        offset: BLOG_LIST_LIMIT * (current - 1),
         filters: `category[equals]${category.id}`,
     });
 

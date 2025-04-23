@@ -8,7 +8,11 @@ export type Category = {
 export type Blog = {
     title: string;
     image?: MicroCMSImage;
-    textBody: string;
+    textBody?: string;
+    code?: string;
+    code2?: string;
+    content?: string;
+    content2?: string;
     category: Category;
 } & MicroCMSListContent;
 

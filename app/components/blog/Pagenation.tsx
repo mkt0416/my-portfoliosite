@@ -11,7 +11,7 @@ type Props = {
 
 const Pagenation = ({ totalCount, current = 1, basePath = '/blog' }: Props) => {
     const page = Array.from(
-        { length: Math.ceil(totalCount * BLOG_LIST_LIMIT) },
+        { length: Math.ceil(totalCount / BLOG_LIST_LIMIT) },
         (_, i) => i + 1,
     );
 

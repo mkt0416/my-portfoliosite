@@ -11,8 +11,10 @@ export type Blog = {
     textBody?: string;
     code?: string;
     code2?: string;
+    code3?: string;
     content?: string;
     content2?: string;
+    content3?: string;
     category: Category;
 } & MicroCMSListContent;
 

@@ -39,14 +39,6 @@ const Article = ({ data }: Props) => {
                         }}
                     ></div>
                 )}
-                {data.code2 && (
-                    <div
-                        className='bg-gray-900 text-white rounded-md p-10'
-                        dangerouslySetInnerHTML={{
-                            __html: data.code2
-                        }}
-                    ></div>
-                )}
                 {data.content && (
                     <div
                         className='text-lg'
@@ -55,11 +47,35 @@ const Article = ({ data }: Props) => {
                         }}
                     ></div>
                 )}
+                {data.code2 && (
+                    <div
+                        className='bg-gray-900 text-white rounded-md p-10'
+                        dangerouslySetInnerHTML={{
+                            __html: data.code2
+                        }}
+                    ></div>
+                )}
                 {data.content2 && (
                     <div
                         className='text-lg'
                         dangerouslySetInnerHTML={{
                             __html: data.content2
+                        }}
+                    ></div>
+                )}
+                {data.code3 && (
+                    <div
+                        className='bg-gray-900 text-white rounded-md p-10'
+                        dangerouslySetInnerHTML={{
+                            __html: data.code3
+                        }}
+                    ></div>
+                )}
+                {data.content3 && (
+                    <div
+                        className='text-lg'
+                        dangerouslySetInnerHTML={{
+                            __html: data.content3
                         }}
                     ></div>
                 )}

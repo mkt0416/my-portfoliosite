@@ -49,7 +49,7 @@ const Article = ({ data }: Props) => {
                 )}
                 {data.code2 && (
                     <div
-                        className='bg-gray-900 text-white rounded-md p-10'
+                        className='bg-gray-900 text-lg text-white rounded-md p-10'
                         dangerouslySetInnerHTML={{
                             __html: data.code2
                         }}
@@ -65,7 +65,7 @@ const Article = ({ data }: Props) => {
                 )}
                 {data.code3 && (
                     <div
-                        className='bg-gray-900 text-white rounded-md p-10'
+                        className='bg-gray-900 text-lg text-white rounded-md p-10'
                         dangerouslySetInnerHTML={{
                             __html: data.code3
                         }}

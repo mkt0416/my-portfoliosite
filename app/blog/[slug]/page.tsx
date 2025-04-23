@@ -4,6 +4,7 @@ import Article from '@/app/components/blog/Article';
 import ButtonLink from '@/app/components/common/ButtonLink';
 import { getBlogDetail } from '@/app/lib/microcms';
 
+export const revalidate = 0;
 
 type Props = {
     params: {

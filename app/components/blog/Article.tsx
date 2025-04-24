@@ -12,7 +12,7 @@ type Props = {
 
 const Article = ({ data }: Props) => {
     return (
-        <div className='w-full max-w-screen-md mx-auto px-8 text-gray-600'>
+        <div className='w-full max-w-screen-md mx-auto px-8 md:px-12 lg:px-16 text-gray-600'>
             <div className='mt-32 mb-20 flex flex-col items-center gap-14'>
                 <h1 className='text-xl lg:text-2xl font-bold'>{data.title}</h1>
                 <div className='flex items-center gap-5'>
@@ -31,54 +31,56 @@ const Article = ({ data }: Props) => {
                         priority
                     />
                 )}
-                {data.code && (
-                    <div
-                        className='bg-gray-900 text-lg text-white rounded-md p-10'
-                        dangerouslySetInnerHTML={{
-                            __html: data.code
-                        }}
-                    ></div>
-                )}
-                {data.content && (
-                    <div
-                        className='text-lg'
-                        dangerouslySetInnerHTML={{
-                            __html: data.content
-                        }}
-                    ></div>
-                )}
-                {data.code2 && (
-                    <div
-                        className='bg-gray-900 text-lg text-white rounded-md p-10'
-                        dangerouslySetInnerHTML={{
-                            __html: data.code2
-                        }}
-                    ></div>
-                )}
-                {data.content2 && (
-                    <div
-                        className='text-lg'
-                        dangerouslySetInnerHTML={{
-                            __html: data.content2
-                        }}
-                    ></div>
-                )}
-                {data.code3 && (
-                    <div
-                        className='bg-gray-900 text-lg text-white rounded-md p-10'
-                        dangerouslySetInnerHTML={{
-                            __html: data.code3
-                        }}
-                    ></div>
-                )}
-                {data.content3 && (
-                    <div
-                        className='text-lg'
-                        dangerouslySetInnerHTML={{
-                            __html: data.content3
-                        }}
-                    ></div>
-                )}
+                <div>
+                    {data.code && (
+                        <div
+                            className="bg-gray-900 text-white rounded-md p-5"
+                            dangerouslySetInnerHTML={{
+                                __html: data.code
+                            }}
+                        ></div>
+                    )}
+                    {data.content && (
+                        <div
+                            className="my-5"
+                            dangerouslySetInnerHTML={{
+                                __html: data.content
+                            }}
+                        ></div>
+                    )}
+                    {data.code2 && (
+                        <div
+                            className='bg-gray-900 text-white rounded-md p-5'
+                            dangerouslySetInnerHTML={{
+                                __html: data.code2
+                            }}
+                        ></div>
+                    )}
+                    {data.content2 && (
+                        <div
+                            className='my-5'
+                            dangerouslySetInnerHTML={{
+                                __html: data.content2
+                            }}
+                        ></div>
+                    )}
+                    {data.code3 && (
+                        <div
+                            className='bg-gray-900 text-white rounded-md p-5'
+                            dangerouslySetInnerHTML={{
+                                __html: data.code3
+                            }}
+                        ></div>
+                    )}
+                    {data.content3 && (
+                        <div
+                            className='my-5'
+                            dangerouslySetInnerHTML={{
+                                __html: data.content3
+                            }}
+                        ></div>
+                    )}
+                </div>
                 <p className='text-lg leading-relaxed'>{data.textBody}</p>
             </div>
         </div>

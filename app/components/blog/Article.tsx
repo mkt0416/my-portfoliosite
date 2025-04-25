@@ -5,6 +5,8 @@ import React from 'react'
 import Date from './Date';
 import Category from './Category';
 import Link from 'next/link';
+import CodeArea from './CodeArea';
+import ContentArea from './ContentArea';
 
 type Props = {
     data: Blog;
@@ -33,52 +35,22 @@ const Article = ({ data }: Props) => {
                 )}
                 <div>
                     {data.code && (
-                        <div
-                            className="bg-gray-900 text-white rounded-md p-5"
-                            dangerouslySetInnerHTML={{
-                                __html: data.code
-                            }}
-                        ></div>
+                        <CodeArea code={data.code} />
                     )}
                     {data.content && (
-                        <div
-                            className="my-5"
-                            dangerouslySetInnerHTML={{
-                                __html: data.content
-                            }}
-                        ></div>
+                        <ContentArea content={data.content} />
                     )}
                     {data.code2 && (
-                        <div
-                            className='bg-gray-900 text-white rounded-md p-5'
-                            dangerouslySetInnerHTML={{
-                                __html: data.code2
-                            }}
-                        ></div>
+                        <CodeArea code={data.code2} />
                     )}
                     {data.content2 && (
-                        <div
-                            className='my-5'
-                            dangerouslySetInnerHTML={{
-                                __html: data.content2
-                            }}
-                        ></div>
+                        <ContentArea content={data.content2} />
                     )}
                     {data.code3 && (
-                        <div
-                            className='bg-gray-900 text-white rounded-md p-5'
-                            dangerouslySetInnerHTML={{
-                                __html: data.code3
-                            }}
-                        ></div>
+                        <CodeArea code={data.code3} />
                     )}
                     {data.content3 && (
-                        <div
-                            className='my-5'
-                            dangerouslySetInnerHTML={{
-                                __html: data.content3
-                            }}
-                        ></div>
+                        <ContentArea content={data.content3} />
                     )}
                 </div>
                 <p className='text-lg leading-relaxed'>{data.textBody}</p>

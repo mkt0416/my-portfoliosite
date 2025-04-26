@@ -33,27 +33,27 @@ const Article = ({ data }: Props) => {
                         priority
                     />
                 )}
+                <p className='text-lg leading-relaxed'>{data.textBody}</p>
                 <div>
-                    {data.code && (
-                        <CodeArea code={data.code} />
-                    )}
                     {data.content && (
                         <ContentArea content={data.content} />
                     )}
-                    {data.code2 && (
-                        <CodeArea code={data.code2} />
+                    {data.code && (
+                        <CodeArea code={data.code} />
                     )}
                     {data.content2 && (
                         <ContentArea content={data.content2} />
                     )}
-                    {data.code3 && (
-                        <CodeArea code={data.code3} />
+                    {data.code2 && (
+                        <CodeArea code={data.code2} />
                     )}
                     {data.content3 && (
                         <ContentArea content={data.content3} />
                     )}
+                    {data.code3 && (
+                        <CodeArea code={data.code3} />
+                    )}
                 </div>
-                <p className='text-lg leading-relaxed'>{data.textBody}</p>
             </div>
         </div>
     );

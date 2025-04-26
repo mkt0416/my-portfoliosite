@@ -8,7 +8,7 @@ type Props = {
 const ContentArea = ({ content }: Props) => {
     return (
         <div
-            className="my-5 text-xs sm:text-lg"
+            className="mt-10 mb-3"
             dangerouslySetInnerHTML={{
                 __html: content
             }}

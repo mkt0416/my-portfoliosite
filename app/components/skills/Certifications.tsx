@@ -1,6 +1,7 @@
 
 import React from 'react'
 import SubTitle from '../common/SubTitle';
+import Container from '../common/Container';
 
 const certItems = [
     {
@@ -39,7 +40,7 @@ const certItems = [
 
 const Certifications = () => {
     return (
-        <div className='mt-32 mb-20'>
+        <Container>
             <SubTitle text='Certifications' />
             <p className='mb-2'>
                 Besides learning programming, I&apos;ve also taken the time to study and earn the following certifications.
@@ -49,13 +50,14 @@ const Certifications = () => {
                 {certItems.map((item) => (
                     <li
                         key={item.id}
-                        className='bg-white shadow-md rounded-lg p-4 border-l-4 border-blue-500 hover:bg-blue-50 duration-300'
+                        style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+                        className='bg-white rounded-lg p-4 border-l-4 border-blue-500 hover:bg-blue-50 duration-300'
                     >
                         <span className='text-gray-600 font-bold'>{item.title}</span>
                     </li>
                 ))}
             </ul>
-        </div>
+        </Container>
     );
 };
 

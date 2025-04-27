@@ -1,6 +1,5 @@
 
 import React from 'react'
-import Container from '../components/common/Container';
 import PageHero from '../components/common/PageHero';
 import Portfolio from '../components/portfolio/Portfolio';
 import { getPortfolioList } from '../lib/microcms';
@@ -17,9 +16,9 @@ const Page = async () => {
                 image='/images/portfolio.svg'
                 title='Portfolio'
             />
-            <Container>
+            <div className='mt-32 mb-20'>
                 <Portfolio data={data.contents} />
-            </Container>
+            </div>
         </>
     );
 };

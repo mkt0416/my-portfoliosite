@@ -13,6 +13,7 @@ import {
     SiTypescript,
     SiVercel,
 } from "react-icons/si";
+import Container from '../common/Container';
 
 const skillsItem = [
     {
@@ -85,7 +86,7 @@ const skillsItem = [
 
 const Skills = () => {
     return (
-        <div className='mt-32'>
+        <Container>
             <SubTitle text='Skillstack' />
             <p className='mb-2'>
                 I&apos;m still in the process of learning, but I&apos;m actively exploring a wide range of technologies across both frontend and backend.
@@ -99,14 +100,15 @@ const Skills = () => {
                 {skillsItem.map((item) => (
                     <div
                         key={item.id}
-                        className='w-full bg-white shadow-md rounded-xl py-10 flex flex-col items-center hover:bg-blue-50 duration-300'
+                        style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+                        className='w-full bg-white rounded-xl py-8 flex flex-col items-center hover:bg-blue-50 duration-300'
                     >
                         <span className={`text-9xl ${item.color}`}>{item.icon}</span>
                         <h3 className='text-3xl text-gray-600 font-bold mt-5'>{item.title}</h3>
                     </div>
                 ))}
             </div>
-        </div>
+        </Container>
     );
 };
 

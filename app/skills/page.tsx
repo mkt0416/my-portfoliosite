@@ -1,7 +1,6 @@
 
 import React from 'react'
 import PageHero from '../components/common/PageHero';
-import Container from '../components/common/Container';
 import Skills from '../components/skills/Skills';
 import Certifications from '../components/skills/Certifications';
 
@@ -12,10 +11,12 @@ const Page = () => {
                 image='/images/skills.svg'
                 title={'Skills'}
             />
-            <Container>
+            <div className='mt-32'>
                 <Skills />
+            </div>
+            <div className='mt-32 mb-20'>
                 <Certifications />
-            </Container>
+            </div>
         </>
     );
 };

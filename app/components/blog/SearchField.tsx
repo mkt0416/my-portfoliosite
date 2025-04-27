@@ -17,7 +17,7 @@ const SearchField = () => {
     };
 
     return (
-        <div className='mt-32 w-full max-w-screen-md mx-auto px-8 md:px-12 lg:px-16'>
+        <div className='w-full max-w-screen-md mx-auto px-8 md:px-12 lg:px-16'>
             <form onSubmit={handleSubmit}>
                 <input
                     className='w-full border border-gray-300 rounded px-4 py-3

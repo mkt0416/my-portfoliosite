@@ -2,6 +2,7 @@
 import React from 'react'
 import SubTitle from '../common/SubTitle';
 import Image from 'next/image';
+import Container from '../common/Container';
 
 const hobbyItem = [
     {
@@ -30,7 +31,7 @@ const hobbyItem = [
 
 const Hobby = () => {
     return (
-        <div className='mt-32'>
+        <Container>
             <SubTitle text='Hobby' />
             {hobbyItem.map((item) => (
                 <div
@@ -47,13 +48,15 @@ const Hobby = () => {
                         />
                     </div>
                     <div>
-                        <h2 className='text-3xl font-bold'>{item.title}</h2>
+                        <h2
+                            style={{ textShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+                            className='text-3xl font-bold'>{item.title}</h2>
                         <span className='text-gray-400 text-sm'>{item.jpTitle}</span>
                         <p className='mt-5'>{item.description}</p>
                     </div>
                 </div>
             ))}
-        </div>
+        </Container>
     );
 };
 

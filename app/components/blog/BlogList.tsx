@@ -12,7 +12,7 @@ type Props = {
 
 const BlogList = ({ data }: Props) => {
     return (
-        <div className='mt-32 mb-20 w-full max-w-screen-lg mx-auto px-8 text-gray-600'>
+        <div className='w-full max-w-screen-lg mx-auto px-8 md:px-12 lg:px-16 text-gray-600'>
             {data.map((article) => (
                 <div
                     key={article.id}
@@ -21,6 +21,7 @@ const BlogList = ({ data }: Props) => {
                     {article.image
                         ? (
                             <Image
+                                style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
                                 className='rounded-lg'
                                 src={article.image.url}
                                 alt='image'
@@ -50,6 +51,7 @@ const BlogList = ({ data }: Props) => {
                                 <Category category={article.category} />
                             </Link>
                             <Link
+                                style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
                                 href={`/blog/${article.id}`}
                                 className='bg-gray-300 px-3 py-2 rounded-md hover:bg-gray-200 duration-300'
                             >

@@ -4,6 +4,7 @@ import SubTitle from '../common/SubTitle';
 import type { Portfolio } from '@/app/lib/microcms';
 import Image from 'next/image';
 import Link from 'next/link';
+import Container from '../common/Container';
 
 type Props = {
     data: Portfolio[];
@@ -11,7 +12,7 @@ type Props = {
 
 const Portfolio = ({ data }: Props) => {
     return (
-        <div className='mt-32 mb-20'>
+        <Container>
             <SubTitle text='Portfolio' />
             <p>Below is a list of projects I created while learning through hands-on application development.</p>
             <span className='text-gray-400 text-xs'>以下は、実際のアプリケーション制作を通じて学習してきた成果物の一覧です。
@@ -22,6 +23,7 @@ const Portfolio = ({ data }: Props) => {
                     <Link
                         href={`/portfolio/${article.id}`}
                         key={article.id}
+                        style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
                         className='bg-gray-200 p-6 rounded-lg shadow-md hover:scale-105 duration-300'
                     >
                         <Image
@@ -37,7 +39,7 @@ const Portfolio = ({ data }: Props) => {
 
                 ))}
             </div>
-        </div>
+        </Container>
     );
 };
 

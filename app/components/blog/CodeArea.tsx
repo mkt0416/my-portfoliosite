@@ -7,7 +7,9 @@ type Props = {
 
 const CodeArea = ({ code }: Props) => {
     return (
-        <div className="w-full overflow-x-auto bg-gray-900 text-white text-sm rounded-md p-5">
+        <div
+            style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
+            className="w-full overflow-x-auto bg-gray-900 text-white text-sm rounded-md p-5">
             <div
                 className="break-words whitespace-pre-wrap"
                 dangerouslySetInnerHTML={{

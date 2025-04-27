@@ -18,7 +18,7 @@ const Page = async ({ params }: Props) => {
     return (
         <>
             <Article data={data} />
-            <div className='text-center mt-10 mb-10'>
+            <div className='flex justify-center mt-10 mb-10'>
                 <ButtonLink href='/blog'>ブログ一覧</ButtonLink>
             </div>
         </>

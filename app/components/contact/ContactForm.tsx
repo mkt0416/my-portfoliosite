@@ -3,6 +3,7 @@
 import React, { useRef } from 'react'
 import SubTitle from '../common/SubTitle'
 import emailjs from '@emailjs/browser';
+import Container from '../common/Container';
 
 const ContactForm = () => {
     const form = useRef<HTMLFormElement>(null);
@@ -31,7 +32,7 @@ const ContactForm = () => {
     };
 
     return (
-        <div className='mt-32 mb-20'>
+        <Container>
             <SubTitle text='Contact' />
             <p>Thank you for visiting my portfolio. Feel free to contact me with any job inquiries or questions.</p>
             <span className='text-gray-400 text-xs'>ご覧いただきありがとうございます。お仕事のご相談やご質問など、お気軽にご連絡ください。</span>
@@ -70,13 +71,14 @@ const ContactForm = () => {
                 />
                 <button
                     type='submit'
+                    style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
                     className='w-full text-xl text-white font-semibold bg-yellow-400 hover:bg-yellow-500 duration-300
                  px-10 py-3 rounded'
                 >
                     Submit
                 </button>
             </form>
-        </div>
+        </Container>
     );
 };
 

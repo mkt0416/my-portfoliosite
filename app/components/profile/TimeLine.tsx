@@ -1,6 +1,7 @@
 
 import React from 'react'
 import SubTitle from '../common/SubTitle';
+import Container from '../common/Container';
 
 const timeLineItem = [
     {
@@ -56,7 +57,7 @@ const timeLineItem = [
 
 const TimeLine = () => {
     return (
-        <div className='mt-32'>
+        <Container>
             <SubTitle text='TimeLine' />
             <div className='border-l-2 border-gray-200 pl-6 space-y-8'>
                 {timeLineItem.map((item) => (
@@ -65,13 +66,15 @@ const TimeLine = () => {
                         className='border-b-2 p-4 border-gray-200'
                     >
                         <span className='text-gray-400 text-lg'>{item.year}</span>
-                        <h3 className='text-xl md:text-3xl font-bold'>{item.title}</h3>
+                        <h3
+                            style={{ textShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+                            className='text-xl md:text-3xl font-bold'>{item.title}</h3>
                         <span className='text-gray-400 text-xs'>{item.jpTitle}</span>
                         <p className='mt-2'>{item.description}</p>
                     </div>
                 ))}
             </div>
-        </div>
+        </Container>
     );
 };
 

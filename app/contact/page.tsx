@@ -1,7 +1,6 @@
 
 import React from 'react'
 import PageHero from '../components/common/PageHero';
-import Container from '../components/common/Container';
 import ContactForm from '../components/contact/ContactForm';
 
 const Page = () => {
@@ -11,9 +10,9 @@ const Page = () => {
                 image='/images/contact.svg'
                 title='Contact'
             />
-            <Container>
+            <div className='mt-32 mb-20'>
                 <ContactForm />
-            </Container>
+            </div>
         </>
     );
 };

@@ -8,7 +8,12 @@ type Props = {
 
 const Category = ({ category }: Props) => {
     return (
-        <div className='bg-yellow-300 px-3 py-2 text-gray-700 rounded-md'>{category.name}</div>
+        <div
+            style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+            className='bg-yellow-300 px-3 py-2 text-gray-700 rounded-md'
+        >
+            {category.name}
+        </div>
     );
 };
 

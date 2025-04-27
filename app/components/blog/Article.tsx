@@ -25,6 +25,7 @@ const Article = ({ data }: Props) => {
                 </div>
                 {data.image && (
                     <Image
+                        style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
                         className='w-full rounded-md'
                         src={data.image.url}
                         alt='image'

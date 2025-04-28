@@ -54,6 +54,9 @@ const Article = ({ data }: Props) => {
                     {data.code3 && (
                         <CodeArea code={data.code3} />
                     )}
+                    {data.content4 && (
+                        <ContentArea content={data.content4} />
+                    )}
                 </div>
             </div>
         </div>

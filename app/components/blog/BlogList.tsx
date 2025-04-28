@@ -38,8 +38,8 @@ const BlogList = ({ data }: Props) => {
                                     className='rounded-lg object-cover'
                                     src={'/images/no-image.png'}
                                     alt='image'
-                                    width={600}
-                                    height={450}
+                                    width={1200}
+                                    height={630}
                                     priority
                                 />
                             </div>

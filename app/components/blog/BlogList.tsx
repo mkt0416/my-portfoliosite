@@ -16,35 +16,39 @@ const BlogList = ({ data }: Props) => {
             {data.map((article) => (
                 <div
                     key={article.id}
-                    className='grid grid-cols-1 lg:grid-cols-2 gap-10 border-b border-gray-200 py-10'
+                    className='flex flex-col md:flex-row gap-10 border-b border-gray-200 py-10'
                 >
                     {article.image
                         ? (
-                            <Image
-                                style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
-                                className='rounded-lg'
-                                src={article.image.url}
-                                alt='image'
-                                width={article.image.width}
-                                height={article.image.height}
-                                priority
-                            />
+                            <div className='w-full'>
+                                <Image
+                                    style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
+                                    className='rounded-lg object-cover'
+                                    src={article.image.url}
+                                    alt='image'
+                                    width={article.image.width}
+                                    height={article.image.height}
+                                    priority
+                                />
+                            </div>
                         )
                         : (
-                            <Image
-                                className='rounded-lg'
-                                src={'/images/no-image.png'}
-                                alt='image'
-                                width={600}
-                                height={450}
-                                priority
-                            />
+                            <div className='w-full'>
+                                <Image
+                                    className='rounded-lg object-cover'
+                                    src={'/images/no-image.png'}
+                                    alt='image'
+                                    width={600}
+                                    height={450}
+                                    priority
+                                />
+                            </div>
                         )
                     }
-                    <div className='flex flex-col gap-10 lg:mt-14'>
-                        <div>
+                    <div className='w-full flex flex-col gap-3 lg:mt-14'>
+                        <div className='flex flex-col gap-1'>
                             <Date date={article.createdAt ?? article.publishedAt} />
-                            <h1 className='text-xl md:text-2xl font-bold'>{article.title}</h1>
+                            <h1 className='font-extrabold'>{article.title}</h1>
                         </div>
                         <div className='flex items-center gap-5'>
                             <Link href={`/blog/category/${article.category.id}`}>
@@ -53,7 +57,7 @@ const BlogList = ({ data }: Props) => {
                             <Link
                                 style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
                                 href={`/blog/${article.id}`}
-                                className='bg-gray-300 px-3 py-2 rounded-md hover:bg-gray-200 duration-300'
+                                className='bg-gray-300 px-2 py-1 rounded-md hover:bg-gray-200 duration-300'
                             >
                                 ブログ詳細
                             </Link>

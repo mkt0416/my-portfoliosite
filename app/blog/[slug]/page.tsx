@@ -3,6 +3,7 @@ import React from 'react'
 import Article from '@/app/components/blog/Article';
 import ButtonLink from '@/app/components/common/ButtonLink';
 import { getBlogDetail } from '@/app/lib/microcms';
+import PageHero from '@/app/components/common/PageHero';
 
 export const revalidate = 0;
 
@@ -17,8 +18,9 @@ const Page = async ({ params }: Props) => {
 
     return (
         <>
+            <PageHero image='/images/blog.svg' title='Blog' />
             <Article data={data} />
-            <div className='flex justify-center mt-10 mb-10'>
+            <div className='flex justify-center mt-32 mb-10'>
                 <ButtonLink href='/blog'>ブログ一覧</ButtonLink>
             </div>
         </>

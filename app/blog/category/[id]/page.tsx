@@ -26,11 +26,13 @@ const Page = async ({ params }: Props) => {
                 image='/images/blog.svg'
                 title='Blog'
             />
-            <BlogList data={blog} />
-            <Pagenation
-                totalCount={totalCount}
-                basePath={`/blog/category/${category.id}`}
-            />
+            <div className='mt-32'>
+                <BlogList data={blog} />
+                <Pagenation
+                    totalCount={totalCount}
+                    basePath={`/blog/category/${category.id}`}
+                />
+            </div>
         </>
     );
 };

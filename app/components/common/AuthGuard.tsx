@@ -9,12 +9,12 @@ const AuthGuard = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState<boolean>(true);
     const context = useContext(AuthContext);
 
-    if (!context) return null;
-
-    const { currentUser, setCurrentUser } = context;
+    const currentUser = context?.currentUser;
+    const setCurrentUser = context?.setCurrentUser;
 
     useEffect(() => {
         const checkAuth = async () => {
+            if (!setCurrentUser) return;
             try {
                 const token = localStorage.getItem('token');
                 if (!token) {
@@ -43,7 +43,7 @@ const AuthGuard = ({ children }: { children: ReactNode }) => {
             }
         };
         checkAuth();
-    }, [router]);
+    }, [router, setCurrentUser]);
 
     if (!currentUser || loading) {
         return (

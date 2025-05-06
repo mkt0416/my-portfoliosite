@@ -49,7 +49,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
             }
         };
         checkAuth();
-    }, []);
+    }, [router]);
 
     if (loading) {
         return (

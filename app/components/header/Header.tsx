@@ -23,10 +23,7 @@ const Header = () => {
     const pathName = usePathname();
 
     const context = useContext(AuthContext);
-
-    if (!context) return null;
-
-    const { currentUser } = context;
+    const currentUser = context?.currentUser;
 
     useEffect(() => {
         setActiveLink(pathName);

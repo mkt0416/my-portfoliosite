@@ -6,6 +6,7 @@ import BlogList from '@/app/components/blog/BlogList';
 import { BLOG_LIST_LIMIT } from '@/app/constants';
 import { notFound } from 'next/navigation';
 import Pagenation from '@/app/components/blog/Pagenation';
+import AuthGuard from '@/app/components/common/AuthGuard';
 
 type Props = {
     params: {
@@ -21,7 +22,7 @@ const Page = async ({ params }: Props) => {
     });
 
     return (
-        <>
+        <AuthGuard>
             <PageHero
                 image='/images/blog.svg'
                 title='Blog'
@@ -33,7 +34,7 @@ const Page = async ({ params }: Props) => {
                     basePath={`/blog/category/${category.id}`}
                 />
             </div>
-        </>
+        </AuthGuard>
     );
 };
 

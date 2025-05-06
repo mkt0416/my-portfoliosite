@@ -1,7 +1,6 @@
 
 'use client'
 import React, { useEffect, useState } from 'react'
-import Container from '../common/Container';
 import { usePathname } from 'next/navigation';
 import MobileMenu from './MobileMenu';
 import HumbergerMenu from './HumbergerMenu';
@@ -28,7 +27,7 @@ const Header = () => {
 
     return (
         <header id='home' className='py-8'>
-            <Container>
+            <div className='w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16'>
                 <div className='flex justify-between items-center'>
                     <HeaderTitle />
                     <Navigation
@@ -43,7 +42,7 @@ const Header = () => {
                         />
                     )}
                 </div>
-            </Container>
+            </div>
         </header>
     );
 };

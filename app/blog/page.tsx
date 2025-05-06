@@ -6,6 +6,7 @@ import BlogList from '../components/blog/BlogList';
 import { BLOG_LIST_LIMIT } from '../constants';
 import Pagenation from '../components/blog/Pagenation';
 import SearchField from '../components/blog/SearchField';
+import AuthGuard from '../components/common/AuthGuard';
 
 export const revalidate = 0;
 
@@ -13,7 +14,7 @@ const Page = async () => {
     const { contents: blog, totalCount } = await getBlogList({ limit: BLOG_LIST_LIMIT });
 
     return (
-        <>
+        <AuthGuard>
             <PageHero
                 image='/images/blog.svg'
                 title='Blog'
@@ -23,7 +24,7 @@ const Page = async () => {
                 <BlogList data={blog} />
                 <Pagenation totalCount={totalCount} />
             </div>
-        </>
+        </AuthGuard>
     );
 };
 

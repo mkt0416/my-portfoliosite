@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import SubTitle from '../common/SubTitle'
 import emailjs from '@emailjs/browser';
 import Container from '../common/Container';
+import AuthGard from '../common/AuthGuard';
 
 const ContactForm = () => {
     const form = useRef<HTMLFormElement>(null);
@@ -32,53 +33,55 @@ const ContactForm = () => {
     };
 
     return (
-        <Container>
-            <SubTitle text='Contact' />
-            <p>Thank you for visiting my portfolio. Feel free to contact me with any job inquiries or questions.</p>
-            <span className='text-gray-400 text-xs'>ご覧いただきありがとうございます。お仕事のご相談やご質問など、お気軽にご連絡ください。</span>
-            <form
-                onSubmit={sendEmail}
-                ref={form}
-                className='mt-10'
-            >
-                <input
-                    className='w-full border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
-                    type="text"
-                    name='name'
-                    placeholder='Name'
-                    required
-                />
-                <input
-                    className='w-full border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
-                    type="email"
-                    name='email'
-                    placeholder='Mailadress'
-                    required
-                />
-                <input
-                    className='w-full border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
-                    type="text"
-                    name='subject'
-                    placeholder='Subject'
-                    required
-                />
-                <textarea
-                    className='w-full border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
-                    name='message'
-                    placeholder='Message'
-                    rows={12}
-                    required
-                />
-                <button
-                    type='submit'
-                    style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
-                    className='w-full text-xl text-white font-semibold bg-yellow-400 hover:bg-yellow-500 duration-300
-                 px-10 py-3 rounded'
+        <AuthGard>
+            <Container>
+                <SubTitle text='Contact' />
+                <p>Thank you for visiting my portfolio. Feel free to contact me with any job inquiries or questions.</p>
+                <span className='text-gray-400 text-xs'>ご覧いただきありがとうございます。お仕事のご相談やご質問など、お気軽にご連絡ください。</span>
+                <form
+                    onSubmit={sendEmail}
+                    ref={form}
+                    className='mt-10'
                 >
-                    Submit
-                </button>
-            </form>
-        </Container>
+                    <input
+                        className='w-full border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
+                        type="text"
+                        name='name'
+                        placeholder='Name'
+                        required
+                    />
+                    <input
+                        className='w-full border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
+                        type="email"
+                        name='email'
+                        placeholder='Mailadress'
+                        required
+                    />
+                    <input
+                        className='w-full border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
+                        type="text"
+                        name='subject'
+                        placeholder='Subject'
+                        required
+                    />
+                    <textarea
+                        className='w-full border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
+                        name='message'
+                        placeholder='Message'
+                        rows={12}
+                        required
+                    />
+                    <button
+                        type='submit'
+                        style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
+                        className='w-full text-xl text-white font-semibold bg-slate-500 hover:bg-slate-600 duration-300
+                 px-10 py-3 rounded'
+                    >
+                        Submit
+                    </button>
+                </form>
+            </Container>
+        </AuthGard>
     );
 };
 

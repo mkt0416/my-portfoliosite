@@ -100,7 +100,7 @@ const Skills = () => {
                 {skillsItem.map((item) => (
                     <div
                         key={item.id}
-                        style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+                        style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                         className='w-full bg-white rounded-xl py-8 flex flex-col items-center hover:bg-blue-50 duration-300'
                     >
                         <span className={`text-9xl ${item.color}`}>{item.icon}</span>

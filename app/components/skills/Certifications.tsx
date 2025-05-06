@@ -50,7 +50,7 @@ const Certifications = () => {
                 {certItems.map((item) => (
                     <li
                         key={item.id}
-                        style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+                        style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                         className='bg-white rounded-lg p-4 border-l-4 border-blue-500 hover:bg-blue-50 duration-300'
                     >
                         <span className='text-gray-600 font-bold'>{item.title}</span>

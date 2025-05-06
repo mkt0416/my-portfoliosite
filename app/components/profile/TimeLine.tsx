@@ -67,7 +67,6 @@ const TimeLine = () => {
                     >
                         <span className='text-gray-400 text-lg'>{item.year}</span>
                         <h3
-                            style={{ textShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
                             className='text-xl md:text-3xl font-bold'>{item.title}</h3>
                         <span className='text-gray-400 text-xs'>{item.jpTitle}</span>
                         <p className='mt-2'>{item.description}</p>

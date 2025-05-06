@@ -43,10 +43,7 @@ const PageHero = ({ image, title }: Props) => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     className='text-center'>
-                    <h1
-                        style={{ textShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
-                        className='text-3xl lg:text-5xl text-gray-600 font-bold mb-10'
-                    >{title}</h1>
+                    <h1 className='text-3xl lg:text-5xl text-gray-600 font-bold mb-10'>{title}</h1>
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0 }}

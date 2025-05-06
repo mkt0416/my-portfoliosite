@@ -16,7 +16,7 @@ const ProfileTop = () => {
                     className='flex-grow text-center lg:text-left max-lg:order-2'
                 >
                     <h1 className='text-3xl md:text-5xl font-bold mb-5'
-                        style={{ textShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
+                        style={{ textShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                     >Makoto Saitoh</h1>
                     <p className='text-lg font-semibold'>I&apos;m an aspiring web developer currently learning JavaScript, React, and Next.js.
                         <br />
@@ -37,7 +37,7 @@ const ProfileTop = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <Image
-                        style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
+                        style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                         className='rounded-full object-cover border-4 border-yellow-400'
                         src={'/images/profile.png'}
                         alt='profile'

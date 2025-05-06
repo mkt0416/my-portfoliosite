@@ -35,6 +35,7 @@ const BlogList = ({ data }: Props) => {
                         : (
                             <div className='w-full'>
                                 <Image
+                                    style={{ boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.5)" }}
                                     className='rounded-lg object-cover'
                                     src={'/images/no-image.png'}
                                     alt='image'
@@ -55,7 +56,7 @@ const BlogList = ({ data }: Props) => {
                                 <Category category={article.category} />
                             </Link>
                             <Link
-                                style={{ boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.5)" }}
+                                style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                                 href={`/blog/${article.id}`}
                                 className='bg-gray-300 px-2 py-1 rounded-md hover:bg-gray-200 duration-300'
                             >

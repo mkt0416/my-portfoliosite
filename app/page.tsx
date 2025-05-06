@@ -1,17 +1,24 @@
 
 'use client'
-import React from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import AuthGuard from './components/common/AuthGuard';
 import ButtonLink from './components/common/ButtonLink';
 import { MdLogout } from "react-icons/md";
+import { AuthContext } from './context/AuthProvider';
 
 const Page = () => {
     const router = useRouter();
+    const context = useContext(AuthContext);
+
+    if (!context) return null;
+
+    const { currentUser, setCurrentUser } = context;
 
     const logout = () => {
         localStorage.removeItem('token');
+        setCurrentUser(null);
         router.push('/login');
     };
 
@@ -35,6 +42,7 @@ const Page = () => {
                             >
                                 Welcome to My portfolio!!
                             </h1>
+                            <h2 className='text-2xl text-gray-600 font-bold mb-3'>Hello!! {currentUser?.name}</h2>
                             <p className='text-gray-600 font-semibold mb-8'> I&apos;m a beginner web developer who is just starting to learn about clean code and thoughtful design.
                                 <br />
                                 I&apos;m eager to improve and learn from more experienced developers.

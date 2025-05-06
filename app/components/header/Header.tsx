@@ -1,11 +1,12 @@
 
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation';
 import MobileMenu from './MobileMenu';
 import HumbergerMenu from './HumbergerMenu';
 import HeaderTitle from './HeaderTitle';
 import Navigation from './Navigation';
+import { AuthContext } from '@/app/context/AuthProvider';
 
 const headerListItems = [
     { id: '1', link: '/', text: 'Home' },
@@ -21,9 +22,17 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const pathName = usePathname();
 
+    const context = useContext(AuthContext);
+
+    if (!context) return null;
+
+    const { currentUser } = context;
+
     useEffect(() => {
         setActiveLink(pathName);
     }, [pathName]);
+
+    if (!currentUser) return null;
 
     return (
         <header id='home' className='py-8'>

@@ -1,11 +1,12 @@
 
 'use client'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import { FaUser } from "react-icons/fa";
 import { TextField, Button } from '@mui/material';
+import { AuthContext } from '../context/AuthProvider';
 
 const Page = () => {
     const router = useRouter();
@@ -15,6 +16,11 @@ const Page = () => {
     const [password, setPassword] = useState<string>('');
     const [nameErrText, setNameErrText] = useState<string>('');
     const [passwordErrText, setPasswordErrText] = useState<string>('');
+    const context = useContext(AuthContext);
+
+    if (!context) return null;
+
+    const { setCurrentUser } = context;
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -50,6 +56,7 @@ const Page = () => {
             const jsonData = await response.json();
             if (response.ok) {
                 localStorage.setItem('token', jsonData.token);
+                setCurrentUser(jsonData.user);
                 alert(jsonData.message);
                 router.push('/');
             } else {

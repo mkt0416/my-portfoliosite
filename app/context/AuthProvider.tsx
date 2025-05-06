@@ -24,7 +24,6 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
             try {
                 const token = localStorage.getItem('token');
                 if (!token) {
-                    setLoading(false);
                     router.push('/login');
                     return;
                 }
@@ -38,15 +37,12 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
                 });
                 const jsonData = await response.json();
                 if (!response.ok) {
-                    setLoading(false);
                     router.push('/login');
-                    return;
                 } else {
                     setCurrentUser(jsonData.user);
                 }
             } catch (err) {
                 router.push('/login');
-                setLoading(false);
             }
             finally {
                 setLoading(false);

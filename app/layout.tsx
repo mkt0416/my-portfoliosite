@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/header/Header";
 import TopMenuButton from "./components/common/TopMenuButton";
 import ProgressBar from "./components/common/ProgressBar";
+import AuthProvider from "./context/AuthProvider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,10 +24,12 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${poppins.className}`}>
-        <ProgressBar />
-        <Header />
-        {children}
-        <TopMenuButton />
+        <AuthProvider>
+          <ProgressBar />
+          <Header />
+          {children}
+          <TopMenuButton />
+        </AuthProvider>
       </body>
     </html>
   );

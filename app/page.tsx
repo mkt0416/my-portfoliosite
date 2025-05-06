@@ -42,7 +42,9 @@ const Page = () => {
                             >
                                 Welcome to My portfolio!!
                             </h1>
-                            <h2 className='text-2xl text-gray-600 font-bold mb-3'>Hello!! {currentUser?.name}</h2>
+                            <h2 className='text-2xl text-gray-600 font-bold mb-3'>Hello!!
+                                <span className="text-yellow-600 font-extrabold underline underline-offset-4 pl-2">{currentUser?.name}</span>!!
+                            </h2>
                             <p className='text-gray-600 font-semibold mb-8'> I&apos;m a beginner web developer who is just starting to learn about clean code and thoughtful design.
                                 <br />
                                 I&apos;m eager to improve and learn from more experienced developers.

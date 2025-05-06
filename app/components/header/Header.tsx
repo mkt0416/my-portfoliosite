@@ -21,7 +21,6 @@ const Header = () => {
     const [activeLink, setActiveLink] = useState<string>('');
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const pathName = usePathname();
-
     const context = useContext(AuthContext);
     const currentUser = context?.currentUser;
 

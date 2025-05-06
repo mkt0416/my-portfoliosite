@@ -1,9 +1,12 @@
 
 'use client'
-import React, { useEffect, useState } from 'react'
+import { AuthContext } from '@/app/context/AuthProvider';
+import React, { useContext, useEffect, useState } from 'react'
 
 const ProgressBar = () => {
     const [scrollProgress, setScrollProgress] = useState<number>(0);
+    const context = useContext(AuthContext);
+    const currentUser = context?.currentUser;
 
     useEffect(() => {
         const updateProgress = () => {
@@ -15,6 +18,8 @@ const ProgressBar = () => {
         window.addEventListener('scroll', updateProgress);
         return () => window.removeEventListener('scroll', updateProgress);
     }, []);
+
+    if (!currentUser) return null;
 
     return (
         <div className='fixed top-0 left-0 w-full h-2 bg-gray-400 z-50'>

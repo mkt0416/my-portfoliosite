@@ -1,8 +1,11 @@
 
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import SubTitle from '../common/SubTitle';
 import Image from 'next/image';
 import Container from '../common/Container';
+import 'aos/dist/aos.css';
+const AOS: any = require('aos');
 
 const hobbyItem = [
     {
@@ -30,6 +33,14 @@ const hobbyItem = [
 ];
 
 const Hobby = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 700,
+            easing: 'slide',
+            once: true,
+        });
+    });
+
     return (
         <Container>
             <SubTitle text='Hobby' />
@@ -38,7 +49,10 @@ const Hobby = () => {
                     key={item.id}
                     className={`flex flex-col lg:flex-row ${item.reverse && 'lg:flex-row-reverse'} items-center gap-10 lg:gap-32 mb-10`}
                 >
-                    <div>
+                    <div
+                        data-aos={`${item.reverse ? 'fade-left' : 'fade-right'}`}
+                        data-aos-delay="500"
+                    >
                         <Image
                             src={item.image}
                             alt='hobbyimage1'
@@ -47,7 +61,10 @@ const Hobby = () => {
                             priority
                         />
                     </div>
-                    <div>
+                    <div
+                        data-aos={`${item.reverse ? 'fade-right' : 'fade-left'}`}
+                        data-aos-delay="500"
+                    >
                         <h2 className='text-3xl font-bold'>{item.title}</h2>
                         <span className='text-gray-400 text-sm'>{item.jpTitle}</span>
                         <p className='mt-5'>{item.description}</p>

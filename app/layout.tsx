@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${poppins.className}`}>
+      <body className={`${poppins.className} bg-slate-50`}>
         <AuthProvider>
           <ProgressBar />
           <Header />

@@ -1,7 +1,10 @@
 
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
+import 'aos/dist/aos.css';
+const AOS: any = require('aos');
 
 const certItems = [
     {
@@ -39,6 +42,14 @@ const certItems = [
 ];
 
 const Certifications = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 700,
+            easing: 'slide',
+            once: true,
+        });
+    });
+
     return (
         <Container>
             <SubTitle text='Certifications' />
@@ -49,6 +60,8 @@ const Certifications = () => {
             <ul className='mt-10 space-y-6'>
                 {certItems.map((item) => (
                     <li
+                        data-aos="zoom-in"
+                        data-aos-delay="500"
                         key={item.id}
                         style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                         className='bg-white rounded-lg p-4 border-l-4 border-blue-500 hover:bg-blue-50 duration-300'

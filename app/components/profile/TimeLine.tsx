@@ -1,7 +1,10 @@
 
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
+import 'aos/dist/aos.css';
+const AOS: any = require('aos');
 
 const timeLineItem = [
     {
@@ -56,18 +59,27 @@ const timeLineItem = [
 ];
 
 const TimeLine = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 700,
+            easing: 'slide',
+            once: true,
+        });
+    });
+
     return (
         <Container>
             <SubTitle text='TimeLine' />
             <div className='border-l-2 border-gray-200 pl-6 space-y-8'>
                 {timeLineItem.map((item) => (
                     <div
+                        data-aos="fade-up"
+                        data-aos-delay="500"
                         key={item.id}
                         className='border-b-2 p-4 border-gray-200'
                     >
                         <span className='text-gray-400 text-lg'>{item.year}</span>
-                        <h3
-                            className='text-xl md:text-3xl font-bold'>{item.title}</h3>
+                        <h3 className='text-xl md:text-3xl font-bold'>{item.title}</h3>
                         <span className='text-gray-400 text-xs'>{item.jpTitle}</span>
                         <p className='mt-2'>{item.description}</p>
                     </div>

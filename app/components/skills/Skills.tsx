@@ -1,5 +1,8 @@
 
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
+import 'aos/dist/aos.css';
+const AOS: any = require('aos');
 import SubTitle from '../common/SubTitle';
 import {
     SiGit,
@@ -85,6 +88,14 @@ const skillsItem = [
 ];
 
 const Skills = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 700,
+            easing: 'slide',
+            once: true,
+        });
+    });
+
     return (
         <Container>
             <SubTitle text='Skillstack' />
@@ -99,6 +110,8 @@ const Skills = () => {
             <div className='mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10'>
                 {skillsItem.map((item) => (
                     <div
+                        data-aos="flip-left"
+                        data-aos-delay="500"
                         key={item.id}
                         style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                         className='w-full bg-white rounded-xl py-8 flex flex-col items-center hover:bg-blue-50 duration-300'

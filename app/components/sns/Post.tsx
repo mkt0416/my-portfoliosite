@@ -77,17 +77,18 @@ const Post = ({ post }: Props) => {
             <div className="flex items-center gap-4">
                 <Link href={`/snsprofile/${user?.username}`}>
                     <div className="flex items-center gap-2">
-                        <Image
-                            className="w-10 h-10 object-cover border-2 border-yellow-400 rounded-full"
-                            src={user?.profilePicture
-                                ? user.profilePicture
-                                : '/images/persons/noAvatar.png'
-                            }
-                            alt="profilePicture"
-                            width={50}
-                            height={50}
-                            priority
-                        />
+                        {user && (
+                            <Image
+                                className="w-10 h-10 object-cover border-2 border-yellow-400 rounded-full"
+                                src={user?.profilePicture
+                                    ? user.profilePicture
+                                    : '/images/persons/noAvatar.png'
+                                }
+                                alt="profilePicture"
+                                width={50}
+                                height={50}
+                            />
+                        )}
                         <span className="font-semibold">{user?.username}</span>
                     </div>
                 </Link>

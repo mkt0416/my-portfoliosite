@@ -74,31 +74,31 @@ const ProfileHero = ({ username }: Props) => {
 
     return (
         <>
-            <div className="relative w-full h-[300px]">
-                <Image
-                    className="object-cover"
-                    src={user?.coverPicture
-                        ? user.coverPicture
-                        : '/images/posts/3.jpeg'
-                    }
-                    alt="coverPicture"
-                    fill
-                    priority
-                />
-                <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
+            {user && (
+                <div className="relative w-full h-[300px]">
                     <Image
-                        className="w-40 h-40 object-cover rounded-full border-4 border-yellow-400"
-                        src={user?.profilePicture
-                            ? user.profilePicture
-                            : '/images/persons/noAvatar.png'
+                        className="object-cover"
+                        src={user?.coverPicture
+                            ? user.coverPicture
+                            : '/images/posts/3.jpeg'
                         }
-                        alt="profilePicture"
-                        width={200}
-                        height={200}
-                        priority
+                        alt="coverPicture"
+                        fill
                     />
+                    <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
+                        <Image
+                            className="w-40 h-40 object-cover rounded-full border-4 border-yellow-400"
+                            src={user?.profilePicture
+                                ? user.profilePicture
+                                : '/images/persons/noAvatar.png'
+                            }
+                            alt="profilePicture"
+                            width={200}
+                            height={200}
+                        />
+                    </div>
                 </div>
-            </div>
+            )}
             <Container>
                 <div className="mt-20">
                     <h1 className="text-lg sm:text-2xl text-center font-bold">{user?.username}</h1>

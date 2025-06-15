@@ -1,6 +1,6 @@
 
-import { FaUser } from "react-icons/fa";
 import LoginForm from "../components/login/LoginForm";
+import { FaUser } from "react-icons/fa";
 
 const Page = () => {
     return (

@@ -10,7 +10,7 @@ const RegisterForm = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [showConfirmPassword, setConfirmShowPassword] = useState<boolean>(false);
-    const [name, setName] = useState<string>('');
+    const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [confirmPassword, setConfirmPassword] = useState<string>('');
     const [nameErrText, setNameErrText] = useState<string>('');
@@ -25,7 +25,7 @@ const RegisterForm = () => {
 
         let error = false;
 
-        if (name === '') {
+        if (username === '') {
             error = true;
             setNameErrText('ユーザー名を入力してください');
         }
@@ -53,7 +53,7 @@ const RegisterForm = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name,
+                    username,
                     password,
                     confirmPassword,
                 })
@@ -65,7 +65,7 @@ const RegisterForm = () => {
             } else {
                 const errors = jsonData.errors;
                 errors.forEach((err: any) => {
-                    if (err.path === 'name') {
+                    if (err.path === 'username') {
                         setNameErrText(err.msg);
                     }
                     if (err.path === 'password') {
@@ -93,8 +93,8 @@ const RegisterForm = () => {
                     className={`w-full rounded py-3 px-4 border border-gray-300 focus:outline-blue-500 
                     ${nameErrText ? '' : 'mb-6'}
                     ${nameErrText ? 'border-red-500' : 'border-gray-300'}`}
-                    onChange={(e) => setName(e.target.value)}
-                    name='name'
+                    onChange={(e) => setUsername(e.target.value)}
+                    name='username'
                     placeholder='お名前'
                     required
                 />

@@ -2,7 +2,6 @@
 import { Blog } from '@/app/lib/microcms';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
 import Date from './Date';
 import Category from './Category';
 

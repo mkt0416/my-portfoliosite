@@ -1,6 +1,5 @@
 
 import Link from 'next/link';
-import React from 'react'
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 type Props = {

@@ -1,5 +1,4 @@
 
-import React from 'react'
 import SubTitle from '../common/SubTitle';
 import type { Portfolio } from '@/app/lib/microcms';
 import Image from 'next/image';

@@ -1,5 +1,4 @@
 
-import React from 'react'
 import AuthGuard from '../components/common/AuthGuard';
 import PageHero from '../components/common/PageHero';
 import ContactForm from '../components/contact/ContactForm';

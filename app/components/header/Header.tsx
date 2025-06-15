@@ -14,7 +14,8 @@ const headerListItems = [
     { id: '3', link: '/skills', text: 'Skills' },
     { id: '4', link: '/portfolio', text: 'Portfolio' },
     { id: '5', link: '/blog', text: 'Blog' },
-    { id: '6', link: '/contact', text: 'Contact' },
+    { id: '6', link: '/snstop', text: 'SNS' },
+    { id: '7', link: '/contact', text: 'Contact' },
 ];
 
 const Header = () => {

@@ -1,5 +1,4 @@
 
-import React from 'react'
 import type { Category } from '@/app/lib/microcms';
 
 type Props = {

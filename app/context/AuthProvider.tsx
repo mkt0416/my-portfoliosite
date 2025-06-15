@@ -1,9 +1,15 @@
 
 'use client'
-import React, { createContext, ReactNode, useEffect, useState } from 'react'
+import React, { createContext, ReactNode, useState } from 'react'
 
 type User = {
-    name: string;
+    _id: string;
+    username: string;
+    desc: string;
+    profilePicture: string;
+    coverPicture: string;
+    followers: string[];
+    followings: string[];
 };
 
 type AuthContextType = {

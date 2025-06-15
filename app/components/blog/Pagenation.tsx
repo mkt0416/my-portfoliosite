@@ -1,7 +1,6 @@
 
 import { BLOG_LIST_LIMIT } from '@/app/constants';
 import Link from 'next/link';
-import React from 'react'
 
 type Props = {
     totalCount: number;

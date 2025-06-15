@@ -1,6 +1,6 @@
 
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
 import 'aos/dist/aos.css';

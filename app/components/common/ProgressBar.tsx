@@ -1,7 +1,7 @@
 
 'use client'
 import { AuthContext } from '@/app/context/AuthProvider';
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 
 const ProgressBar = () => {
     const [scrollProgress, setScrollProgress] = useState<number>(0);

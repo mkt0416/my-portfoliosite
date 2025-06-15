@@ -1,5 +1,4 @@
 
-import React from 'react'
 import ProfileTop from '../components/profile/ProfileTop';
 import TimeLine from '../components/profile/TimeLine';
 import Hobby from '../components/profile/Hobby';

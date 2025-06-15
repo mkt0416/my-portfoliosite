@@ -1,11 +1,12 @@
 
-import HeroSction from "./components/hero/HeroSction";
+import AuthGuard from "./components/common/AuthGuard";
+import HeroSection from "./components/hero/HeroSection";
 
 const Page = () => {
     return (
-        <>
-            <HeroSction />
-        </>
+        <AuthGuard>
+            <HeroSection />
+        </AuthGuard>
     );
 };
 

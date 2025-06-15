@@ -1,6 +1,6 @@
 
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef } from 'react';
 import SubTitle from '../common/SubTitle'
 import emailjs from '@emailjs/browser';
 import Container from '../common/Container';

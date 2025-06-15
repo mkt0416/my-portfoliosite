@@ -1,6 +1,5 @@
 
 import Link from 'next/link';
-import React from 'react'
 import { motion } from 'framer-motion';
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -27,7 +26,7 @@ const MobileMenu = ({ headerListItems, setShowMenu }: Props) => {
                     onClick={() => setShowMenu(false)}
                     href={'/'}
                 >
-                    <h1 className='text-3xl text-gray-600 font-bold mb-4'>My Portfolio</h1>
+                    <h1 className='text-xl md:text-3xl text-gray-600 font-bold mb-4'>My Portfolio</h1>
                 </Link>
                 <span
                     onClick={() => setShowMenu(false)}

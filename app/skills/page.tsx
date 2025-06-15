@@ -1,5 +1,4 @@
 
-import React from 'react'
 import PageHero from '../components/common/PageHero';
 import Skills from '../components/skills/Skills';
 import Certifications from '../components/skills/Certifications';

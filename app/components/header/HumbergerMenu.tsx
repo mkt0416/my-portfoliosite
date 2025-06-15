@@ -1,6 +1,4 @@
 
-import React from 'react'
-
 type Props = {
     setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
 };

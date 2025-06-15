@@ -1,6 +1,6 @@
 
-import { FaUser } from "react-icons/fa";
 import RegisterForm from "../components/register/RegisterForm";
+import { FaUser } from "react-icons/fa";
 
 const Page = () => {
     return (

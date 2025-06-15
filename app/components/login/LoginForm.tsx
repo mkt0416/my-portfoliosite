@@ -1,16 +1,16 @@
 
 'use client'
 import React, { useContext, useState } from 'react'
+import { AuthContext } from '@/app/context/AuthProvider';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
-import { AuthContext } from '@/app/context/AuthProvider';
 
 const LoginForm = () => {
     const router = useRouter();
     const [loading, setLoading] = useState<boolean>(false);
     const [showPassword, setShowPassword] = useState<boolean>(false);
-    const [name, setName] = useState<string>('');
+    const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [nameErrText, setNameErrText] = useState<string>('');
     const [passwordErrText, setPasswordErrText] = useState<string>('');
@@ -27,7 +27,7 @@ const LoginForm = () => {
 
         let error = false;
 
-        if (name === '') {
+        if (username === '') {
             error = true;
             setNameErrText('ユーザー名を入力してください');
         }
@@ -47,7 +47,7 @@ const LoginForm = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name,
+                    username,
                     password,
                 })
             });
@@ -60,7 +60,7 @@ const LoginForm = () => {
             } else {
                 const errors = jsonData.errors;
                 errors.forEach((err: any) => {
-                    if (err.path === 'name') {
+                    if (err.path === 'username') {
                         setNameErrText(err.msg);
                     }
                     if (err.path === 'password') {
@@ -86,7 +86,7 @@ const LoginForm = () => {
                     className={`w-full rounded py-3 px-4 border border-gray-300 focus:outline-blue-500 
                     ${nameErrText ? '' : 'mb-6'}
                     ${nameErrText ? 'border-red-500' : 'border-gray-300'}`}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                     name='name'
                     placeholder='お名前'
                     required

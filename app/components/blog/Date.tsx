@@ -1,6 +1,5 @@
 
 import { formatDate } from '@/app/lib/utils';
-import React from 'react'
 
 type Props = {
     date: string;

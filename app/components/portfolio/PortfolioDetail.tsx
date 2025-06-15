@@ -1,8 +1,7 @@
 
-import { Portfolio } from '@/app/lib/microcms';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import { Portfolio } from '@/app/lib/microcms';
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from 'react-icons/fi';
 import { IoArrowUndoCircle } from "react-icons/io5";

@@ -20,7 +20,7 @@ const TopMenuButton = () => {
     }, []);
 
     return (
-        <div className={`${scrolling ? 'fixed bottom-1 right-1 z-50' : 'hidden'}`}>
+        <div className={`${scrolling ? 'fixed bottom-12 lg:bottom-0 right-1 z-50' : 'hidden'}`}>
             <Link href={'#home'}>
                 <button>
                     <BsArrowUpSquare

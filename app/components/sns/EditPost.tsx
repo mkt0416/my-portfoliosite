@@ -86,15 +86,16 @@ const EditPost = ({ id }: Props) => {
                     type="text"
                 />
                 <p className="text-sm font-semibold mb-2 ml-2">・画像</p>
-                <Image
-                    style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                    className="w-full rounded-md"
-                    src={img ? img : '/images/posts/no-image.png'}
-                    alt="postImage"
-                    width={400}
-                    height={400}
-                    priority
-                />
+                {img && (
+                    <Image
+                        style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                        className="w-full rounded-md"
+                        src={img ? img : '/images/posts/no-image.png'}
+                        alt="postImage"
+                        width={400}
+                        height={400}
+                    />
+                )}
                 <div className="flex justify-between items-center mt-10">
                     <label
                         className="flex flex-col sm:flex-row items-start md:items-center gap-2"

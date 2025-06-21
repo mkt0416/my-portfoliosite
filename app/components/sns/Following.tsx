@@ -21,7 +21,7 @@ const Following = ({ friend, handleUnFollow }: Props) => {
                     className="w-10 h-10 rounded-full object-cover border-2 border-yellow-400"
                     src={friend.profilePicture
                         ? friend.profilePicture
-                        : '/images/person/noAvatar.png'
+                        : '/images/persons/noAvatar.png'
                     }
                     alt="profilePicture"
                     width={50}

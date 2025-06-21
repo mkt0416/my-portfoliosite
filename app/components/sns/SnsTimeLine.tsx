@@ -31,22 +31,17 @@ const SnsTimeline = ({ username }: Props) => {
             console.log(err);
         }
     };
-    if (posts.length === 0) {
-        return (
-            <h1>まだ投稿がありません</h1>
-        );
-    } else {
-        return (
-            <>
-                {posts.map((post) => (
-                    <Post
-                        key={post._id}
-                        post={post}
-                        fetchPost={fetchPost} />
-                ))}
-            </>
-        );
-    }
+
+    return (
+        <>
+            {posts.map((post) => (
+                <Post
+                    key={post._id}
+                    post={post}
+                    fetchPost={fetchPost} />
+            ))}
+        </>
+    );
 };
 
 export default SnsTimeline;

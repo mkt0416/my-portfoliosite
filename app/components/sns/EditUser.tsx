@@ -126,29 +126,16 @@ const EditUser = ({ userId }: Props) => {
                 />
                 <div>
                     <p className="text-sm font-semibold mb-2 ml-2">・プロフィール画像</p>
-                    {profileImage
-                        ? (
-                            <Image
-                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                                className="w-full rounded-md"
-                                src={profileImage}
-                                alt="postImage"
-                                width={400}
-                                height={400}
-                            />
-                        )
-                        : (
-                            <Image
-                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                                className="w-full rounded-md"
-                                src={'/images/persons/noAvatar.png'}
-                                alt="postImage"
-                                width={400}
-                                height={400}
-                            />
-                        )
-                    }
-
+                    {profileImage && (
+                        <Image
+                            style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                            className="w-full rounded-md"
+                            src={profileImage}
+                            alt="postImage"
+                            width={400}
+                            height={400}
+                        />
+                    )}
                     <label
                         className="mt-10 flex flex-col sm:flex-row items-start md:items-center gap-2"
                         htmlFor="profile"
@@ -179,29 +166,16 @@ const EditUser = ({ userId }: Props) => {
                 </div>
                 <div className="mt-10">
                     <p className="text-sm font-semibold mb-2 ml-2">・カバー画像</p>
-                    {coverImage
-                        ? (
-                            <Image
-                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                                className="w-full rounded-md"
-                                src={coverImage}
-                                alt="postImage"
-                                width={400}
-                                height={400}
-                            />
-                        )
-                        : (
-                            <Image
-                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                                className="w-full rounded-md"
-                                src={'/images/posts/3.jpeg'}
-                                alt="postImage"
-                                width={400}
-                                height={400}
-                            />
-                        )
-                    }
-
+                    {coverImage && (
+                        <Image
+                            style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                            className="w-full rounded-md"
+                            src={coverImage}
+                            alt="postImage"
+                            width={400}
+                            height={400}
+                        />
+                    )}
                     <label
                         className="mt-10 flex flex-col sm:flex-row items-start md:items-center gap-2"
                         htmlFor="cover"

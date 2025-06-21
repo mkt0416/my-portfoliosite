@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
 import { PostType, UserType } from "@/app/lib/snsTypes";
+import { formatDate } from "@/app/lib/utils";
 import { format } from 'timeago.js';
 import { FaHeart } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
@@ -84,6 +85,7 @@ const Post = ({ post, fetchPost }: Props) => {
             style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
             className="flex flex-col gap-5 bg-white border rounded-lg p-6 md:p-16 mb-10"
         >
+            <span className="text-xs sm:text-sm font-semibold self-end">投稿日:{formatDate(post.createdAt)}</span>
             <div className="flex items-center gap-4">
                 <Link href={`/snsprofile/${user?.username}`}>
                     <div className="flex items-center gap-2">

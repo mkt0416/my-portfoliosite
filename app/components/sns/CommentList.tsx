@@ -34,26 +34,14 @@ const CommentList = ({ postId }: Props) => {
                 postId={postId}
                 getComments={getComments}
             />
-            {comments.length === 0
-                ? (
-                    <h1>まだコメントが投稿されていません</h1>
-                )
-                : (
-                    <div
-                        style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                        className="bg-white border rounded-xl p-6 sm:p-10"
-                    >
-                        {comments.map((comment) => (
-                            <Comment
-                                key={comment._id}
-                                comment={comment}
-                                postId={postId}
-                                getComments={getComments}
-                            />
-                        ))}
-                    </div>
-                )
-            }
+            {comments.map((comment) => (
+                <Comment
+                    key={comment._id}
+                    comment={comment}
+                    postId={postId}
+                    getComments={getComments}
+                />
+            ))}
         </>
     );
 };

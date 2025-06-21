@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { AuthContext } from "@/app/context/AuthProvider";
 import { useContext } from "react";
-import { FaUser, FaUserEdit } from "react-icons/fa";
+import { FaUser, FaUserEdit, FaUserSlash } from "react-icons/fa";
 import { FaDesktop } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { FaUsers } from "react-icons/fa";
@@ -46,6 +46,12 @@ const Sidebar = () => {
             label: '友達',
             link: `/followings/${currentUser?._id}`,
             icon: <FaUsers />
+        },
+        {
+            id: '6',
+            label: 'アカウント削除',
+            link: `/unsubscribe/${currentUser?._id}`,
+            icon: <FaUserSlash />
         },
     ];
 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useContext, useState } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
 import { FaImage } from "react-icons/fa";
+import { IoIosCreate } from "react-icons/io";
 
 const Share = () => {
     const context = useContext(AuthContext);
@@ -74,7 +75,7 @@ const Share = () => {
                 <h1 className="text-xs sm:text-lg font-semibold mb-4 underline">こんにちは{currentUser?.username}さん!!</h1>
                 <input
                     onChange={(e) => setDesc(e.target.value)}
-                    className="w-full rounded-md border py-3 px-4 focus:outline-none mb-5 placeholder:text-sm"
+                    className="w-full rounded-md border py-3 px-4 focus:outline-none mb-5 placeholder:text-xs sm:placeholder:text-sm"
                     type="text"
                     placeholder="今何してるの？"
                 />
@@ -85,8 +86,8 @@ const Share = () => {
                         htmlFor="file"
                     >
                         <div className="flex items-center gap-1">
-                            <FaImage className="text-blue-600 text-2xl" />
-                            <p className="text-sm">写真選択</p>
+                            <FaImage className="text-blue-600 text-xl sm:text-2xl" />
+                            <p className="text-xs sm:text-sm">写真選択</p>
                         </div>
                         <input
                             onChange={(e) => {
@@ -110,10 +111,11 @@ const Share = () => {
                     <button
                         disabled={!desc}
                         type="submit"
-                        className="text-white text-xs sm:text-lg self-end sm:self-center bg-blue-600 py-1 px-3
-                            rounded-lg hover:bg-blue-500 duration-300 disabled:bg-blue-300"
+                        className="flex items-center gap-1 border border-blue-300 py-2 px-3 rounded-md text-blue-500
+                        hover:bg-blue-50 duration-300"
                     >
-                        投稿
+                        <IoIosCreate className="size-4" />
+                        <p className="text-xs sm:text-sm">投稿</p>
                     </button>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { M_PLUS_1 } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header/Header";
 import TopMenuButton from "./components/common/TopMenuButton";
 import ProgressBar from "./components/common/ProgressBar";
 import AuthProvider from "./context/AuthProvider";
 
-const poppins = Poppins({
+const m_plus_1 = M_PLUS_1({
   subsets: ["latin"],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${poppins.className} bg-slate-50`}>
+      <body className={`${m_plus_1.className} bg-slate-50`}>
         <AuthProvider>
           <ProgressBar />
           <Header />

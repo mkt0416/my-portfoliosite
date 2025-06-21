@@ -1,13 +1,14 @@
 
 'use client'
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
 import { IoMdHome } from "react-icons/io";
 import { FaDesktop, FaUser, FaUsers } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
-import { useRouter } from "next/navigation";
+import { FaUserSlash } from "react-icons/fa";
 
 const Navbar = () => {
     const router = useRouter();
@@ -44,6 +45,12 @@ const Navbar = () => {
             label: '友達',
             link: `/followings/${currentUser?._id}`,
             icon: <FaUsers />
+        },
+        {
+            id: '6',
+            label: 'アカウント削除',
+            link: `/unsubscribe/${currentUser?._id}`,
+            icon: <FaUserSlash />
         },
     ];
 

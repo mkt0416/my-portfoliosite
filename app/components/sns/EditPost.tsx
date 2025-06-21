@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
 import { FaImage } from "react-icons/fa";
+import { FaFilePen } from "react-icons/fa6";
 
 type Props = {
     id: string;
@@ -86,16 +87,26 @@ const EditPost = ({ id }: Props) => {
                     type="text"
                 />
                 <p className="text-sm font-semibold mb-2 ml-2">・画像</p>
-                {img && (
-                    <Image
+                {img
+                    ? (
+                        <Image
+                            style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                            className="w-full rounded-md"
+                            src={img}
+                            alt="postImage"
+                            width={400}
+                            height={400}
+                        />
+                    )
+                    : <Image
                         style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
                         className="w-full rounded-md"
-                        src={img ? img : '/images/posts/no-image.png'}
+                        src={'/images/no-image.png'}
                         alt="postImage"
                         width={400}
                         height={400}
                     />
-                )}
+                }
                 <div className="flex justify-between items-center mt-10">
                     <label
                         className="flex flex-col sm:flex-row items-start md:items-center gap-2"
@@ -126,11 +137,11 @@ const EditPost = ({ id }: Props) => {
                     </label>
                     <button
                         type="submit"
-                        style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                        className="text-white text-sm self-end sm:self-center bg-blue-600 py-2 px-3
-                            rounded-lg hover:bg-blue-500 duration-300"
+                        className="flex items-center gap-1 text-sm self-end sm:self-center border border-blue-300 text-blue-500 py-2 px-3
+                            rounded-md hover:bg-blue-50 duration-300"
                     >
-                        投稿編集
+                        <FaFilePen className="size-4" />
+                        <span>投稿編集</span>
                     </button>
                 </div>
             </form>

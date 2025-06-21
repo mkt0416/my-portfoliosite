@@ -104,13 +104,13 @@ const ProfileHero = ({ username }: Props) => {
                     <h1 className="text-lg sm:text-2xl text-center font-bold">{user?.username}</h1>
                     <p className="mt-5 text-center">{user?.desc}</p>
                     <div className="mt-10 flex flex-wrap gap-5 justify-center sm:justify-around">
-                        <span className="flexnitems-center gap-1 bg-slate-500 font-semibold text-xs sm:text-sm text-white py-2 px-4 rounded-full
-                             hover:bg-slate-400 duration-300">フォロワー {followers}</span>
+                        <span className="flex items-center gap-1 border border-blue-300 text-xs sm:text-sm text-blue-500 py-2 px-3 rounded-md
+                             hover:bg-blue-50 duration-300">フォロワー {followers}</span>
                         <button
                             disabled={user?._id === currentUser?._id}
                             onClick={handleFollow}
-                            className="flex items-center gap-1 bg-slate-500 font-semibold text-xs sm:text-sm text-white py-2 px-4 rounded-full
-                             hover:bg-slate-400 duration-300 disabled:bg-slate-300"
+                            className="flex items-center gap-1 border border-blue-300 text-xs sm:text-sm text-blue-500 py-2 px-3 rounded-md
+                             hover:bg-blue-50 duration-300 disabled:hidden"
                         >
                             <span><RiUserFollowLine /></span>
                             フォロー
@@ -118,8 +118,8 @@ const ProfileHero = ({ username }: Props) => {
                         <button
                             disabled={user?._id === currentUser?._id}
                             onClick={handleUnFollow}
-                            className="flex items-center gap-1 bg-slate-500 font-semibold text-xs sm:text-sm text-white py-2 px-4 rounded-full
-                             hover:bg-slate-400 duration-300 disabled:bg-slate-300"
+                            className="flex items-center gap-1 border border-blue-300 text-xs sm:text-sm text-blue-500 py-2 px-3 rounded-md
+                             hover:bg-blue-50 duration-300 disabled:hidden"
                         >
                             <span><RiUserUnfollowLine /></span>
                             アンフォロー

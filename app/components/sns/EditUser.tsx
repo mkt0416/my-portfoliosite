@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
 import { FaImage } from "react-icons/fa";
+import { FaFilePen } from "react-icons/fa6";
 
 type Props = {
     userId: string;
@@ -112,29 +113,42 @@ const EditUser = ({ userId }: Props) => {
                 <p className="text-sm font-semibold mb-2 ml-2">・ユーザー名</p>
                 <input
                     className="w-full rounded-md border py-3 px-4 focus:outline-none mb-10"
-                    value={username}
+                    value={username || ''}
                     onChange={(e) => setUsername(e.target.value)}
                     type="text"
                 />
                 <p className="text-sm font-semibold mb-2 ml-2">・説明</p>
                 <input
                     className="w-full rounded-md border py-3 px-4 focus:outline-none mb-10"
-                    value={desc}
+                    value={desc || ''}
                     onChange={(e) => setDesc(e.target.value)}
                     type="text"
                 />
                 <div>
                     <p className="text-sm font-semibold mb-2 ml-2">・プロフィール画像</p>
-                    {profileImage && (
-                        <Image
-                            style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                            className="w-full rounded-md"
-                            src={profileImage ? profileImage : '/images/persons/noAvatar.png'}
-                            alt="postImage"
-                            width={400}
-                            height={400}
-                        />
-                    )}
+                    {profileImage
+                        ? (
+                            <Image
+                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                                className="w-full rounded-md"
+                                src={profileImage}
+                                alt="postImage"
+                                width={400}
+                                height={400}
+                            />
+                        )
+                        : (
+                            <Image
+                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                                className="w-full rounded-md"
+                                src={'/images/persons/noAvatar.png'}
+                                alt="postImage"
+                                width={400}
+                                height={400}
+                            />
+                        )
+                    }
+
                     <label
                         className="mt-10 flex flex-col sm:flex-row items-start md:items-center gap-2"
                         htmlFor="profile"
@@ -165,16 +179,29 @@ const EditUser = ({ userId }: Props) => {
                 </div>
                 <div className="mt-10">
                     <p className="text-sm font-semibold mb-2 ml-2">・カバー画像</p>
-                    {coverImage && (
-                        <Image
-                            style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                            className="w-full rounded-md"
-                            src={coverImage ? coverImage : '/images/posts/3.jpeg'}
-                            alt="postImage"
-                            width={400}
-                            height={400}
-                        />
-                    )}
+                    {coverImage
+                        ? (
+                            <Image
+                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                                className="w-full rounded-md"
+                                src={coverImage}
+                                alt="postImage"
+                                width={400}
+                                height={400}
+                            />
+                        )
+                        : (
+                            <Image
+                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                                className="w-full rounded-md"
+                                src={'/images/posts/3.jpeg'}
+                                alt="postImage"
+                                width={400}
+                                height={400}
+                            />
+                        )
+                    }
+
                     <label
                         className="mt-10 flex flex-col sm:flex-row items-start md:items-center gap-2"
                         htmlFor="cover"
@@ -206,11 +233,11 @@ const EditUser = ({ userId }: Props) => {
                 <div className="mt-10 flex justify-center">
                     <button
                         type="submit"
-                        style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                        className="text-white text-sm self-end sm:self-center bg-blue-600 py-2 px-3
-                            rounded-lg hover:bg-blue-500 duration-300"
+                        className="flex items-center gap-1 text-sm self-end sm:self-center border border-blue-300 text-blue-500 py-2 px-3
+                        rounded-md hover:bg-blue-50 duration-300"
                     >
-                        プロフィール編集
+                        <FaFilePen className="size-4" />
+                        <span>プロフィール編集</span>
                     </button>
                 </div>
             </form>

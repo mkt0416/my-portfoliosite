@@ -9,12 +9,14 @@ import { format } from 'timeago.js';
 import { FaHeart } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import { FaTrashAlt } from "react-icons/fa";
+import { FaRegCommentAlt } from "react-icons/fa";
 
 type Props = {
     post: PostType;
+    fetchPost: () => Promise<void>;
 };
 
-const Post = ({ post }: Props) => {
+const Post = ({ post, fetchPost }: Props) => {
     const [user, setUser] = useState<UserType | null>(null);
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
@@ -33,6 +35,14 @@ const Post = ({ post }: Props) => {
         };
         fetchUser();
     }, [post.userId]);
+
+    useEffect(() => {
+        if (currentUser?._id) {
+            setIsLiked(post.likes.includes(currentUser?._id))
+        } else {
+            setIsLiked(false);
+        }
+    }, [post.likes, currentUser?._id]);
 
     const handleLike = async () => {
         try {
@@ -63,7 +73,7 @@ const Post = ({ post }: Props) => {
                     userId: currentUser?._id,
                 })
             });
-            window.location.reload();
+            fetchPost();
         } catch (err) {
             console.log(err);
         }
@@ -89,12 +99,15 @@ const Post = ({ post }: Props) => {
                                 height={50}
                             />
                         )}
-                        <span className="font-semibold">{user?.username}</span>
+                        <span className="font-semibold text-sm sm:text-lg">{user?.username}</span>
                     </div>
                 </Link>
-                <span className="text-sm">{format(post.createdAt)}</span>
+                <span className="text-xs sm:text-sm">{format(post.createdAt)}</span>
             </div>
-            <p>{post.desc}</p>
+            <div className="flex justify-between items-center">
+                <p className="text-sm sm:text-lg">{post.desc}</p>
+
+            </div>
             <Image
                 style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
                 className="w-full rounded-lg"
@@ -112,20 +125,35 @@ const Post = ({ post }: Props) => {
                     onClick={handleLike}
                     className="flex items-center gap-2"
                 >
-                    <FaHeart className="text-red-600 text-lg sm:text-2xl" />
+                    <FaHeart className="text-red-600 text-lg sm:text-xl" />
                     <span>{like}</span>
                 </button>
-                {currentUser?._id === post.userId && (
-                    <div className="flex items-baseline gap-4">
-                        <Link href={`/editpost/${post._id}`}>
-                            <FaFilePen className="sm:text-2xl text-gray-600" />
-                        </Link>
-                        <button onClick={deletePost}>
-                            <FaTrashAlt className="sm:text-2xl text-red-600" />
-                        </button>
+                <Link href={`/comment/${post._id}`}>
+                    <div className="flex items-center gap-1">
+                        <FaRegCommentAlt />
+                        <p className="text-xs sm:text-sm">コメント {post.comments.length}</p>
                     </div>
-                )}
+                </Link>
             </div>
+            {currentUser?._id === post.userId && (
+                <div className="mt-5 flex justify-end gap-5">
+                    <Link
+                        className="flex items-center gap-1 border border-blue-300 py-2 px-3 rounded-md text-blue-500
+                        hover:bg-blue-50 duration-300"
+                        href={`/editpost/${post._id}`}>
+                        <FaFilePen className="size-4" />
+                        <p className="text-xs sm:text-sm">編集</p>
+                    </Link>
+                    <button
+                        className="flex items-center gap-1 border border-blue-300 py-2 px-3 rounded-md text-blue-500
+                        hover:bg-blue-50 duration-300"
+                        onClick={deletePost}
+                    >
+                        <FaTrashAlt className="size-4" />
+                        <p className="text-xs sm:text-sm">削除</p>
+                    </button>
+                </div>
+            )}
         </div>
     );
 };

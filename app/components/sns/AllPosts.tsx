@@ -6,9 +6,11 @@ import { PostType } from "@/app/lib/snsTypes";
 
 const AllPosts = () => {
     const [posts, setPosts] = useState<PostType[]>([]);
+    const [loadingPost, setLoadingPost] = useState(true);
 
     const fetchPost = async () => {
         try {
+            setLoadingPost(true)
             const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/posts`)
             const jsonData: PostType[] = await response.json();
             setPosts(jsonData.sort((a, b) => {
@@ -16,6 +18,8 @@ const AllPosts = () => {
             }));
         } catch (err) {
             console.log(err);
+        } finally {
+            setLoadingPost(false);
         }
     };
 
@@ -30,6 +34,7 @@ const AllPosts = () => {
                     key={post._id}
                     post={post}
                     fetchPost={fetchPost}
+                    loadingPost={loadingPost}
                 />
             ))}
         </>

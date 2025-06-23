@@ -11,10 +11,10 @@ const Page = () => {
                 image='/images/skills.svg'
                 title={'Skills'}
             />
-            <div className='mt-32'>
+            <div className='mt-20'>
                 <Skills />
             </div>
-            <div className='mt-32 mb-20'>
+            <div className='mt-20 mb-20'>
                 <Certifications />
             </div>
         </AuthGuard>

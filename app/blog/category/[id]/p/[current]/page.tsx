@@ -1,5 +1,4 @@
 
-import React from 'react'
 import PageHero from '@/app/components/common/PageHero';
 import { getBlogList, getCategoryDetail } from '@/app/lib/microcms';
 import BlogList from '@/app/components/blog/BlogList';

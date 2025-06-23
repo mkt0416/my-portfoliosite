@@ -18,7 +18,7 @@ const Page = async () => {
                 image='/images/blog.svg'
                 title='Blog'
             />
-            <div className='mt-32 mb-20'>
+            <div className='mt-20 mb-20'>
                 <SearchField />
                 <BlogList data={blog} />
                 <Pagenation totalCount={totalCount} />

@@ -19,7 +19,7 @@ const SearchField = () => {
         <div className='w-full max-w-screen-lg mx-auto px-8 md:px-12 lg:px-16 text-gray-600'>
             <form onSubmit={handleSubmit}>
                 <input
-                    className='w-full border border-gray-300 rounded px-4 py-3
+                    className='w-full border border-gray-300 rounded-xl px-4 py-3
                     outline-none'
                     type="text"
                     name='q'

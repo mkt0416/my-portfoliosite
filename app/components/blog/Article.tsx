@@ -14,7 +14,7 @@ type Props = {
 const Article = ({ data }: Props) => {
     return (
         <div className='w-full max-w-screen-md mx-auto px-8 md:px-12 lg:px-16 text-gray-600'>
-            <div className='mt-32 mb-20 flex flex-col items-center gap-14'>
+            <div className='mt-20 mb-20 flex flex-col items-center gap-14'>
                 <h1 className='text-xl lg:text-2xl font-bold'>{data.title}</h1>
                 <div className='flex items-center gap-5'>
                     <Date date={data.createdAt ?? data.publishedAt} />

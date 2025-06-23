@@ -15,7 +15,7 @@ const Page = async () => {
                 image='/images/portfolio.svg'
                 title='Portfolio'
             />
-            <div className='mt-32 mb-20'>
+            <div className='mt-20 mb-20'>
                 <Portfolio data={data.contents} />
             </div>
         </>

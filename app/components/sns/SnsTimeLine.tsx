@@ -12,6 +12,7 @@ type Props = {
 const SnsTimeline = ({ username }: Props) => {
     const context = useContext(AuthContext);
     const currentUser = context?.currentUser;
+    const [loadingPost, setLoadingPost] = useState(true);
     const [posts, setPosts] = useState<PostType[]>([]);
 
     useEffect(() => {
@@ -20,6 +21,7 @@ const SnsTimeline = ({ username }: Props) => {
 
     const fetchPost = async () => {
         try {
+            setLoadingPost(true);
             const response = username
                 ? await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/posts/profile/${username}`)
                 : await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/posts/timeline/${currentUser?._id}`)
@@ -29,6 +31,8 @@ const SnsTimeline = ({ username }: Props) => {
             }));
         } catch (err) {
             console.log(err);
+        } finally {
+            setLoadingPost(false);
         }
     };
 
@@ -38,7 +42,9 @@ const SnsTimeline = ({ username }: Props) => {
                 <Post
                     key={post._id}
                     post={post}
-                    fetchPost={fetchPost} />
+                    fetchPost={fetchPost}
+                    loadingPost={loadingPost}
+                />
             ))}
         </>
     );

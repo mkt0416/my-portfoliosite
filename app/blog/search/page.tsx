@@ -1,5 +1,4 @@
 
-import React from 'react'
 import BlogList from '@/app/components/blog/BlogList';
 import SearchField from '@/app/components/blog/SearchField';
 import PageHero from '@/app/components/common/PageHero';

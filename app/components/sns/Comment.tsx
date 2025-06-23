@@ -7,6 +7,7 @@ import { AuthContext } from "@/app/context/AuthProvider";
 import { CommentType, UserType } from "@/app/lib/snsTypes";
 import { format } from 'timeago.js';
 import { FaTrashAlt } from "react-icons/fa";
+import SnsLoading from "./SnsLoading";
 
 type Props = {
     comment: CommentType;
@@ -17,16 +18,20 @@ type Props = {
 const Comment = ({ comment, postId, getComments }: Props) => {
     const context = useContext(AuthContext);
     const currentUser = context?.currentUser;
+    const [loading, setLoading] = useState(true);
     const [user, setUser] = useState<UserType | null>(null);
 
     useEffect(() => {
         const fetchUser = async () => {
+            setLoading(true);
             try {
                 const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users?userId=${comment.userId}`);
                 const jsonData: UserType = await response.json();
                 setUser(jsonData);
             } catch (err) {
                 console.log(err);
+            } finally {
+                setLoading(false);
             }
         };
         fetchUser();
@@ -56,18 +61,20 @@ const Comment = ({ comment, postId, getComments }: Props) => {
                     href={`/snsprofile/${user?.username}`}
                     className="flex items-center gap-2"
                 >
-                    {user && (
-                        <Image
-                            className="w-10 h-10 object-cover border-2 border-yellow-400 rounded-full"
-                            src={user?.profilePicture
-                                ? user.profilePicture
-                                : '/images/persons/noAvatar.png'
-                            }
-                            alt="profilePicture"
-                            width={50}
-                            height={50}
-                        />
-                    )}
+                    {loading
+                        ? <SnsLoading />
+                        : (
+                            <Image
+                                className="w-10 h-10 object-cover border-2 border-yellow-400 rounded-full"
+                                src={user?.profilePicture
+                                    ? user.profilePicture
+                                    : '/images/persons/noAvatar.png'
+                                }
+                                alt="profilePicture"
+                                width={50}
+                                height={50}
+                            />
+                        )}
                     <span>{user?.username}</span>
                 </Link>
                 <span className="text-xs">{format(comment.createdAt)}</span>

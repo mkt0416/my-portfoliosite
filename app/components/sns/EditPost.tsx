@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
+import SnsLoading from "./SnsLoading";
 import { FaImage } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 
@@ -15,6 +16,7 @@ const EditPost = ({ id }: Props) => {
     const router = useRouter();
     const context = useContext(AuthContext);
     const currentUser = context?.currentUser;
+    const [loading, setLoading] = useState(true);
     const [desc, setDesc] = useState('');
     const [img, setImg] = useState('');
     const [imageFile, setImageFile] = useState<File | null>(null);
@@ -22,11 +24,18 @@ const EditPost = ({ id }: Props) => {
 
     useEffect(() => {
         const getPost = async () => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/posts/${id}`);
-            const jsonData = await response.json();
-            const { desc, img } = jsonData;
-            setDesc(desc);
-            setImg(img || '');
+            setLoading(true);
+            try {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/posts/${id}`);
+                const jsonData = await response.json();
+                const { desc, img } = jsonData;
+                setDesc(desc);
+                setImg(img || '');
+            } catch (err) {
+                console.log(err);
+            } finally {
+                setLoading(false);
+            }
         };
         getPost();
     }, [id]);
@@ -87,16 +96,18 @@ const EditPost = ({ id }: Props) => {
                     type="text"
                 />
                 <p className="text-sm font-semibold mb-2 ml-2">・画像</p>
-                {img && (
-                    <Image
-                        style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                        className="w-full rounded-md"
-                        src={img}
-                        alt="postImage"
-                        width={400}
-                        height={400}
-                    />
-                )}
+                {loading
+                    ? <SnsLoading />
+                    : (
+                        <Image
+                            style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                            className="w-full rounded-md"
+                            src={img}
+                            alt="postImage"
+                            width={400}
+                            height={400}
+                        />
+                    )}
                 <div className="flex justify-between items-center mt-10">
                     <label
                         className="flex flex-col sm:flex-row items-start md:items-center gap-2"

@@ -20,7 +20,7 @@ const Page = async ({ params }: Props) => {
         <>
             <PageHero image='/images/blog.svg' title='Blog' />
             <Article data={data} />
-            <div className='flex justify-center mt-32 mb-10'>
+            <div className='flex justify-center mb-20'>
                 <ButtonLink href='/blog'>ブログ一覧</ButtonLink>
             </div>
         </>

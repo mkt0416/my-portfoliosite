@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
+import SnsLoading from "./SnsLoading";
 import { PostType, UserType } from "@/app/lib/snsTypes";
 import { formatDate } from "@/app/lib/utils";
 import { format } from 'timeago.js';
@@ -15,9 +16,11 @@ import { FaRegCommentAlt } from "react-icons/fa";
 type Props = {
     post: PostType;
     fetchPost: () => Promise<void>;
+    loadingPost: boolean;
 };
 
-const Post = ({ post, fetchPost }: Props) => {
+const Post = ({ post, loadingPost, fetchPost }: Props) => {
+    const [loadingUser, setLoadingUser] = useState(true);
     const [user, setUser] = useState<UserType | null>(null);
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
@@ -26,12 +29,15 @@ const Post = ({ post, fetchPost }: Props) => {
 
     useEffect(() => {
         const fetchUser = async () => {
+            setLoadingUser(true);
             try {
                 const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users?userId=${post.userId}`);
                 const jsonData: UserType = await response.json();
                 setUser(jsonData);
             } catch (err) {
                 console.log(err);
+            } finally {
+                setLoadingUser(false);
             }
         };
         fetchUser();
@@ -89,18 +95,20 @@ const Post = ({ post, fetchPost }: Props) => {
             <div className="flex items-center gap-4">
                 <Link href={`/snsprofile/${user?.username}`}>
                     <div className="flex items-center gap-2">
-                        {user && (
-                            <Image
-                                className="w-10 h-10 object-cover border-2 border-yellow-400 rounded-full"
-                                src={user?.profilePicture
-                                    ? user.profilePicture
-                                    : '/images/persons/noAvatar.png'
-                                }
-                                alt="profilePicture"
-                                width={50}
-                                height={50}
-                            />
-                        )}
+                        {loadingUser
+                            ? <SnsLoading />
+                            : (
+                                <Image
+                                    className="w-10 h-10 object-cover border-2 border-yellow-400 rounded-full"
+                                    src={user?.profilePicture
+                                        ? user.profilePicture
+                                        : '/images/persons/noAvatar.png'
+                                    }
+                                    alt="profilePicture"
+                                    width={50}
+                                    height={50}
+                                />
+                            )}
                         <span className="font-semibold text-sm sm:text-lg">{user?.username}</span>
                     </div>
                 </Link>
@@ -110,18 +118,23 @@ const Post = ({ post, fetchPost }: Props) => {
                 <p className="text-sm sm:text-lg">{post.desc}</p>
 
             </div>
-            <Image
-                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                className="w-full rounded-lg"
-                src={post.img
-                    ? post.img
-                    : '/images/posts/no-image.png'
-                }
-                alt="postImg"
-                width={600}
-                height={600}
-                priority
-            />
+            {loadingPost
+                ? <SnsLoading />
+                : (
+                    <Image
+                        style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                        className="w-full rounded-lg"
+                        src={post.img
+                            ? post.img
+                            : '/images/posts/no-image.png'
+                        }
+                        alt="postImg"
+                        width={600}
+                        height={600}
+                        priority
+                    />
+                )
+            }
             <div className="flex justify-between items-center">
                 <button
                     onClick={handleLike}

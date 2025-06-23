@@ -2,8 +2,8 @@
 'use client'
 import { AuthContext } from "@/app/context/AuthProvider";
 import { useContext, useEffect, useState } from "react";
-import { UserType } from "@/app/lib/snsTypes";
 import Following from "./Following";
+import { UserType } from "@/app/lib/snsTypes";
 
 type Props = {
     userId: string;
@@ -12,6 +12,7 @@ type Props = {
 const Followings = ({ userId }: Props) => {
     const context = useContext(AuthContext);
     const currentUser = context?.currentUser;
+    const [loading, setLoading] = useState(true);
     const [followings, setFollowings] = useState<UserType[]>([]);
 
     useEffect(() => {
@@ -19,12 +20,15 @@ const Followings = ({ userId }: Props) => {
     }, [userId]);
 
     const getFollowings = async () => {
+        setLoading(true);
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users/${userId}/friends`);
             const jsonData: UserType[] = await response.json();
             setFollowings(jsonData);
         } catch (err) {
             console.log(err);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -52,6 +56,7 @@ const Followings = ({ userId }: Props) => {
                     key={friend._id}
                     friend={friend}
                     handleUnFollow={handleUnFollow}
+                    loading={loading}
                 />
             ))}
         </>

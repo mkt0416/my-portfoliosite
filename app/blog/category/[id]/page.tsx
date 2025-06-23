@@ -1,5 +1,4 @@
 
-import React from 'react'
 import PageHero from '@/app/components/common/PageHero';
 import { getBlogList, getCategoryDetail } from '@/app/lib/microcms';
 import BlogList from '@/app/components/blog/BlogList';
@@ -26,7 +25,7 @@ const Page = async ({ params }: Props) => {
                 image='/images/blog.svg'
                 title='Blog'
             />
-            <div className='mt-32'>
+            <div className='mt-20'>
                 <BlogList data={blog} />
                 <Pagenation
                     totalCount={totalCount}

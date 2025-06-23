@@ -1,9 +1,9 @@
 
 'use client'
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "@/app/context/AuthProvider";
 import { useContext } from "react";
-import Link from "next/link";
 
 type Props = {
     userId: string;

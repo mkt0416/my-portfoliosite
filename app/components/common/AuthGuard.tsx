@@ -3,6 +3,7 @@
 import React, { ReactNode, useContext, useEffect, useState } from 'react';
 import { AuthContext } from '@/app/context/AuthProvider';
 import { useRouter } from 'next/navigation';
+import Loading from './Loading';
 
 const AuthGuard = ({ children }: { children: ReactNode }) => {
     const router = useRouter();
@@ -46,11 +47,7 @@ const AuthGuard = ({ children }: { children: ReactNode }) => {
     }, [router, setCurrentUser]);
 
     if (!currentUser || loading) {
-        return (
-            <div className='w-full min-h-screen flex items-center justify-center'>
-                <div className='w-20 h-20 border-4 border-blue-500 rounded-full border-t-transparent animate-spin'></div>
-            </div>
-        );
+        return <Loading />
     }
 
     return <>{children}</>;

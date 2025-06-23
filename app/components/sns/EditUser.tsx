@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "@/app/context/AuthProvider";
+import SnsLoading from "./SnsLoading";
 import { FaImage } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 
@@ -15,6 +16,7 @@ const EditUser = ({ userId }: Props) => {
     const router = useRouter();
     const context = useContext(AuthContext);
     const currentUser = context?.currentUser;
+    const [loading, setLoading] = useState(true);
     const [username, setUsername] = useState('');
     const [desc, setDesc] = useState('');
     const [profileImage, setProfileImage] = useState('');
@@ -26,13 +28,21 @@ const EditUser = ({ userId }: Props) => {
 
     useEffect(() => {
         const getPost = async () => {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users?userId=${userId}`);
-            const jsonData = await response.json();
-            const { username, desc, profilePicture, coverPicture } = jsonData;
-            setUsername(username);
-            setDesc(desc);
-            setProfileImage(profilePicture);
-            setCoverImage(coverPicture);
+            setLoading(true);
+            try {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users?userId=${userId}`);
+                await new Promise(resolve => setTimeout(resolve, 2000))
+                const jsonData = await response.json();
+                const { username, desc, profilePicture, coverPicture } = jsonData;
+                setUsername(username);
+                setDesc(desc);
+                setProfileImage(profilePicture);
+                setCoverImage(coverPicture);
+            } catch (err) {
+                console.log(err);
+            } finally {
+                setLoading(false);
+            }
         };
         getPost();
     }, [userId]);
@@ -126,16 +136,18 @@ const EditUser = ({ userId }: Props) => {
                 />
                 <div>
                     <p className="text-sm font-semibold mb-2 ml-2">・プロフィール画像</p>
-                    {profileImage && (
-                        <Image
-                            style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                            className="w-full rounded-md"
-                            src={profileImage}
-                            alt="postImage"
-                            width={400}
-                            height={400}
-                        />
-                    )}
+                    {loading
+                        ? <SnsLoading />
+                        : (
+                            <Image
+                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                                className="w-full rounded-md"
+                                src={profileImage}
+                                alt="postImage"
+                                width={400}
+                                height={400}
+                            />
+                        )}
                     <label
                         className="mt-10 flex flex-col sm:flex-row items-start md:items-center gap-2"
                         htmlFor="profile"
@@ -166,16 +178,18 @@ const EditUser = ({ userId }: Props) => {
                 </div>
                 <div className="mt-10">
                     <p className="text-sm font-semibold mb-2 ml-2">・カバー画像</p>
-                    {coverImage && (
-                        <Image
-                            style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                            className="w-full rounded-md"
-                            src={coverImage}
-                            alt="postImage"
-                            width={400}
-                            height={400}
-                        />
-                    )}
+                    {loading
+                        ? <SnsLoading />
+                        : (
+                            <Image
+                                style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
+                                className="w-full rounded-md"
+                                src={coverImage}
+                                alt="postImage"
+                                width={400}
+                                height={400}
+                            />
+                        )}
                     <label
                         className="mt-10 flex flex-col sm:flex-row items-start md:items-center gap-2"
                         htmlFor="cover"

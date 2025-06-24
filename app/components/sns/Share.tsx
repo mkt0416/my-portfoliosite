@@ -19,15 +19,14 @@ const Share = () => {
         try {
             const data = new FormData();
             data.append('file', imageFile);
-            data.append('upload_preset', `${process.env.NEXT_PUBLIC_UPLOAD_PRESET}`);
-            data.append('cloud_name', `${process.env.NEXT_PUBLIC_CLOUD_NAME}`);
 
-            const response = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/upload`, {
                 method: 'POST',
                 body: data,
             });
             const jsonData = await response.json();
             setImageUrl(jsonData.url);
+            console.log(imageUrl);
             alert('画像アップロード成功');
         } catch (err) {
             console.log(err);

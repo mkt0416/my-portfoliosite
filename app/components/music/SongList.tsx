@@ -1,7 +1,7 @@
 
 import Image from "next/image";
-import { SpotifyTrack } from "../lib/spotifyTypes";
-import Loading from "../components/common/Loading";
+import { SpotifyTrack } from "../../lib/spotifyTypes";
+import Loading from "../common/Loading";
 
 type Props = {
     isLoading: boolean;

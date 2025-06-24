@@ -1,8 +1,7 @@
 
 'use client'
-import { getPopularSongs, getSearchedSongs } from "@/app/lib/spotify";
 import { SpotifyTrack } from "@/app/lib/spotifyTypes";
-import SongList from "@/app/music/SongList";
+import SongList from "@/app/components/music/SongList";
 import { useEffect, useState } from "react";
 import SearchInput from "./SearchInput";
 import Pagenation from "./Pagenation";
@@ -24,8 +23,9 @@ const Music = () => {
 
     const fetchPopularSongs = async () => {
         setIsLoading(true);
-        const result = await getPopularSongs();
-        const popularSongs = result?.items.map((item) => item.track) ?? [];
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/music/popularsongs`);
+        const result = await response.json();
+        const popularSongs = result?.items.map((item: any) => item.track) ?? [];
         setPopularSongs(popularSongs)
         setIsLoading(false);
     };
@@ -33,7 +33,8 @@ const Music = () => {
     const searchSongs = async (page: number) => {
         setIsLoading(true);
         const offset = page ? (page - 1) * limit : 0;
-        const result = await getSearchedSongs(keyword, limit.toString(), offset.toString());
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/music/search?q=${keyword}&limit=${limit}&offset=${offset}`);
+        const result = await response.json();
         const searchTracks = result?.items ?? [] as SpotifyTrack[];
         setHasNext(result?.next !== null);
         setHasPrev(result?.previous !== null);

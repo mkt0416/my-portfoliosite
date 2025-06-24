@@ -31,7 +31,6 @@ const EditUser = ({ userId }: Props) => {
             setLoading(true);
             try {
                 const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/users?userId=${userId}`);
-                await new Promise(resolve => setTimeout(resolve, 2000))
                 const jsonData = await response.json();
                 const { username, desc, profilePicture, coverPicture } = jsonData;
                 setUsername(username);
@@ -53,10 +52,8 @@ const EditUser = ({ userId }: Props) => {
         try {
             const data = new FormData();
             data.append('file', profileImageFile);
-            data.append('upload_preset', `${process.env.NEXT_PUBLIC_UPLOAD_PRESET}`);
-            data.append('cloud_name', `${process.env.NEXT_PUBLIC_CLOUD_NAME}`);
 
-            const response = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/upload`, {
                 method: 'POST',
                 body: data,
             });
@@ -75,10 +72,8 @@ const EditUser = ({ userId }: Props) => {
         try {
             const data = new FormData();
             data.append('file', coverImageFile);
-            data.append('upload_preset', `${process.env.NEXT_PUBLIC_UPLOAD_PRESET}`);
-            data.append('cloud_name', `${process.env.NEXT_PUBLIC_CLOUD_NAME}`);
 
-            const response = await fetch(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUD_NAME}/image/upload`, {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/upload`, {
                 method: 'POST',
                 body: data,
             });
@@ -108,7 +103,7 @@ const EditUser = ({ userId }: Props) => {
 
                 })
             });
-            router.push('/sns');
+            router.push(`/snsprofile/${currentUser?.username}`);
         } catch (err) {
             console.log(err);
         }

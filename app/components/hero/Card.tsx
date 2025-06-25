@@ -1,15 +1,30 @@
 
+'use client'
 import Link from "next/link";
+import { useEffect } from "react";
 import { CardDataType } from "./CardSection";
 import { IoIosArrowDropright } from "react-icons/io";
+import 'aos/dist/aos.css';
+const AOS: any = require('aos');
 
 type Props = {
     card: CardDataType;
 };
 
 const Card = ({ card }: Props) => {
+    useEffect(() => {
+        AOS.init({
+            duration: 700,
+            easing: 'slide',
+            once: true,
+        });
+    });
+
     return (
-        <div className="flex flex-col items-center gap-5 bg-indigo-400 dark:bg-indigo-900 py-20 px-4 rounded-xl"
+        <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            className="flex flex-col items-center gap-5 bg-indigo-200 dark:bg-indigo-900 py-20 px-4 rounded-xl"
             style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
         >
             <div className="flex items-center gap-1 text-4xl font-extrabold">

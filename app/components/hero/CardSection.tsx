@@ -70,12 +70,13 @@ const cardData: CardDataType[] = [
 const CardSection = () => {
     return (
         <section className='w-full min-h-screen max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16
-        text-gray-600 dark:text-white my-20'
+           text-gray-600 dark:text-white my-20 relative'
         >
-            <div className="">
-                <h2 className="text-xl md:text-3xl font-extrabold mb-4 text-center">Explore My Portfolio</h2>
-                <p className="font-semibold text-center">各ページの紹介とリンクをご覧ください。</p>
-            </div>
+            <div className="hidden sm:flex absolute inset-0 top-32 bg-blue-100 dark:bg-gray-600 max-w-md 
+            md:max-w-lg lg:max-w-3xl xl:max-w-5xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10"
+            />
+            <h2 className="text-xl md:text-4xl font-extrabold mb-4 text-center">Explore My Portfolio</h2>
+            <p className="font-semibold text-center">各ページの紹介とリンクをご覧ください。</p>
             <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-x-40 lg:gap-y-20">
                 {cardData.map((card) => (
                     <Card
@@ -84,7 +85,7 @@ const CardSection = () => {
                     />
                 ))}
             </div>
-        </section>
+        </section >
     );
 };
 

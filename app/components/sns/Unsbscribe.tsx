@@ -31,7 +31,7 @@ const Unsbscribe = ({ userId }: Props) => {
             });
             localStorage.removeItem('token');
             setCurrentUser(null);
-            router.push('/register');
+            router.push('/');
         } catch (err) {
             console.log(err);
         }

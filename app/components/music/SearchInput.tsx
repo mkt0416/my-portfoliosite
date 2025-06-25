@@ -13,7 +13,8 @@ const SearchInput = ({ setKeyword, searchSongs }: Props) => {
             <div className="flex">
                 <input
                     onChange={(e) => setKeyword(e.target.value)}
-                    className="w-full h-12 bg-gray-200 rounded-tl-xl rounded-bl-xl py-3 px-4 focus:outline-none"
+                    className="w-full h-12 bg-gray-200 rounded-tl-xl rounded-bl-xl py-3 px-4 focus:outline-none
+                    dark:bg-gray-400 dark:placeholder:text-white"
                     type="text"
                     placeholder="キーワード検索"
                 />

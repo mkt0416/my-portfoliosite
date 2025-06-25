@@ -6,7 +6,10 @@ import { useContext, useEffect, useState } from 'react'
 import MobileMenu from './MobileMenu';
 import HumbergerMenu from './HumbergerMenu';
 import Navigation from './Navigation';
-import HeaderTitle from './HeaderTitle';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
+import ThemeToggle from './ThemeToggle';
+import RegisterButton from './RegisterButton';
 
 const headerListItems = [
     { id: '1', link: '/', text: 'Home' },
@@ -15,8 +18,8 @@ const headerListItems = [
     { id: '4', link: '/portfolio', text: 'Portfolio' },
     { id: '5', link: '/blog', text: 'Blog' },
     { id: '6', link: '/snstop', text: 'SNS' },
-    { id: '7', link: '/contact', text: 'Contact' },
-    { id: '8', link: '/music', text: 'Music' },
+    { id: '7', link: '/music', text: 'Music' },
+    { id: '8', link: '/contact', text: 'Contact' },
 ];
 
 const Header = () => {
@@ -25,39 +28,46 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const pathName = usePathname();
     const context = useContext(AuthContext);
-    const currentUser = context?.currentUser;
-    const setCurrentUser = context?.setCurrentUser;
+    const loggedIn = context?.loggedIn;
+    const setLoggedIn = context?.setLoggedIn;
 
     const logout = () => {
         localStorage.removeItem('token');
-        if (setCurrentUser) {
-            setCurrentUser(null);
+        if (setLoggedIn) {
+            setLoggedIn(false);
         }
-        router.push('/login');
+        router.push('/');
     };
 
     useEffect(() => {
         setActiveLink(pathName);
     }, [pathName]);
 
-    if (!currentUser) return null;
+    useEffect(() => {
+        const isAuth = localStorage.getItem('token');
+        if (setLoggedIn) {
+            isAuth && setLoggedIn(true)
+        }
+    }, []);
 
     return (
-        <header id='home' className='py-8'>
+        <header id='home' className='py-8 sm:py-10'>
             <div className='w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16'>
-                <div className='flex justify-between md:justify-end items-center'>
-                    <HeaderTitle />
+                <div className='flex justify-between items-center'>
                     <Navigation
                         headerListItems={headerListItems}
                         activeLink={activeLink}
-                        logout={logout}
                     />
                     <HumbergerMenu setShowMenu={setShowMenu} />
+                    <div className='flex items-center gap-2 xl:gap-4'>
+                        <RegisterButton />
+                        {loggedIn ? <LogoutButton logout={logout} /> : <LoginButton />}
+                        <ThemeToggle />
+                    </div>
                     {showMenu && (
                         <MobileMenu
                             headerListItems={headerListItems}
                             setShowMenu={setShowMenu}
-                            logout={logout}
                         />
                     )}
                 </div>

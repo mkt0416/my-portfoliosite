@@ -1,8 +1,8 @@
 
-import PageHero from '../components/common/PageHero';
-import Portfolio from '../components/portfolio/Portfolio';
 import { getPortfolioList } from '../lib/microcms';
 import { PORTFOLIO_LIST_LIMIT } from '../constants';
+import PageHero from '../components/common/PageHero';
+import Portfolio from '../components/portfolio/Portfolio';
 
 export const revalidate = 0;
 

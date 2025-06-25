@@ -18,7 +18,7 @@ const SongList = ({ isLoading, popularSongs }: Props) => {
             {popularSongs.map((song) => (
                 <div
                     style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                    className="bg-gray-300 p-6 rounded-xl"
+                    className="bg-gray-300 dark:bg-gray-600 p-6 rounded-xl"
                     key={song.id}
                 >
                     <div className="flex flex-col gap-1 mb-2">

@@ -1,6 +1,6 @@
 
 'use client'
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
 import 'aos/dist/aos.css';
@@ -64,9 +64,9 @@ const Certifications = () => {
                         data-aos-delay="500"
                         key={item.id}
                         style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                        className='bg-white rounded-lg p-4 border-l-4 border-blue-500 hover:bg-blue-50 duration-300'
+                        className='bg-white dark:bg-gray-600 rounded-lg p-4 border-l-4 border-blue-500 hover:bg-blue-50 duration-300'
                     >
-                        <span className='text-gray-600 font-bold'>{item.title}</span>
+                        <span className='text-gray-600 dark:text-white font-bold'>{item.title}</span>
                     </li>
                 ))}
             </ul>

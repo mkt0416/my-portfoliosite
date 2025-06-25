@@ -1,8 +1,8 @@
 
 'use client'
-import React, { useState } from 'react'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 
 const RegisterForm = () => {
@@ -91,6 +91,7 @@ const RegisterForm = () => {
                 <input
                     disabled={loading}
                     className={`w-full rounded py-3 px-4 border border-gray-300 focus:outline-blue-500 
+                  dark:bg-gray-400 dark:placeholder:text-white
                     ${nameErrText ? '' : 'mb-6'}
                     ${nameErrText ? 'border-red-500' : 'border-gray-300'}`}
                     onChange={(e) => setUsername(e.target.value)}
@@ -106,6 +107,7 @@ const RegisterForm = () => {
                     <input
                         disabled={loading}
                         className={`w-full rounded py-3 px-4 border border-gray-300 focus:outline-blue-500 
+                      dark:bg-gray-400 dark:placeholder:text-white
                         ${passwordErrText ? '' : 'mb-6'}
                         ${passwordErrText ? 'border-red-500' : 'border-gray-300'}`}
                         onChange={(e) => setPassword(e.target.value)}
@@ -130,6 +132,7 @@ const RegisterForm = () => {
                     <input
                         disabled={loading}
                         className={`w-full rounded py-3 px-4 border border-gray-300 focus:outline-blue-500 
+                      dark:bg-gray-400 dark:placeholder:text-white
                         ${confirmErrText ? '' : 'mb-6'}
                         ${confirmErrText ? 'border-red-500' : 'border-gray-300'}`}
                         onChange={(e) => setConfirmPassword(e.target.value)}
@@ -152,7 +155,7 @@ const RegisterForm = () => {
 
                 <button
                     disabled={loading}
-                    className='w-full py-2 bg-white border border-blue-400 rounded text-blue-500 hover:bg-blue-50 duration-300 mb-4'
+                    className='w-full py-2 border border-blue-400 rounded text-blue-500 hover:bg-blue-50 duration-300 mb-4'
                     type='submit'
                 >
                     {loading ? '登録中...' : 'アカウント作成'}

@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${m_plus_1.className} bg-slate-50`}>
+      <body className={`${m_plus_1.className} bg-slate-50 dark:bg-gray-800 dark:text-white`}>
         <AuthProvider>
           <ProgressBar />
           <Header />

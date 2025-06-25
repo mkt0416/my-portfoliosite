@@ -1,8 +1,8 @@
 
 'use client'
-import React, { useEffect } from 'react';
-import SubTitle from '../common/SubTitle';
 import Image from 'next/image';
+import { useEffect } from 'react';
+import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
 import 'aos/dist/aos.css';
 const AOS: any = require('aos');

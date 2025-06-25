@@ -1,6 +1,6 @@
 
 'use client'
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import 'aos/dist/aos.css';
 const AOS: any = require('aos');
 import SubTitle from '../common/SubTitle';
@@ -114,10 +114,10 @@ const Skills = () => {
                         data-aos-delay="500"
                         key={item.id}
                         style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                        className='w-full bg-white rounded-xl py-8 flex flex-col items-center hover:bg-blue-50 duration-300'
+                        className='w-full bg-white dark:bg-gray-600 rounded-xl py-8 flex flex-col items-center hover:bg-blue-50 duration-300'
                     >
                         <span className={`text-9xl ${item.color}`}>{item.icon}</span>
-                        <h3 className='text-3xl text-gray-600 font-bold mt-5'>{item.title}</h3>
+                        <h3 className='text-3xl text-gray-600 dark:text-white font-bold mt-5'>{item.title}</h3>
                     </div>
                 ))}
             </div>

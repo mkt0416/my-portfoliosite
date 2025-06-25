@@ -1,6 +1,6 @@
 
-import { BLOG_LIST_LIMIT } from '@/app/constants';
 import Link from 'next/link';
+import { BLOG_LIST_LIMIT } from '@/app/constants';
 
 type Props = {
     totalCount: number;

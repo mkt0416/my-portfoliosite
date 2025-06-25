@@ -83,12 +83,12 @@ const EditPost = ({ id }: Props) => {
     return (
         <div
             style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-            className="bg-white p-6 sm:p-20 rounded-lg border"
+            className="bg-white dark:bg-gray-600 p-6 sm:p-20 rounded-lg border"
         >
             <form onSubmit={handleSubmit}>
                 <p className="text-sm font-semibold mb-2 ml-2">・投稿内容</p>
                 <input
-                    className="w-full rounded-md border py-3 px-4 focus:outline-none mb-10"
+                    className="w-full rounded-md border py-3 px-4 focus:outline-none mb-10 dark:bg-gray-400"
                     value={desc}
                     onChange={(e) => setDesc(e.target.value)}
                     type="text"

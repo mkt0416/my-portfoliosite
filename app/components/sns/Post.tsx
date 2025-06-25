@@ -89,7 +89,7 @@ const Post = ({ post, loadingPost, fetchPost }: Props) => {
     return (
         <div
             style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-            className="flex flex-col gap-5 bg-white border rounded-lg p-6 md:p-16 mb-10"
+            className="flex flex-col gap-5 bg-white dark:bg-gray-600  border rounded-lg p-6 md:p-16 mb-10"
         >
             <span className="text-xs sm:text-sm font-semibold self-end">投稿日:{formatDate(post.createdAt)}</span>
             <div className="flex items-center gap-4">

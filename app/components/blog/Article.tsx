@@ -1,9 +1,9 @@
 
-import { Blog } from '@/app/lib/microcms';
+import Link from 'next/link';
 import Image from 'next/image';
+import { Blog } from '@/app/lib/microcms';
 import Date from './Date';
 import Category from './Category';
-import Link from 'next/link';
 import CodeArea from './CodeArea';
 import ContentArea from './ContentArea';
 
@@ -13,7 +13,7 @@ type Props = {
 
 const Article = ({ data }: Props) => {
     return (
-        <div className='w-full max-w-screen-md mx-auto px-8 md:px-12 lg:px-16 text-gray-600'>
+        <div className='w-full max-w-screen-md mx-auto px-8 md:px-12 lg:px-16 text-gray-600 dark:text-white'>
             <div className='mt-20 mb-20 flex flex-col items-center gap-14'>
                 <h1 className='text-xl lg:text-2xl font-bold'>{data.title}</h1>
                 <div className='flex items-center gap-5'>

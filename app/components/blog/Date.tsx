@@ -7,7 +7,7 @@ type Props = {
 
 const Date = ({ date }: Props) => {
     return (
-        <p className='text-gray-600 font-semibold'>
+        <p className='text-gray-600 dark:text-white font-semibold'>
             {formatDate(date)}
         </p>
     );

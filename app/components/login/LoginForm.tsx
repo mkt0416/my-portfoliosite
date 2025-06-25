@@ -1,9 +1,9 @@
 
 'use client'
-import React, { useContext, useState } from 'react'
-import { AuthContext } from '@/app/context/AuthProvider';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useContext, useState } from 'react'
+import { AuthContext } from '@/app/context/AuthProvider';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 
 const LoginForm = () => {
@@ -18,7 +18,7 @@ const LoginForm = () => {
 
     if (!context) return null;
 
-    const { setCurrentUser } = context;
+    const { setCurrentUser, setLoggedIn } = context;
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -55,6 +55,7 @@ const LoginForm = () => {
             if (response.ok) {
                 localStorage.setItem('token', jsonData.token);
                 setCurrentUser(jsonData.user);
+                setLoggedIn(true);
                 alert(jsonData.message);
                 router.push('/');
             } else {
@@ -83,7 +84,8 @@ const LoginForm = () => {
             >
                 <input
                     disabled={loading}
-                    className={`w-full rounded py-3 px-4 border border-gray-300 focus:outline-blue-500 
+                    className={`w-full rounded py-3 px-4 border border-gray-300 focus:outline-blue-500
+                  dark:bg-gray-400 dark:placeholder:text-white
                     ${nameErrText ? '' : 'mb-6'}
                     ${nameErrText ? 'border-red-500' : 'border-gray-300'}`}
                     onChange={(e) => setUsername(e.target.value)}
@@ -99,6 +101,7 @@ const LoginForm = () => {
                     <input
                         disabled={loading}
                         className={`w-full rounded py-3 px-4 border border-gray-300 focus:outline-blue-500 
+                       dark:bg-gray-400 dark:placeholder:text-white
                         ${passwordErrText ? '' : 'mb-6'}
                         ${passwordErrText ? 'border-red-500' : 'border-gray-300'}`}
                         onChange={(e) => setPassword(e.target.value)}
@@ -121,7 +124,7 @@ const LoginForm = () => {
 
                 <button
                     disabled={loading}
-                    className='w-full py-2 bg-white border border-blue-400 rounded text-blue-500 hover:bg-blue-50 duration-300 mb-4'
+                    className='w-full py-2 border border-blue-400 rounded text-blue-500 hover:bg-blue-50 duration-300 mb-4'
                     type='submit'
                 >
                     {loading ? 'ログイン中...' : 'ログイン'}

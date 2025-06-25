@@ -16,11 +16,11 @@ const SearchField = () => {
     };
 
     return (
-        <div className='w-full max-w-screen-lg mx-auto px-8 md:px-12 lg:px-16 text-gray-600'>
+        <div className='w-full max-w-screen-lg mx-auto px-8 md:px-12 lg:px-16'>
             <form onSubmit={handleSubmit}>
                 <input
-                    className='w-full border border-gray-300 rounded-xl px-4 py-3
-                    outline-none'
+                    className='w-full border border-gray-300 rounded-xl px-4 py-3 dark:bg-gray-600
+                     dark:placeholder:text-white outline-none'
                     type="text"
                     name='q'
                     placeholder='キーワード検索'

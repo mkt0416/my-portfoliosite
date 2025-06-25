@@ -37,13 +37,14 @@ const CommentForm = ({ postId, getComments }: Props) => {
     return (
         <div
             style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-            className="mb-10 bg-white border rounded-xl p-6 sm:p-10"
+            className="mb-10 bg-white dark:bg-gray-600 border rounded-xl p-6 sm:p-10"
         >
             <form onSubmit={createComment}>
                 <input
                     value={text}
                     onChange={(e) => setText(e.target.value)}
-                    className="w-full rounded-md border py-3 px-4 focus:outline-none placeholder:text-sm"
+                    className="w-full rounded-md border py-3 px-4 focus:outline-none placeholder:text-sm dark:bg-gray-400
+                    dark:placeholder:text-white"
                     type="text"
                     name="comment"
                     placeholder="コメント投稿"

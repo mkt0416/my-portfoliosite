@@ -58,7 +58,7 @@ const Sidebar = () => {
     const logout = () => {
         localStorage.removeItem('token');
         setCurrentUser(null);
-        router.push('/login');
+        router.push('/');
     };
 
     return (
@@ -86,4 +86,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar
+export default Sidebar;

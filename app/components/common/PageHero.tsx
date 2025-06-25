@@ -11,7 +11,7 @@ type Props = {
 
 const PageHero = ({ image, title }: Props) => {
     return (
-        <div className='relative bg-blue-50'>
+        <div className='relative bg-blue-50 text-gray-600 dark:bg-gray-600 dark:text-white'>
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -42,7 +42,7 @@ const PageHero = ({ image, title }: Props) => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     className='text-center'>
-                    <h1 className='text-3xl lg:text-5xl text-gray-600 font-bold mb-10'>{title}</h1>
+                    <h1 className='text-3xl lg:text-5xl font-bold mb-10'>{title}</h1>
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0 }}

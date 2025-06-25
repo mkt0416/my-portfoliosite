@@ -58,7 +58,7 @@ const Share = () => {
         <form onSubmit={handleSubmit}>
             <div
                 style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
-                className="bg-white border rounded-xl p-6 sm:p-10"
+                className="bg-white dark:bg-gray-600 border rounded-xl p-6 sm:p-10"
             >
                 <Image
                     className="w-10 h-10 rounded-full border-2 border-yellow-400 object-cover mb-4"

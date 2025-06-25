@@ -1,9 +1,15 @@
 
 'use client';
-import React, { ReactNode, useContext, useEffect, useState } from 'react';
-import { AuthContext } from '@/app/context/AuthProvider';
 import { useRouter } from 'next/navigation';
+import { ReactNode, useContext, useEffect, useState } from 'react';
+import { AuthContext } from '@/app/context/AuthProvider';
+import { jwtDecode } from 'jwt-decode';
 import Loading from './Loading';
+
+type DecodedToken = {
+    exp: number;
+    [key: string]: any;
+};
 
 const AuthGuard = ({ children }: { children: ReactNode }) => {
     const router = useRouter();
@@ -21,6 +27,12 @@ const AuthGuard = ({ children }: { children: ReactNode }) => {
                 if (!token) {
                     router.push('/login');
                     return;
+                }
+
+                const dedoded: DecodedToken = jwtDecode(token);
+                const isExpired = dedoded.exp * 1000 < Date.now();
+                if (isExpired) {
+                    router.push('/login');
                 }
 
                 const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify-token`, {

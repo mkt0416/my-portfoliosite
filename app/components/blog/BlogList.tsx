@@ -1,7 +1,7 @@
 
-import { Blog } from '@/app/lib/microcms';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Blog } from '@/app/lib/microcms';
 import Date from './Date';
 import Category from './Category';
 
@@ -11,11 +11,11 @@ type Props = {
 
 const BlogList = ({ data }: Props) => {
     return (
-        <div className='w-full max-w-screen-lg mx-auto px-8 md:px-12 lg:px-16 text-gray-600'>
+        <div className='w-full max-w-screen-lg mx-auto px-8 md:px-12 lg:px-16 text-gray-600 dark:text-white'>
             {data.map((article) => (
                 <div
                     key={article.id}
-                    className='flex flex-col md:flex-row gap-10 border-b border-gray-200 py-10'
+                    className='flex flex-col md:flex-row gap-10 border-b border-gray-200 dark:border-gray-600 py-10'
                 >
                     {article.image
                         ? (
@@ -57,7 +57,7 @@ const BlogList = ({ data }: Props) => {
                             <Link
                                 style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                                 href={`/blog/${article.id}`}
-                                className='bg-gray-300 px-2 py-1 rounded-md hover:bg-gray-200 duration-300'
+                                className='bg-gray-300 text-gray-700 px-2 py-1 rounded-md hover:bg-gray-200 duration-300'
                             >
                                 ブログ詳細
                             </Link>

@@ -7,16 +7,14 @@ import Container from '../common/Container';
 const ProfileTop = () => {
     return (
         <Container>
-            <div className='flex flex-col lg:flex-row gap-10 items-center'>
+            <section className='flex flex-col lg:flex-row gap-10 items-center'>
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className='flex-grow text-center lg:text-left max-lg:order-2'
                 >
-                    <h1 className='text-3xl md:text-5xl font-bold mb-5'
-                        style={{ textShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                    >Makoto Saitoh</h1>
+                    <h1 className='text-3xl md:text-5xl font-extrabold mb-5'>Makoto Saitoh</h1>
                     <p className='text-lg font-semibold'>I&apos;m an aspiring web developer currently learning JavaScript, React, and Next.js.
                         <br />
                         While I still have a lot to learn, I&apos;m passionate about growing as a developer and working hard to
@@ -45,7 +43,7 @@ const ProfileTop = () => {
                         priority
                     />
                 </motion.div>
-            </div>
+            </section>
         </Container>
     );
 };

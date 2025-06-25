@@ -1,9 +1,9 @@
 
-import PageHero from '@/app/components/common/PageHero';
-import { getBlogList } from '@/app/lib/microcms';
-import BlogList from '@/app/components/blog/BlogList';
-import { BLOG_LIST_LIMIT } from '@/app/constants';
 import { notFound } from 'next/navigation';
+import { getBlogList } from '@/app/lib/microcms';
+import { BLOG_LIST_LIMIT } from '@/app/constants';
+import PageHero from '@/app/components/common/PageHero';
+import BlogList from '@/app/components/blog/BlogList';
 import Pagenation from '@/app/components/blog/Pagenation';
 
 type Props = {

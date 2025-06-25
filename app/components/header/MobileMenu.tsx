@@ -10,16 +10,10 @@ type Props = {
         text: string;
     }[];
     setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
-    logout: () => void;
 };
 
 
-const MobileMenu = ({ headerListItems, setShowMenu, logout }: Props) => {
-    const handleLogout = () => {
-        logout();
-        setShowMenu(false);
-    };
-
+const MobileMenu = ({ headerListItems, setShowMenu }: Props) => {
     return (
         <div className='w-full h-screen fixed top-0 left-0 bg-gray-400/70 z-50'>
             <motion.div
@@ -50,11 +44,6 @@ const MobileMenu = ({ headerListItems, setShowMenu, logout }: Props) => {
                             <li>{item.text}</li>
                         </Link>
                     ))}
-                    <p
-                        onClick={handleLogout}
-                    >
-                        Logout
-                    </p>
                 </ul>
             </motion.div>
         </div>

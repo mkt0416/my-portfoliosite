@@ -1,8 +1,8 @@
 
 'use client'
 import { useEffect, useState } from "react";
-import Post from "./Post";
 import { PostType } from "@/app/lib/snsTypes";
+import Post from "./Post";
 
 const AllPosts = () => {
     const [posts, setPosts] = useState<PostType[]>([]);

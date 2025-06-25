@@ -1,11 +1,10 @@
 
-import React from 'react'
-import PageHero from '../components/common/PageHero';
 import { getBlogList } from '../lib/microcms';
-import BlogList from '../components/blog/BlogList';
 import { BLOG_LIST_LIMIT } from '../constants';
-import Pagenation from '../components/blog/Pagenation';
+import PageHero from '../components/common/PageHero';
+import BlogList from '../components/blog/BlogList';
 import SearchField from '../components/blog/SearchField';
+import Pagenation from '../components/blog/Pagenation';
 
 export const revalidate = 0;
 

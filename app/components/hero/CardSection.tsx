@@ -4,7 +4,7 @@ import Card from "./Card";
 import { FaCode, FaFolderOpen, FaUserCheck } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import { GrChatOption } from "react-icons/gr";
-import { SiYoutubemusic } from "react-icons/si";
+import { SiYoutubemusic, SiOpenai } from "react-icons/si";
 import { FiMail } from "react-icons/fi";
 
 export type CardDataType = {
@@ -60,6 +60,13 @@ const cardData: CardDataType[] = [
     },
     {
         id: '7',
+        title: 'Chat',
+        desc: 'AIと自由に会話できるチャット機能です（ログイン後に利用可能）。',
+        link: '/chat',
+        icon: <SiOpenai />,
+    },
+    {
+        id: '8',
         title: 'Conatct',
         desc: 'お気軽にお問い合わせください。',
         link: '/contact',

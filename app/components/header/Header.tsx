@@ -19,7 +19,8 @@ const headerListItems = [
     { id: '5', link: '/blog', text: 'Blog' },
     { id: '6', link: '/snstop', text: 'SNS' },
     { id: '7', link: '/music', text: 'Music' },
-    { id: '8', link: '/contact', text: 'Contact' },
+    { id: '8', link: '/chat', text: 'Chat' },
+    { id: '9', link: '/contact', text: 'Contact' },
 ];
 
 const Header = () => {

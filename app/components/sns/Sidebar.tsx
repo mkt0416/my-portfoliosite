@@ -15,42 +15,42 @@ const Sidebar = () => {
     const pathName = usePathname();
     const context = useContext(AuthContext);
     if (!context) return null;
-    const { currentUser, setCurrentUser } = context;
+    const { currentUser, setCurrentUser, setLoggedIn } = context;
     const sidebarItem = [
         {
             id: '1',
             label: 'トップ',
-            link: '/snstop',
+            link: '/sns/snstop',
             icon: <FaDesktop />
         },
         {
             id: '2',
             label: 'マイホーム',
-            link: '/sns',
+            link: '/sns/myhome',
             icon: <IoMdHome />
         },
         {
             id: '3',
             label: 'マイプロフィール',
-            link: `/snsprofile/${currentUser?.username}`,
+            link: `/sns/snsprofile/${currentUser?.username}`,
             icon: <FaUser />
         },
         {
             id: '4',
             label: 'マイプロフィール編集',
-            link: `/edituser/${currentUser?._id}`,
+            link: `/sns/edituser/${currentUser?._id}`,
             icon: <FaUserEdit />
         },
         {
             id: '5',
             label: '友達',
-            link: `/followings/${currentUser?._id}`,
+            link: `/sns/followings/${currentUser?._id}`,
             icon: <FaUsers />
         },
         {
             id: '6',
             label: 'アカウント削除',
-            link: `/unsubscribe/${currentUser?._id}`,
+            link: `/sns/unsubscribe/${currentUser?._id}`,
             icon: <FaUserSlash />
         },
     ];
@@ -58,6 +58,7 @@ const Sidebar = () => {
     const logout = () => {
         localStorage.removeItem('token');
         setCurrentUser(null);
+        setLoggedIn(false);
         router.push('/');
     };
 

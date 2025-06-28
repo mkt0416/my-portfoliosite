@@ -17,7 +17,7 @@ const Following = ({ friend, loading, handleUnFollow }: Props) => {
             className="flex justify-between items-center border-b"
         >
             <Link
-                href={`/snsprofile/${friend.username}`}
+                href={`/sns/snsprofile/${friend.username}`}
                 className="flex items-center gap-2 py-4">
                 {loading
                     ? <SnsLoading />

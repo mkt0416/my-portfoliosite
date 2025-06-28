@@ -51,12 +51,12 @@ const BlogList = ({ data }: Props) => {
                             <h1 className='font-extrabold'>{article.title}</h1>
                         </div>
                         <div className='flex items-center gap-5'>
-                            <Link href={`/blog/category/${article.category.id}`}>
+                            <Link href={`/site/blog/category/${article.category.id}`}>
                                 <Category category={article.category} />
                             </Link>
                             <Link
                                 style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                                href={`/blog/${article.id}`}
+                                href={`/site/blog/${article.id}`}
                                 className='bg-gray-300 text-gray-700 px-2 py-1 rounded-md hover:bg-gray-200 duration-300'
                             >
                                 ブログ詳細

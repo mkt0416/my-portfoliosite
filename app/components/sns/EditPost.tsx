@@ -74,7 +74,7 @@ const EditPost = ({ id }: Props) => {
                     img: imageUrl || img,
                 })
             });
-            router.push('/sns');
+            router.push('/sns/snstop');
         } catch (err) {
             console.log(err);
         }
@@ -100,7 +100,7 @@ const EditPost = ({ id }: Props) => {
                         <Image
                             style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
                             className="w-full rounded-md"
-                            src={img}
+                            src={img ? img : '/images/no-image.png'}
                             alt="postImage"
                             width={400}
                             height={400}

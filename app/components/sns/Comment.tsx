@@ -58,7 +58,7 @@ const Comment = ({ comment, postId, getComments }: Props) => {
         <div className="py-4 border-b">
             <div className="flex items-center gap-5">
                 <Link
-                    href={`/snsprofile/${user?.username}`}
+                    href={`/sns/snsprofile/${user?.username}`}
                     className="flex items-center gap-2"
                 >
                     {loading

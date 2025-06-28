@@ -13,14 +13,14 @@ import RegisterButton from './RegisterButton';
 
 const headerListItems = [
     { id: '1', link: '/', text: 'Home' },
-    { id: '2', link: '/profile', text: 'Profile' },
-    { id: '3', link: '/skills', text: 'Skills' },
-    { id: '4', link: '/portfolio', text: 'Portfolio' },
-    { id: '5', link: '/blog', text: 'Blog' },
-    { id: '6', link: '/snstop', text: 'SNS' },
-    { id: '7', link: '/music', text: 'Music' },
-    { id: '8', link: '/chat', text: 'Chat' },
-    { id: '9', link: '/contact', text: 'Contact' },
+    { id: '2', link: '/site/profile', text: 'Profile' },
+    { id: '3', link: '/site/skills', text: 'Skills' },
+    { id: '4', link: '/site/portfolio', text: 'Portfolio' },
+    { id: '5', link: '/site/blog', text: 'Blog' },
+    { id: '6', link: '/sns/snstop', text: 'SNS' },
+    { id: '7', link: '/site/music', text: 'Music' },
+    { id: '8', link: '/site/chat', text: 'Chat' },
+    { id: '9', link: '/site/contact', text: 'Contact' },
 ];
 
 const Header = () => {

@@ -19,7 +19,7 @@ const Navigation = ({ headerListItems, activeLink }: Props) => {
                         href={item.link}
                         key={item.id}
                     >
-                        <li className={`${activeLink === item.link && 'bg-indigo-400'}
+                        <li className={`${activeLink === item.link ? 'bg-indigo-400' : ''}
                         text-gray-600 dark:text-white font-semibold hover:bg-indigo-400 px-3 py-2 rounded-full duration-300`}>
                             {item.text}
                         </li>

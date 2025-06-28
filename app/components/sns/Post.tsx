@@ -93,7 +93,7 @@ const Post = ({ post, loadingPost, fetchPost }: Props) => {
         >
             <span className="text-xs sm:text-sm font-semibold self-end">投稿日:{formatDate(post.createdAt)}</span>
             <div className="flex items-center gap-4">
-                <Link href={`/snsprofile/${user?.username}`}>
+                <Link href={`/sns/snsprofile/${user?.username}`}>
                     <div className="flex items-center gap-2">
                         {loadingUser
                             ? <SnsLoading />
@@ -143,7 +143,7 @@ const Post = ({ post, loadingPost, fetchPost }: Props) => {
                     <FaHeart className="text-red-600 text-lg sm:text-xl" />
                     <span>{like}</span>
                 </button>
-                <Link href={`/comment/${post._id}`}>
+                <Link href={`/sns/comment/${post._id}`}>
                     <div className="flex items-center gap-1">
                         <FaRegCommentAlt />
                         <p className="text-xs sm:text-sm">コメント {post.comments.length}</p>
@@ -155,7 +155,7 @@ const Post = ({ post, loadingPost, fetchPost }: Props) => {
                     <Link
                         className="flex items-center gap-1 border border-blue-300 py-2 px-3 rounded-md text-blue-500
                         hover:bg-blue-50 duration-300"
-                        href={`/editpost/${post._id}`}>
+                        href={`/sns/editpost/${post._id}`}>
                         <FaFilePen className="size-4" />
                         <p className="text-xs sm:text-sm">編集</p>
                     </Link>

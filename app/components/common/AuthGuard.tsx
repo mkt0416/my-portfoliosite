@@ -25,14 +25,14 @@ const AuthGuard = ({ children }: { children: ReactNode }) => {
             try {
                 const token = localStorage.getItem('token');
                 if (!token) {
-                    router.push('/login');
+                    router.push('/auth/login');
                     return;
                 }
 
                 const dedoded: DecodedToken = jwtDecode(token);
                 const isExpired = dedoded.exp * 1000 < Date.now();
                 if (isExpired) {
-                    router.push('/login');
+                    router.push('/auth/login');
                 }
 
                 const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/verify-token`, {
@@ -44,12 +44,12 @@ const AuthGuard = ({ children }: { children: ReactNode }) => {
                 });
                 const jsonData = await response.json();
                 if (!response.ok) {
-                    router.push('/login');
+                    router.push('/auth/login');
                 } else {
                     setCurrentUser(jsonData.user);
                 }
             } catch (err) {
-                router.push('/login');
+                router.push('/auth/login');
             }
             finally {
                 setLoading(false);

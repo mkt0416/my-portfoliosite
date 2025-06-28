@@ -18,7 +18,7 @@ const Article = ({ data }: Props) => {
                 <h1 className='text-xl lg:text-2xl font-bold'>{data.title}</h1>
                 <div className='flex items-center gap-5'>
                     <Date date={data.createdAt ?? data.publishedAt} />
-                    <Link href={`/blog/category/${data.category.id}`}>
+                    <Link href={`/site/blog/category/${data.category.id}`}>
                         <Category category={data.category} />
                     </Link>
                 </div>

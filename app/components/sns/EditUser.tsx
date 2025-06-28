@@ -103,7 +103,7 @@ const EditUser = ({ userId }: Props) => {
 
                 })
             });
-            router.push(`/snsprofile/${currentUser?.username}`);
+            router.push(`/sns/snsprofile/${currentUser?.username}`);
         } catch (err) {
             console.log(err);
         }
@@ -137,7 +137,7 @@ const EditUser = ({ userId }: Props) => {
                             <Image
                                 style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
                                 className="w-full rounded-md"
-                                src={profileImage}
+                                src={profileImage ? profileImage : '/images/persons/noAvatar.png'}
                                 alt="postImage"
                                 width={400}
                                 height={400}
@@ -179,7 +179,7 @@ const EditUser = ({ userId }: Props) => {
                             <Image
                                 style={{ boxShadow: '5px 5px 5px rgba(0,0,0,0.5)' }}
                                 className="w-full rounded-md"
-                                src={coverImage}
+                                src={coverImage ? coverImage : '/images/posts/3.jpeg'}
                                 alt="postImage"
                                 width={400}
                                 height={400}

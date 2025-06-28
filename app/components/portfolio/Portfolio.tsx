@@ -20,7 +20,7 @@ const Portfolio = ({ data }: Props) => {
             <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {data.map((article) => (
                     <Link
-                        href={`/portfolio/${article.id}`}
+                        href={`/site/portfolio/${article.id}`}
                         key={article.id}
                         style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                         className='bg-gray-200 dark:bg-gray-600 p-6 rounded-lg shadow-md hover:scale-105 duration-300'

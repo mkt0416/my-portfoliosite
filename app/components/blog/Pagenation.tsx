@@ -8,7 +8,7 @@ type Props = {
     basePath?: string;
 };
 
-const Pagenation = ({ totalCount, current = 1, basePath = '/blog' }: Props) => {
+const Pagenation = ({ totalCount, current = 1, basePath = '/site/blog' }: Props) => {
     const page = Array.from(
         { length: Math.ceil(totalCount / BLOG_LIST_LIMIT) },
         (_, i) => i + 1,

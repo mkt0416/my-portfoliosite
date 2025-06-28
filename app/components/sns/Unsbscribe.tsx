@@ -14,6 +14,7 @@ const Unsbscribe = ({ userId }: Props) => {
     const context = useContext(AuthContext);
     const currentUser = context?.currentUser;
     const setCurrentUser = context?.setCurrentUser;
+    const setLoggedIn = context?.setLoggedIn;
 
     const handleUnscribe = async () => {
         if (!setCurrentUser) return;
@@ -31,6 +32,9 @@ const Unsbscribe = ({ userId }: Props) => {
             });
             localStorage.removeItem('token');
             setCurrentUser(null);
+            if (setLoggedIn) {
+                setLoggedIn(false);
+            }
             router.push('/');
         } catch (err) {
             console.log(err);
@@ -54,7 +58,7 @@ const Unsbscribe = ({ userId }: Props) => {
                 </button>
                 <Link
                     className="border border-blue-300 text-blue-500 py-3 px-4 rounded-md hover:bg-blue-50 duration-300"
-                    href={'/snstop'}
+                    href={'/sns/snstop'}
                 >
                     退会しない
                 </Link>

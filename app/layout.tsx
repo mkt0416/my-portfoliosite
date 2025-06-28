@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { M_PLUS_1 } from "next/font/google";
 import "./globals.css";
-import Header from "./components/header/Header";
-import TopMenuButton from "./components/common/TopMenuButton";
-import ProgressBar from "./components/common/ProgressBar";
 import AuthProvider from "./context/AuthProvider";
+import ProgressBar from "./components/common/ProgressBar";
+import TopMenuButton from "./components/common/TopMenuButton";
 
 const m_plus_1 = M_PLUS_1({
   subsets: ["latin"],
@@ -21,12 +20,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="ja">
       <body className={`${m_plus_1.className} bg-slate-50 dark:bg-gray-800 dark:text-white`}>
         <AuthProvider>
           <ProgressBar />
-          <Header />
           {children}
           <TopMenuButton />
         </AuthProvider>

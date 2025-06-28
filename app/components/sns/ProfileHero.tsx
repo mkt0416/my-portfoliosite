@@ -9,7 +9,6 @@ import SnsLoading from "./SnsLoading";
 import { RiUserFollowLine } from "react-icons/ri";
 import { RiUserUnfollowLine } from "react-icons/ri";
 
-
 type Props = {
     username: string;
 };

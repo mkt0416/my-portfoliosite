@@ -5,6 +5,7 @@ import { Portfolio } from '@/app/lib/microcms';
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from 'react-icons/fi';
 import { IoArrowUndoCircle } from "react-icons/io5";
+import UrlLink from './UrlLink';
 
 type Props = {
     data: Portfolio;
@@ -18,7 +19,7 @@ const PortfolioDetail = ({ data }: Props) => {
                 className='bg-gray-200 dark:bg-gray-600 p-5 sm:p-10 md:p-20 rounded-lg  flex flex-col items-center gap-10 relative'
             >
                 <span className='absolute top-2 right-2'>
-                    <Link href={'/portfolio'}>
+                    <Link href={'/site/portfolio'}>
                         <IoArrowUndoCircle size={40} className='text-gray-600 dark:text-white' />
                     </Link>
                 </span>
@@ -34,31 +35,25 @@ const PortfolioDetail = ({ data }: Props) => {
                 />
                 <p className='max-w-screen-xl'>{data.description}</p>
                 <div className='flex flex-wrap justify-center items-center gap-5 text-lg font-semibold mt-10'>
-                    <a href={`${data.projecturlfrontend}`}
-                        style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                        className='flex items-center gap-1 bg-yellow-300 px-3 py-2 
-                    rounded-md hover:bg-yellow-400 duration-300' target='_blank'
+                    <UrlLink
+                        href={data.projecturlfrontend}
+                        text='URL'
                     >
                         <FiExternalLink />
-                        <p>URL</p>
-                    </a>
-                    <a href={`${data.githuburlfrontend}`}
-                        style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                        className='flex items-center gap-1 bg-yellow-300 px-3 py-2 
-                    rounded-md hover:bg-yellow-400 duration-300' target='_blank'
+                    </UrlLink>
+                    <UrlLink
+                        href={data.githuburlfrontend}
+                        text='URL'
                     >
                         <FaGithub />
-                        <p>URL</p>
-                    </a>
+                    </UrlLink>
                     {data.githuburlbackend && (
-                        <a href={`${data.githuburlbackend}`}
-                            style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                            className='flex items-center gap-1 bg-yellow-300 px-3 py-2 
-                         rounded-md hover:bg-yellow-400 duration-300' target='_blank'
+                        <UrlLink
+                            href={data.githuburlbackend}
+                            text='BackendURL'
                         >
                             <FaGithub />
-                            <p>backendURL</p>
-                        </a>
+                        </UrlLink>
                     )}
                 </div>
             </div>

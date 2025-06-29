@@ -2,7 +2,7 @@
 import { getBlogDetail } from '@/app/lib/microcms';
 import PageHero from '@/app/components/common/PageHero';
 import Article from '@/app/components/blog/Article';
-import ButtonLink from '@/app/components/common/ButtonLink';
+import ButtonLink from '@/app/components/blog/ButtonLink';
 
 export const revalidate = 0;
 

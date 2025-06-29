@@ -73,7 +73,9 @@ const HeroSection = () => {
                                 transition={{ duration: 0.5 }}
                                 className='w-full text-center sm:text-left text-gray-600 dark:text-white'
                             >
-                                <h1 className='flex items-center gap-2 text-3xl lg:text-4xl xl:text-5xl font-extrabold mb-5'>
+                                <h1 className='flex items-center justify-center sm:justify-start gap-2 text-3xl lg:text-4xl xl:text-5xl
+                                 font-extrabold mb-5'
+                                >
                                     {title} <span className='pt-2'>{icon && icon}</span>
                                 </h1>
                                 <p className='text-lg font-semibold mb-8'>{text}</p>

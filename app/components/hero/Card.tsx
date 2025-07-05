@@ -32,10 +32,18 @@ const Card = ({ card }: Props) => {
                 <h3>{card.title}</h3>
             </div>
             <p className="text-center md:text-left font-semibold">{card.desc}</p>
-            <Link href={card.link} className="flex items-center hover:underline hover:text-blue-500">
-                <p>詳細はこちらから</p>
-                <IoIosArrowDropright className="pt-1 size-6" />
-            </Link>
+            <div className="flex flex-col lg:flex-row items-center gap-2 xl:gap-8">
+                <Link href={card.link} className="flex items-center hover:underline hover:text-blue-500">
+                    <p>詳細はこちらから</p>
+                    <IoIosArrowDropright className="pt-1 size-6" />
+                </Link>
+                {card.isAuth && (
+                    <Link href={'/auth/register'} className="flex items-center hover:underline hover:text-blue-500">
+                        <p>新規登録はこちら</p>
+                        <IoIosArrowDropright className="pt-1 size-6" />
+                    </Link>
+                )}
+            </div>
         </div>
     );
 };

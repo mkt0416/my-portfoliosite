@@ -1,9 +1,13 @@
 
 'use client'
-import { useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import Container from '../common/Container';
+import Modal from './Modal';
+import SubTitle from '../common/SubTitle';
+import SkillCard from './SkillCard';
 import 'aos/dist/aos.css';
 const AOS: any = require('aos');
-import SubTitle from '../common/SubTitle';
 import {
     SiGit,
     SiHtml5,
@@ -16,78 +20,121 @@ import {
     SiTypescript,
     SiVercel,
 } from "react-icons/si";
-import Container from '../common/Container';
 
 const skillsItem = [
     {
         id: '1',
         icon: <SiHtml5 />,
         title: 'HTML',
-        color: 'text-orange-600'
+        textColor: 'text-orange-600',
+        bgColor: 'bg-orange-600',
+        desc: '基本的なタグの使い方を学習中。思い通りにコーディングできるようになるのが目標です。',
+        proficiency: 35
     },
     {
         id: '2',
         icon: <SiJavascript />,
         title: 'JavaScript',
-        color: 'text-yellow-400'
+        textColor: 'text-yellow-400',
+        bgColor: 'bg-yellow-400',
+        desc: '変数、関数、配列などの基礎を学習中。より理解を深める事が目標です。',
+        proficiency: 15
     },
     {
         id: '3',
         icon: <SiTypescript />,
         title: 'TypeScript',
-        color: 'text-blue-600'
+        textColor: 'text-blue-600',
+        bgColor: 'bg-blue-600',
+        desc: '型の概念を学習し始めたばかり。JavaScriptとの違いを意識しています。',
+        proficiency: 10,
     },
     {
         id: '4',
         icon: <SiReact />,
         title: 'React',
-        color: 'text-blue-400'
+        textColor: 'text-blue-400',
+        bgColor: 'bg-blue-400',
+        desc: 'コンポーネントの作成やHooksの使い方を学んでいます。',
+        proficiency: 20,
     },
     {
         id: '5',
         icon: <SiNodedotjs />,
         title: 'Nodejs',
-        color: 'text-green-400'
+        textColor: 'text-green-400',
+        bgColor: 'bg-green-400',
+        desc: 'バックエンドの基礎を学習中。Expressを使ったAPI開発に挑戦しています。',
+        proficiency: 25,
     },
     {
         id: '6',
         icon: <SiTailwindcss />,
         title: 'Tailwindcss',
-        color: 'text-blue-400'
+        textColor: 'text-blue-400',
+        bgColor: 'bg-blue-400',
+        desc: 'クラスを使ったデザインに慣れてきたところ。柔軟にデザインできるよう学習しています。',
+        proficiency: 35,
     },
     {
         id: '7',
         icon: <SiNextdotjs />,
         title: 'Nextjs',
-        color: 'text-black'
+        textColor: 'text-black',
+        bgColor: 'bg-black',
+        desc: 'ダイナミックルーティングやNext.jsのお作法を学習中。Reactと合わせて自由に使いこなしたいです。',
+        proficiency: 20,
     },
     {
         id: '8',
         icon: <SiMongodb />,
         title: 'MongoDB',
-        color: 'text-green-500'
+        textColor: 'text-green-500',
+        bgColor: 'bg-green-500',
+        desc: 'ドキュメント型DBの使い方を学びながら、自在にデータ操作できるようなる事が目標です。',
+        proficiency: 15,
     },
     {
         id: '9',
         icon: <SiVercel />,
         title: 'Vercel',
-        color: 'text-black'
+        textColor: 'text-black',
+        bgColor: 'bg-black',
+        desc: 'デプロイの仕組みを学びながら、自作アプリを公開する練習をしています。',
+        proficiency: 10,
     },
     {
         id: '10',
         icon: <SiRender />,
         title: 'Render',
-        color: 'text-black'
+        textColor: 'text-black',
+        bgColor: 'bg-black',
+        desc: 'Node.jsアプリの公開を通じて、ホスティングの流れを理解し始めています。',
+        proficiency: 10,
     },
     {
         id: '11',
         icon: <SiGit />,
         title: 'Git',
-        color: 'text-orange-600'
+        textColor: 'text-orange-600',
+        bgColor: 'bg-orange-600',
+        desc: '基本的なコマンド操作を練習中。安心してコード管理できるようになる事が目標です。',
+        proficiency: 15,
     },
 ];
 
+export type ModalDataType = {
+    title: string | null;
+    desc: string | null;
+    icon?: ReactNode | null;
+    textColor?: string | null;
+    bgColor?: string | null;
+    proficiency?: number | null;
+};
+
 const Skills = () => {
+    const [modalData, setModalData] = useState<ModalDataType | null>(null);
+
     useEffect(() => {
         AOS.init({
             duration: 700,
@@ -106,21 +153,25 @@ const Skills = () => {
             </p>
             <span className='text-gray-400 text-xs'>まだまだ勉強中の身ですが、フロントエンド・バックエンド問わず幅広くチャレンジしています。
                 毎日少しずつでも成長できるように、楽しく学習を続けています！
+                <br />カードをクリックし詳細をご覧いただけます。
             </span>
-            <div className='mt-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10'>
-                {skillsItem.map((item) => (
-                    <div
-                        data-aos="flip-left"
-                        data-aos-delay="500"
-                        key={item.id}
-                        style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                        className='w-full bg-white dark:bg-gray-600 rounded-xl py-8 flex flex-col items-center hover:bg-blue-50 duration-300'
-                    >
-                        <span className={`text-9xl ${item.color}`}>{item.icon}</span>
-                        <h3 className='text-3xl text-gray-600 dark:text-white font-bold mt-5'>{item.title}</h3>
-                    </div>
-                ))}
-            </div>
+            <AnimatePresence>
+                <div className='mt-10 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 cursor-pointer'>
+                    {skillsItem.map((item) => (
+                        <SkillCard
+                            key={item.id}
+                            item={item}
+                            setModalData={setModalData}
+                        />
+                    ))}
+                </div>
+            </AnimatePresence>
+            <AnimatePresence>
+                <Modal
+                    modalData={modalData}
+                    onclose={() => setModalData(null)}
+                />
+            </AnimatePresence>
         </Container>
     );
 };

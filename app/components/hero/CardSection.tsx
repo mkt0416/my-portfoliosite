@@ -13,6 +13,7 @@ export type CardDataType = {
     desc: string;
     link: string;
     icon: ReactNode;
+    isAuth: boolean;
 };
 
 const cardData: CardDataType[] = [
@@ -22,13 +23,15 @@ const cardData: CardDataType[] = [
         desc: '私についてのプロフィールをご紹介します。',
         link: '/site/profile',
         icon: <FaUserCheck />,
+        isAuth: false,
     },
     {
         id: '2',
         title: 'Skills',
         desc: '使用している技術や学習中の技術をご紹介します。',
         link: '/site/skills',
-        icon: <FaCode />
+        icon: <FaCode />,
+        isAuth: false,
     },
     {
         id: '3',
@@ -36,13 +39,16 @@ const cardData: CardDataType[] = [
         desc: 'これまでに制作、学習した作品をご覧いただけます。',
         link: '/site/portfolio',
         icon: <FaFolderOpen />,
+        isAuth: false,
     },
     {
         id: '4',
         title: 'Blog',
-        desc: '日々の気づきや技術記事を投稿しています。ログイン後にご覧いただけます。',
+        desc: '日々の気づきや技術記事を投稿しています。（ログイン後に利用可能）。',
         link: '/site/blog',
         icon: <FaFilePen />,
+        isAuth: true,
+
     },
     {
         id: '5',
@@ -50,6 +56,7 @@ const cardData: CardDataType[] = [
         desc: 'SNS機能をご利用いただけます（ログイン後に利用可能）。',
         link: '/sns/snstop',
         icon: <GrChatOption />,
+        isAuth: true,
     },
     {
         id: '6',
@@ -57,6 +64,7 @@ const cardData: CardDataType[] = [
         desc: '楽曲検索機能ご利用いただけます（ログイン後に利用可能）。',
         link: '/site/music',
         icon: <SiYoutubemusic />,
+        isAuth: true,
     },
     {
         id: '7',
@@ -64,6 +72,7 @@ const cardData: CardDataType[] = [
         desc: 'AIと自由に会話できるチャット機能です（ログイン後に利用可能）。',
         link: '/site/chat',
         icon: <SiOpenai />,
+        isAuth: true,
     },
     {
         id: '8',
@@ -71,6 +80,7 @@ const cardData: CardDataType[] = [
         desc: 'お気軽にお問い合わせください。',
         link: '/site/contact',
         icon: <FiMail />,
+        isAuth: false,
     },
 ];
 

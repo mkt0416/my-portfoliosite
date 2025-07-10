@@ -8,7 +8,7 @@ import { IoRocketOutline, IoBulbOutline } from "react-icons/io5";
 const slides = [
     {
         image: "/images/slideimage1.svg",
-        title: "Welcome to My portfolio!!",
+        title: "Hello World!!",
         text: "I'm a beginner web developer who is just starting to learn about clean code and thoughtful design. I'm eager to improve and learn from more experienced developers."
     },
     {
@@ -73,7 +73,7 @@ const HeroSection = () => {
                                 transition={{ duration: 0.5 }}
                                 className='w-full text-center sm:text-left text-gray-600 dark:text-white'
                             >
-                                <h1 className='flex items-center justify-center sm:justify-start gap-2 text-3xl lg:text-4xl xl:text-5xl
+                                <h1 className='flex items-center justify-center sm:justify-start gap-2 text-3xl lg:text-4xl xl:text-6xl
                                  font-extrabold mb-5'
                                 >
                                     {title} <span className='pt-2'>{icon && icon}</span>

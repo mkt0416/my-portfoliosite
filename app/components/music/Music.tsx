@@ -23,10 +23,16 @@ const Music = () => {
 
     const fetchPopularSongs = async () => {
         setIsLoading(true);
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/music/popularsongs`);
-        const result = await response.json();
-        const popularSongs = result?.items.map((item: any) => item.track) ?? [];
-        setPopularSongs(popularSongs)
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/music/popularsongs`);
+            const result = await response.json();
+            const popularSongs = result?.items.map((item: any) => item.track) ?? [];
+            setPopularSongs(popularSongs)
+        } catch (err) {
+            console.log(err);
+        } finally {
+            setIsLoading(false);
+        }
         setIsLoading(false);
     };
 

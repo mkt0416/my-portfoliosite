@@ -30,7 +30,7 @@ export type WinModalType = {
     image: string;
 };
 
-const WinAppTable = () => {
+const WinAppTableList = () => {
     const [modalData, setModalData] = useState<WinModalType | null>(null);
 
     return (
@@ -58,4 +58,4 @@ const WinAppTable = () => {
     );
 };
 
-export default WinAppTable;
+export default WinAppTableList;

@@ -76,7 +76,7 @@ const cardData: CardDataType[] = [
     },
     {
         id: '8',
-        title: 'Windows App',
+        title: 'WinApp',
         desc: '各種ウィンドウズアプリをダウンロードいただけます。',
         link: '/site/winapp',
         icon: <FaWindows />,

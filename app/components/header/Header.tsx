@@ -17,10 +17,11 @@ const headerListItems = [
     { id: '3', link: '/site/skills', text: 'Skills' },
     { id: '4', link: '/site/portfolio', text: 'Portfolio' },
     { id: '5', link: '/site/blog', text: 'Blog' },
-    { id: '6', link: '/sns/snstop', text: 'SNS' },
-    { id: '7', link: '/site/chat', text: 'Chat' },
-    { id: '8', link: '/site/winapp', text: 'WinApp' },
-    { id: '9', link: '/site/contact', text: 'Contact' },
+    { id: '6', link: '/site/winapp', text: 'WinApp' },
+    { id: '7', link: '/sns/snstop', text: 'SNS' },
+    { id: '8', link: '/site/music', text: 'Music' },
+    { id: '9', link: '/site/chat', text: 'Chat' },
+    { id: '10', link: '/site/contact', text: 'Contact' },
 ];
 
 const Header = () => {
@@ -52,7 +53,7 @@ const Header = () => {
     }, []);
 
     return (
-        <header id='home' className='py-8 sm:py-10'>
+        <header id='home' className='py-6 sm:py-8'>
             <div className='w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16'>
                 <div className='flex justify-between items-center'>
                     <Navigation
@@ -60,7 +61,7 @@ const Header = () => {
                         activeLink={activeLink}
                     />
                     <HumbergerMenu setShowMenu={setShowMenu} />
-                    <div className='flex items-center gap-2 xl:gap-4'>
+                    <div className='flex items-center gap-4'>
                         <RegisterButton />
                         {loggedIn ? <LogoutButton logout={logout} /> : <LoginButton />}
                         <ThemeToggle />

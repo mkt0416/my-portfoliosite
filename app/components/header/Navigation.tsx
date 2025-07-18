@@ -12,7 +12,7 @@ type Props = {
 
 const Navigation = ({ headerListItems, activeLink }: Props) => {
     return (
-        <nav className='hidden lg:flex items-center'>
+        <nav className='hidden lg:flex items-center text-sm'>
             <ul className='flex items-center gap-1'>
                 {headerListItems.map((item) => (
                     <Link

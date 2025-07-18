@@ -4,7 +4,7 @@ import Card from "./Card";
 import { FaCode, FaFolderOpen, FaUserCheck, FaWindows } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import { GrChatOption } from "react-icons/gr";
-import { SiOpenai } from "react-icons/si";
+import { SiYoutubemusic, SiOpenai } from "react-icons/si";
 import { FiMail } from "react-icons/fi";
 
 export type CardDataType = {
@@ -52,22 +52,6 @@ const cardData: CardDataType[] = [
     },
     {
         id: '5',
-        title: 'SNS',
-        desc: 'SNS機能をご利用いただけます（ログイン後に利用可能）。',
-        link: '/sns/snstop',
-        icon: <GrChatOption />,
-        isAuth: true,
-    },
-    {
-        id: '6',
-        title: 'Chat',
-        desc: 'AIと自由に会話できるチャット機能です（ログイン後に利用可能）。',
-        link: '/site/chat',
-        icon: <SiOpenai />,
-        isAuth: true,
-    },
-    {
-        id: '7',
         title: 'WinApp',
         desc: '各種ウィンドウズアプリをダウンロードいただけます。',
         link: '/site/winapp',
@@ -75,7 +59,31 @@ const cardData: CardDataType[] = [
         isAuth: true,
     },
     {
+        id: '6',
+        title: 'SNS',
+        desc: 'SNS機能をご利用いただけます（ログイン後に利用可能）。',
+        link: '/sns/snstop',
+        icon: <GrChatOption />,
+        isAuth: true,
+    },
+    {
+        id: '7',
+        title: 'Music',
+        desc: '楽曲検索機能ご利用いただけます（ログイン後に利用可能）。',
+        link: '/site/music',
+        icon: <SiYoutubemusic />,
+        isAuth: true,
+    },
+    {
         id: '8',
+        title: 'Chat',
+        desc: 'AIと自由に会話できるチャット機能です（ログイン後に利用可能）。',
+        link: '/site/chat',
+        icon: <SiOpenai />,
+        isAuth: true,
+    },
+    {
+        id: '9',
         title: 'Conatct',
         desc: 'お気軽にお問い合わせください。',
         link: '/site/contact',

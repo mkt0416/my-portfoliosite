@@ -155,17 +155,15 @@ const Skills = () => {
                 毎日少しずつでも成長できるように、楽しく学習を続けています！
                 <br />カードをクリックし詳細をご覧いただけます。
             </span>
-            <AnimatePresence>
-                <div className='mt-10 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 cursor-pointer'>
-                    {skillsItem.map((item) => (
-                        <SkillCard
-                            key={item.id}
-                            item={item}
-                            setModalData={setModalData}
-                        />
-                    ))}
-                </div>
-            </AnimatePresence>
+            <div className='mt-10 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 cursor-pointer'>
+                {skillsItem.map((item) => (
+                    <SkillCard
+                        key={item.id}
+                        item={item}
+                        setModalData={setModalData}
+                    />
+                ))}
+            </div>
             <AnimatePresence>
                 <Modal
                     modalData={modalData}

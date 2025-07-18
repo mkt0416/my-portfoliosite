@@ -1,7 +1,7 @@
 
 import { ReactNode } from "react";
 import Card from "./Card";
-import { FaCode, FaFolderOpen, FaUserCheck } from "react-icons/fa";
+import { FaCode, FaFolderOpen, FaUserCheck, FaWindows } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import { GrChatOption } from "react-icons/gr";
 import { SiYoutubemusic, SiOpenai } from "react-icons/si";
@@ -47,7 +47,7 @@ const cardData: CardDataType[] = [
         desc: '日々の気づきや技術記事を投稿しています。（ログイン後に利用可能）。',
         link: '/site/blog',
         icon: <FaFilePen />,
-        isAuth: true,
+        isAuth: false,
 
     },
     {
@@ -76,6 +76,14 @@ const cardData: CardDataType[] = [
     },
     {
         id: '8',
+        title: 'Windows App',
+        desc: '各種ウィンドウズアプリをダウンロードいただけます。',
+        link: '/site/winapp',
+        icon: <FaWindows />,
+        isAuth: true,
+    },
+    {
+        id: '9',
         title: 'Conatct',
         desc: 'お気軽にお問い合わせください。',
         link: '/site/contact',

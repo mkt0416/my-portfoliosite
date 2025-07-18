@@ -90,6 +90,7 @@ const RegisterForm = () => {
                         <FaUser />
                         <h1>ユーザー登録</h1>
                     </div>
+                    <span className='text-xs text-gray-600'>お名前3文字以上、パスワード8文字以上で登録してください。</span>
                     <FormArea
                         type='register'
                         loading={loading}

@@ -32,10 +32,10 @@ const ThemeToggle = () => {
             {isDark
                 ? (
                     <span className='flex items-center font-semibold text-indigo-500 border border-indigo-500 p-1 text-sm
-                     sm:text-base sm:p-2 rounded-md hover:bg-indigo-100 duration-300'
+                      sm:p-2 rounded-md hover:bg-indigo-100 duration-300'
                     >
                         <p className="hidden sm:flex">Ligth</p>
-                        <MdOutlineLightMode className=" size-4 sm:size-6" />
+                        <MdOutlineLightMode className=" size-4 sm:size-5" />
                     </span>
                 )
                 : (

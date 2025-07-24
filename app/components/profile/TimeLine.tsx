@@ -1,6 +1,6 @@
 
 'use client'
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
 import 'aos/dist/aos.css';
@@ -59,6 +59,22 @@ const timeLineItem = [
 ];
 
 const TimeLine = () => {
+    const [secondsElapsed, setSecondsElapsed] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSecondsElapsed(prev => prev + 10);
+        }, 10);
+        return () => clearInterval(interval);
+    }, []);
+
+    const formatTime = (totalSeconds: number) => {
+        const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+        const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+        const seconds = String(totalSeconds % 60).padStart(2, "0");
+        return `${hours}:${minutes}:${seconds}`;
+    };
+
     useEffect(() => {
         AOS.init({
             duration: 700,
@@ -70,20 +86,34 @@ const TimeLine = () => {
     return (
         <Container>
             <SubTitle text='TimeLine' />
-            <div className='border-l-2 border-gray-200 pl-6 space-y-8'>
-                {timeLineItem.map((item) => (
-                    <div
-                        data-aos="fade-up"
-                        data-aos-delay="500"
-                        key={item.id}
-                        className='border-b-2 p-4 border-gray-200'
-                    >
-                        <span className='text-gray-400 text-lg'>{item.year}</span>
-                        <h3 className='text-xl md:text-3xl font-bold'>{item.title}</h3>
-                        <span className='text-gray-400 text-xs'>{item.jpTitle}</span>
-                        <p className='mt-2'>{item.description}</p>
+            <div className='relative'>
+                <div className="absolute right-0 top-52 text-5xl font-bold text-indigo-600 transition-all duration-500
+                     ease-in-out animate-pulse -z-10 hidden lg:block">
+                    {formatTime(secondsElapsed)}
+                </div>
+                <div
+                    data-aos="fade"
+                    data-aos-delay="1000"
+                    className='absolute right-10 bottom-96 -z-10 hidden lg:block'>
+                    <div className="relative w-80 h-80 border-4 border-indigo-500  rounded-full animate-spin-slow">
+                        <div className="absolute top-0 left-1/2 w-4 h-40 bg-gray-600 transform -translate-x-1/2 rounded-md"></div>
                     </div>
-                ))}
+                </div>
+                <div className='border-l-2 border-gray-200 pl-6 space-y-8'>
+                    {timeLineItem.map((item) => (
+                        <div
+                            data-aos="fade-up"
+                            data-aos-delay="500"
+                            key={item.id}
+                            className='border-b-2 p-4 border-gray-200'
+                        >
+                            <span className='text-gray-400 text-lg'>{item.year}</span>
+                            <h3 className='text-xl md:text-3xl font-bold'>{item.title}</h3>
+                            <span className='text-gray-400 text-xs'>{item.jpTitle}</span>
+                            <p className='mt-2'>{item.description}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </Container>
     );

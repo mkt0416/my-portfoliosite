@@ -20,6 +20,7 @@ import {
     SiTypescript,
     SiVercel,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 const skillsItem = [
     {
@@ -155,14 +156,19 @@ const Skills = () => {
                 毎日少しずつでも成長できるように、楽しく学習を続けています！
                 <br />カードをクリックし詳細をご覧いただけます。
             </span>
-            <div className='mt-10 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 cursor-pointer'>
-                {skillsItem.map((item) => (
-                    <SkillCard
-                        key={item.id}
-                        item={item}
-                        setModalData={setModalData}
-                    />
-                ))}
+            <div className='relative'>
+                <div>
+                    <VscVscode size={600} className='text-blue-600 absolute -bottom-10 -right-10 hidden lg:flex' />
+                </div>
+                <div className='mt-10 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-10 cursor-pointer'>
+                    {skillsItem.map((item) => (
+                        <SkillCard
+                            key={item.id}
+                            item={item}
+                            setModalData={setModalData}
+                        />
+                    ))}
+                </div>
             </div>
             <AnimatePresence>
                 <Modal

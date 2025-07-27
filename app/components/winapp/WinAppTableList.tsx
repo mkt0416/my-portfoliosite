@@ -14,7 +14,14 @@ const winAppData = [
         description: '新規作成、読み込み、保存機能をもったシンプルなメモ帳アプリです。',
         link: 'https://github.com/mkt0416/NotePad/releases/tag/v1.0',
         image: '/images/NotePad.png',
-    }
+    },
+    {
+        id: '2',
+        title: 'PasswordManager',
+        description: '日々のさまざまなサービスで使用するパスワード情報を安全かつ簡単に管理できる、シンプルなWindows向けパスワード管理ツールです。新規登録はもちろん、既存パスワードの編集や削除にも対応しております。',
+        link: 'https://github.com/mkt0416/PasswordManager/releases/tag/v1.0',
+        image: '/images/PasswordManager.png',
+    },
 ];
 
 export type winAppDataType = {

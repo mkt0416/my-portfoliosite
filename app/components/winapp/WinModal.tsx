@@ -12,7 +12,10 @@ type Props = {
 const WinModal = ({ modalData, onclose }: Props) => {
     if (!modalData) return null;
     return (
-        <div className="fixed inset-0 flex justify-center items-center bg-black/60 px-8">
+        <div
+            onClick={onclose}
+            className="fixed inset-0 flex justify-center items-center bg-black/60 px-8"
+        >
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -29,8 +32,8 @@ const WinModal = ({ modalData, onclose }: Props) => {
                     className="w-full rounded-xl"
                     src={modalData.image}
                     alt="app-image"
-                    width={400}
-                    height={400}
+                    width={300}
+                    height={300}
                 />
                 <div className="flex justify-center">
                     <button

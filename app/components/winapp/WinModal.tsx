@@ -34,6 +34,7 @@ const WinModal = ({ modalData, onclose }: Props) => {
                     alt="app-image"
                     width={300}
                     height={300}
+                    priority
                 />
                 <div className="flex justify-center">
                     <button

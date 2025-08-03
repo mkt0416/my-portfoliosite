@@ -14,8 +14,11 @@ const ProfileTop = () => {
                     transition={{ duration: 0.8 }}
                     className='flex-grow text-center lg:text-left max-lg:order-2'
                 >
+                    <div className='absolute left-16 top-0 w-5/12 h-96
+                     bg-gradient-to-tl from-indigo-100 to-indigo-200 dark:bg-gray-700 dark:from-transparent dark:to-transparent
+                    -z-10 shadow-2xl -skew-x-12 rounded-xl hidden lg:flex'></div>
                     <h1 className='text-3xl md:text-5xl font-extrabold mb-5'>Makoto Saitoh</h1>
-                    <p className='max-w-2xl text-gray-600 font-semibold leading-relaxed dark:text-gray-400'>
+                    <p className='max-w-2xl text-sm md:text-base text-gray-600 font-semibold leading-relaxed dark:text-gray-400'>
                         私は開発者として駆け出しの者で、現在JavaScript、React、Next.jsを学習しています。
                         <br />
                         まだ学ぶべきことはたくさんありますが、開発者として成長することに情熱を持っており、
@@ -32,8 +35,8 @@ const ProfileTop = () => {
                 >
                     <Image
                         style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                        className='rounded-full object-cover border-4 border-yellow-400'
-                        src={'/images/profile.png'}
+                        className='rounded-full object-cover border-4 border-indigo-500'
+                        src={'/images/profile2.jpg'}
                         alt='profile'
                         width={400}
                         height={400}

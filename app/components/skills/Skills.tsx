@@ -13,13 +13,13 @@ import {
     SiHtml5,
     SiJavascript,
     SiMongodb, SiNextdotjs,
-    SiNodedotjs,
     SiReact,
     SiRender,
     SiTailwindcss,
     SiTypescript,
     SiVercel,
 } from "react-icons/si";
+import { FaNode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
 const skillsItem = [
@@ -61,7 +61,7 @@ const skillsItem = [
     },
     {
         id: '5',
-        icon: <SiNodedotjs />,
+        icon: <FaNode />,
         title: 'Nodejs',
         textColor: 'text-green-400',
         bgColor: 'bg-green-400',

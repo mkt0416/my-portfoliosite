@@ -1,6 +1,6 @@
 
 'use client'
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
 import 'aos/dist/aos.css';
@@ -44,7 +44,7 @@ const timeLineItem = [
     },
     {
         id: '6',
-        year: '2023',
+        year: '2022',
         title: 'Became aware of IT literacy gap.',
         jpTitle: 'ITリテラシーの低さに危機感を抱く',
         description: '仕事をする中で自分のITスキルの不足に気づき、まずはExcelやwordの基本的な操作から勉強を始めました。'
@@ -59,22 +59,6 @@ const timeLineItem = [
 ];
 
 const TimeLine = () => {
-    const [secondsElapsed, setSecondsElapsed] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setSecondsElapsed(prev => prev + 10);
-        }, 10);
-        return () => clearInterval(interval);
-    }, []);
-
-    const formatTime = (totalSeconds: number) => {
-        const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
-        const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
-        const seconds = String(totalSeconds % 60).padStart(2, "0");
-        return `${hours}:${minutes}:${seconds}`;
-    };
-
     useEffect(() => {
         AOS.init({
             duration: 700,
@@ -87,9 +71,13 @@ const TimeLine = () => {
         <Container>
             <SubTitle text='TimeLine' />
             <div className='relative'>
-                <div className="absolute right-0 top-52 text-5xl font-bold text-indigo-600 transition-all duration-500
-                     ease-in-out animate-pulse -z-10 hidden lg:block">
-                    {formatTime(secondsElapsed)}
+                <div
+                    data-aos="fade"
+                    data-aos-delay="1000"
+                    className='absolute right-20 top-14 -z-10 hidden lg:block'>
+                    <div className="relative w-48 h-48 border-4 border-indigo-500  rounded-full animate-spin-fast">
+                        <div className="absolute top-0 left-1/2 w-2 h-24 bg-gray-600 transform -translate-x-1/2 rounded-md"></div>
+                    </div>
                 </div>
                 <div
                     data-aos="fade"

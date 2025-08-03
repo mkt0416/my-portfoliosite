@@ -16,6 +16,7 @@ const config: Config = {
       },
       animation: {
         'spin-slow': 'spin 10s linear infinite',
+        'spin-fast': 'spin 5s linear infinite',
       },
     },
   },

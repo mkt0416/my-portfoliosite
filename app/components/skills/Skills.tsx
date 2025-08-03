@@ -146,16 +146,10 @@ const Skills = () => {
 
     return (
         <Container>
-            <SubTitle text='Skillstack' />
-            <p className='mb-2'>
-                I&apos;m still in the process of learning, but I&apos;m actively exploring a wide range of technologies across both frontend and backend.
-                <br />
-                I&apos;m enjoying the journey and striving to grow little by little every day!
-            </p>
-            <span className='text-gray-400 text-xs'>まだまだ勉強中の身ですが、フロントエンド・バックエンド問わず幅広くチャレンジしています。
-                毎日少しずつでも成長できるように、楽しく学習を続けています！
-                <br />カードをクリックし詳細をご覧いただけます。
-            </span>
+            <SubTitle
+                text='Skillstack'
+                description='まだまだ勉強中の身ですが、フロントエンド・バックエンド問わず幅広くチャレンジしています。毎日少しずつでも成長できるように、楽しく学習を続けています！カードをクリックし詳細をご覧いただけます。'
+            />
             <div className='relative'>
                 <div>
                     <VscVscode size={600} className='text-blue-600 absolute -bottom-10 -right-10 hidden lg:flex' />

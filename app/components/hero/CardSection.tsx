@@ -43,20 +43,20 @@ const cardData: CardDataType[] = [
     },
     {
         id: '4',
-        title: 'Blog',
-        desc: '日々の気づきや技術記事を投稿しています。（ログイン後に利用可能）。',
-        link: '/site/blog',
-        icon: <FaFilePen />,
-        isAuth: false,
-
-    },
-    {
-        id: '5',
         title: 'WinApp',
         desc: '各種ウィンドウズアプリをダウンロードいただけます。',
         link: '/site/winapp',
         icon: <FaWindows />,
+        isAuth: false,
+    },
+    {
+        id: '5',
+        title: 'Blog',
+        desc: '日々の気づきや技術記事を投稿しています。（ログイン後に利用可能）。',
+        link: '/site/blog',
+        icon: <FaFilePen />,
         isAuth: true,
+
     },
     {
         id: '6',

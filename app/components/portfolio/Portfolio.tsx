@@ -12,11 +12,10 @@ type Props = {
 const Portfolio = ({ data }: Props) => {
     return (
         <Container>
-            <SubTitle text='Portfolio' />
-            <p>Below is a list of projects I created while learning through hands-on application development.</p>
-            <span className='text-gray-400 text-xs'>以下は、実際のアプリケーション制作を通じて学習してきた成果物の一覧です。
-                <br />カードをクリックし詳細をご覧いただけます。
-            </span>
+            <SubTitle
+                text='Portfolio'
+                description=' 以下は、実際のアプリケーション制作を通じて学習してきた成果物の一覧です。カードをクリックし詳細をご覧いただけます。'
+            />
             <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {data.map((article) => (
                     <Link
@@ -35,7 +34,6 @@ const Portfolio = ({ data }: Props) => {
                         />
                         <h2 className='text-xl text-gray-600 dark:text-white font-bold'>{article.title}</h2>
                     </Link>
-
                 ))}
             </div>
         </Container>

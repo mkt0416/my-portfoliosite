@@ -33,39 +33,40 @@ const ContactForm = () => {
 
     return (
         <Container>
-            <SubTitle text='Contact' />
-            <p>Thank you for visiting my portfolio. Feel free to contact me with any job inquiries or questions.</p>
-            <span className='text-gray-400 text-xs'>ご覧いただきありがとうございます。お仕事のご相談やご質問など、お気軽にご連絡ください。</span>
+            <SubTitle
+                text='Contact'
+                description='ここまでご覧いただきありがとうございます。応援やフィードバックも大歓迎です。以下のフォームよりお気軽にどうぞ！'
+            />
             <form
                 onSubmit={sendEmail}
                 ref={form}
                 className='mt-10'
             >
                 <input
-                    className='w-full dark:bg-gray-400 placeholder:text-white border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
+                    className='w-full dark:bg-gray-400 dark:placeholder:text-white border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
                     type="text"
                     name='name'
-                    placeholder='Name'
+                    placeholder='お名前'
                     required
                 />
                 <input
-                    className='w-full dark:bg-gray-400 placeholder:text-white border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
+                    className='w-full dark:bg-gray-400 dark:placeholder:text-white border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
                     type="email"
                     name='email'
-                    placeholder='Mailadress'
+                    placeholder='メールアドレス'
                     required
                 />
                 <input
-                    className='w-full dark:bg-gray-400 placeholder:text-white border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
+                    className='w-full dark:bg-gray-400 dark:placeholder:text-white border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
                     type="text"
                     name='subject'
-                    placeholder='Subject'
+                    placeholder='タイトル'
                     required
                 />
                 <textarea
-                    className='w-full dark:bg-gray-400 placeholder:text-white border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
+                    className='w-full dark:bg-gray-400 dark:placeholder:text-white border border-gray-300 rounded px-4 py-3 mb-5 outline-none'
                     name='message'
-                    placeholder='Message'
+                    placeholder='メッセージ'
                     rows={12}
                     required
                 />
@@ -73,9 +74,9 @@ const ContactForm = () => {
                     type='submit'
                     style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                     className='w-full text-xl text-white font-semibold bg-slate-500 hover:bg-slate-600 duration-300
-                 px-10 py-3 rounded'
+                    px-10 py-3 rounded'
                 >
-                    Submit
+                    送信
                 </button>
             </form>
         </Container>

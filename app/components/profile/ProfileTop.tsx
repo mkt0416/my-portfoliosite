@@ -7,30 +7,27 @@ import Container from '../common/Container';
 const ProfileTop = () => {
     return (
         <Container>
-            <section className='flex flex-col lg:flex-row gap-10 items-center'>
+            <section className='flex flex-col lg:flex-row gap-10 items-center relative'>
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     className='flex-grow text-center lg:text-left max-lg:order-2'
                 >
                     <h1 className='text-3xl md:text-5xl font-extrabold mb-5'>Makoto Saitoh</h1>
-                    <p className='text-lg font-semibold'>I&apos;m an aspiring web developer currently learning JavaScript, React, and Next.js.
+                    <p className='max-w-2xl text-gray-600 font-semibold leading-relaxed dark:text-gray-400'>
+                        私は開発者として駆け出しの者で、現在JavaScript、React、Next.jsを学習しています。
                         <br />
-                        While I still have a lot to learn, I&apos;m passionate about growing as a developer and working hard to
+                        まだ学ぶべきことはたくさんありますが、開発者として成長することに情熱を持っており、
                         <br />
-                        become a skilled and reliable engineer!
-
+                        一人前の信頼されるエンジニアになれるよう努力しています！
+                        <br />
+                        最近では、開発スキルの幅を広げるためにC#の学習も始めました。
                     </p>
-                    <span className='text-xs text-gray-400'>
-                        私はウェブ開発者として駆け出しの者で、現在javascript、React、Next.jsを学習しています。
-                        <br />
-                        まだ学ぶべきことはたくさんありますが、開発者として成長することに情熱を持っており、一人前の信頼されるエンジニアになれるよう努力しています！
-                    </span>
                 </motion.div>
                 <motion.div
-                    initial={{ opacity: 0, y: 80 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
                     <Image

@@ -9,18 +9,18 @@ const slides = [
     {
         image: "/images/slideimage1.svg",
         title: "Hello World!!",
-        text: "I'm a beginner web developer who is just starting to learn about clean code and thoughtful design. I'm eager to improve and learn from more experienced developers."
+        text: "I'm a beginner developer who is just starting to learn about clean code and thoughtful design. I'm eager to improve and learn from more experienced developers."
     },
     {
         image: "/images/slideimage2.svg",
         title: "What I Can Do",
-        text: "While I don’t have hands-on experience yet, I’m actively studying HTML, CSS, and JavaScript, and I’m beginning to explore both frontend development with React and backend technologies like Node.js and MongoDB.",
+        text: "While I don’t have hands-on experience yet, I’m actively studying HTML, CSS, and JavaScript, and I’m beginning to explore both frontend development with React and backend technologies like Node.js and MongoDB. Recently, I’ve also started learning C# to broaden my development skills.",
         icon: <IoBulbOutline />
     },
     {
         image: "/images/slideimage3.svg",
         title: "Always Growing",
-        text: "I’m still learning every day and doing my best to grow. While I still have a lot to learn, I hope to contribute to meaningful projects and eventually become a full-stack developer.",
+        text: "I’m still learning every day and doing my best to grow. While I still have a lot to learn, my goal is to become a developer who is trusted by others and can truly make a difference",
         icon: <IoRocketOutline />
     },
 ];

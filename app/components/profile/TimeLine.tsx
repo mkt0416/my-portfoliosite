@@ -19,18 +19,18 @@ const timeLineItem = [
         year: '2002',
         title: 'Start skateboarding.',
         jpTitle: 'スケートボードを始める',
-        description: '勉強もろくにせず朝から晩までスケートボードに没頭し、毎日親に怒られる日々を過ごしました。'
+        description: 'スケートボードと出会って以来、その魅力に引き込まれ、夢中で取り組んできました。'
     },
     {
         id: '3',
         year: '2006',
         title: 'Entering society as a working adult.',
         jpTitle: '社会人として働き始める',
-        description: '働きながらも継続してスケートボードに取り組み、充実した日々を過ごしました。'
+        description: '働きながらもスケートボードを続け、充実した時間を積み重ねてきました。'
     },
     {
         id: '4',
-        year: '2018',
+        year: '2017',
         title: 'Get married.',
         jpTitle: '結婚',
         description: '結婚と同時に部署のチームリーダーに就任し、責任のある立場となりました。'
@@ -51,10 +51,10 @@ const timeLineItem = [
     },
     {
         id: '7',
-        year: '2024',
+        year: 'Since 2024',
         title: 'Discovered Programming.',
         jpTitle: 'プログラミングとの出会い',
-        description: ' HTMLやCSS、JavaScriptに興味を持ち学習を始め、Webで何かを作る楽しさを知りました。'
+        description: ' HTMLやCSS、JavaScriptに興味を持ち学習を始め、プログラミングの魅力に引き込まれ、夢中で取り組んでいます!'
     },
 ];
 

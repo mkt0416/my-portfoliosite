@@ -27,17 +27,17 @@ const certItems = [
     },
     {
         id: '4',
-        title: 'python3エンジニア認定基礎試験',
-        desc: 'プログラミングへの理解を深めたいという思いから、きっかけとしてPythonの基礎を学び始めました。文法や制御構文、データ構造などの基本を学びました。'
+        title: 'Python3エンジニア認定基礎試験',
+        desc: 'プログラミングとは何かを知るきっかけとして取り組みました。文法や制御構文、データ構造などの基本を学びました。'
     },
     {
         id: '5',
-        title: 'python3エンジニア認定データ分析試験',
+        title: 'Python3エンジニア認定データ分析試験',
         desc: 'NumPyやpandasなどを使ったデータ処理や分析手法についての知識を学びました。'
     },
     {
         id: '6',
-        title: 'webクリエーター能力検定試験',
+        title: 'Webクリエーター能力検定試験',
         desc: 'Webとは何かを知るきっかけとして学習を始め、HTML/CSSを用いたWeb制作の基礎知識を身につけました。'
     },
     {
@@ -48,7 +48,7 @@ const certItems = [
     {
         id: '8',
         title: 'VBAエキスパート',
-        desc: 'Officeソフトの学習を進める中でVBAの存在を知り、さらなる業務効率化を目指して習得しました。Excel VBAを活用し、実務での自動化にも取り組んでいます。',
+        desc: 'Officeソフトの学習を進める中でVBAの存在を知り、さらなる業務効率化を目指して習得しました。Excel VBAを活用し、仕事での効率化にも取り組んでいます。',
     },
 ];
 
@@ -65,14 +65,10 @@ const Certifications = () => {
 
     return (
         <Container>
-            <SubTitle text='Certifications' />
-            <p className='mb-2'>
-                Besides learning programming, I&apos;ve also taken the time to study and earn the following certifications.
-            </p>
-            <span className='text-gray-400 text-xs'>
-                プログラミング学習に加えて、以下の資格についても勉強し取得しました。
-                <br />カードをクリックし詳細をご覧いただけます。
-            </span>
+            <SubTitle
+                text='Certifications'
+                description='プログラミング学習に加えて、以下の資格についても勉強し取得しました。カードをクリックし詳細をご覧いただけます。'
+            />
             <ul className='mt-10 space-y-6'>
                 {certItems.map((item) => (
                     <CertificationCard

@@ -17,11 +17,14 @@ const PageHero = ({ image, title }: Props) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <div className='hidden lg:flex absolute w-[80px] h-[80px] rounded-xl border-4 border-gray-300 
-                top-10 lg:left-56 rotate-45'></div>
-                <div className='hidden lg:flex absolute w-[80px] h-[80px] rounded-xl bg-red-500 top-10 left-28 lg:left-60 rotate-45'></div>
-                <div className='hidden lg:flex absolute bottom-20 left-8 md:left-1/4 text-blue-800'>
-                    <FaRocket size={80} />
+                <div className='hidden lg:flex absolute w-[55px] h-[55px] rounded-xl border-4 border-gray-300 
+                top-10 xl:left-56 lg:left-32 rotate-45'></div>
+                <div className='hidden lg:flex absolute w-[55px] h-[55px] rounded-xl bg-red-500 top-10 
+                xl:left-60 lg:left-36 rotate-45'
+                >
+                </div>
+                <div className='hidden lg:flex absolute bottom-8 left-8 md:left-1/4 text-blue-800'>
+                    <FaRocket size={60} />
                 </div>
             </motion.div>
             <div className='max-w-screen-xl mx-auto flex flex-col items-center'>
@@ -33,8 +36,8 @@ const PageHero = ({ image, title }: Props) => {
                     <Image
                         src={image}
                         alt=''
-                        width={300}
-                        height={300}
+                        width={200}
+                        height={200}
                         priority
                     />
                 </motion.div>
@@ -43,18 +46,21 @@ const PageHero = ({ image, title }: Props) => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                     className='text-center'>
-                    <h1 className='text-3xl lg:text-5xl font-bold mb-10'>{title}</h1>
+                    <h1 className='text-2xl lg:text-4xl font-extrabold mb-10'>{title}</h1>
                 </motion.div>
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className='hidden lg:flex absolute w-[80px] h-[80px] rounded-xl border-4 border-gray-300
-                     bottom-10 lg:right-56 rotate-45'></div>
-                    <div className='hidden lg:flex absolute w-[80px] h-[80px] rounded-xl bg-green-400 bottom-10 right-28 lg:right-60 rotate-45'></div>
-                    <div className='hidden lg:flex absolute top-20 right-8 md:right-1/4 text-blue-400'>
-                        <FaCloud size={80} />
+                    <div className='hidden lg:flex absolute w-[55px] h-[55px] rounded-xl border-4 border-gray-300
+                     bottom-10 xl:right-56 lg:right-32 rotate-45'></div>
+                    <div className='hidden lg:flex absolute w-[55px] h-[55px] rounded-xl bg-green-400 bottom-10
+                     xl:right-60 lg:right-36 rotate-45'
+                    >
+                    </div>
+                    <div className='hidden lg:flex absolute top-8 right-8 md:right-1/4 text-blue-400'>
+                        <FaCloud size={60} />
                     </div>
                 </motion.div>
             </div>

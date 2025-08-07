@@ -40,7 +40,7 @@ const ProfileTop = () => {
                         alt='profile'
                         width={400}
                         height={400}
-                        priority
+                        loading='eager'
                     />
                 </motion.div>
             </section>

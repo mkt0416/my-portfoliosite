@@ -20,7 +20,6 @@ const WinModal = ({ modalData, onclose }: Props) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
                 className="bg-gray-50 dark:bg-gray-700 py-4 sm:py-8 px-6 sm:px-14 rounded-xl flex flex-col items-center gap-8"
             >
                 <div className="flex items-center gap-1 text-sm sm:text-2xl font-bold">

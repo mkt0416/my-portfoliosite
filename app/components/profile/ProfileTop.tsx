@@ -11,7 +11,6 @@ const ProfileTop = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
                     className='flex-grow text-center lg:text-left max-lg:order-2'
                 >
                     <div className='absolute left-16 top-0 w-5/12 h-96
@@ -31,7 +30,6 @@ const ProfileTop = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
                 >
                     <Image
                         style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}

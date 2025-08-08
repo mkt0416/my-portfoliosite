@@ -3,7 +3,6 @@ import Image from "next/image";
 import { WinModalType } from "./WinAppTableList";
 import { FaWindows } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
-import { motion } from 'framer-motion';
 
 type Props = {
     modalData: WinModalType | null;
@@ -16,12 +15,7 @@ const WinModal = ({ modalData, onclose }: Props) => {
             onClick={onclose}
             className="fixed inset-0 flex justify-center items-center bg-black/60 px-8"
         >
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="bg-gray-50 dark:bg-gray-700 py-4 sm:py-8 px-6 sm:px-14 rounded-xl flex flex-col items-center gap-8"
-            >
+            <div className="bg-gray-50 dark:bg-gray-700 py-4 sm:py-8 px-6 sm:px-14 rounded-xl flex flex-col items-center gap-8">
                 <div className="flex items-center gap-1 text-sm sm:text-2xl font-bold">
                     <FaWindows />
                     <h1>{modalData.title}</h1>
@@ -33,7 +27,7 @@ const WinModal = ({ modalData, onclose }: Props) => {
                     alt="app-image"
                     width={300}
                     height={300}
-                    loading="eager"
+                    priority
                 />
                 <div className="flex justify-center">
                     <button
@@ -44,7 +38,7 @@ const WinModal = ({ modalData, onclose }: Props) => {
                         閉じる
                     </button>
                 </div>
-            </motion.div>
+            </div>
         </div>
     );
 };

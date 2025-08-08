@@ -5,18 +5,24 @@ import Container from "../common/Container";
 import SubTitle from "../common/SubTitle";
 import WinAppTableItem from "./WinAppTableItem";
 import WinModal from "./WinModal";
-import { AnimatePresence } from "framer-motion";
 
 const winAppData = [
     {
         id: '1',
+        title: 'Fotune Telling',
+        description: 'Randomクラスを使って、毎回ランダムに占い結果を表示するシンプルアプリです。実行するたびに、今日のあなたの運勢が表示されます。',
+        link: 'https://github.com/mkt0416/Fotune-Telling/releases/tag/v1.0',
+        image: '/images/Fotune Telling.png',
+    },
+    {
+        id: '2',
         title: 'NotePad',
         description: '新規作成、読み込み、保存機能をもったシンプルなメモ帳アプリです。',
         link: 'https://github.com/mkt0416/NotePad/releases/tag/v1.0',
         image: '/images/NotePad.png',
     },
     {
-        id: '2',
+        id: '3',
         title: 'PasswordManager',
         description: '日々のさまざまなサービスで使用するパスワード情報を安全かつ簡単に管理できる、シンプルなWindows向けパスワード管理ツールです。新規登録はもちろん、既存パスワードの編集や削除にも対応しております。',
         link: 'https://github.com/mkt0416/PasswordManager/releases/tag/v1.0',
@@ -52,12 +58,10 @@ const WinAppTableList = () => {
                     setModalData={setModalData}
                 />
             </div>
-            <AnimatePresence>
-                <WinModal
-                    modalData={modalData}
-                    onclose={() => setModalData(null)}
-                />
-            </AnimatePresence>
+            <WinModal
+                modalData={modalData}
+                onclose={() => setModalData(null)}
+            />
         </Container>
     );
 };

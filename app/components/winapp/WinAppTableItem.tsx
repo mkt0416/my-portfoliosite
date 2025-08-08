@@ -2,7 +2,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { winAppDataType, WinModalType } from "./WinAppTableList";
 import { RiDownload2Fill } from "react-icons/ri";
-import { AnimatePresence } from "framer-motion";
 
 type Props = {
     winAppData: winAppDataType;
@@ -20,27 +19,25 @@ const WinAppTableItem = ({ winAppData, setModalData }: Props) => {
                 </tr>
             </thead>
             <tbody>
-                <AnimatePresence>
-                    {winAppData.map((data) => (
-                        <tr key={data.id}>
-                            <td
-                                onClick={() => setModalData({ title: data.title, image: data.image })}
-                                className="border border-gray-300 px-4 py-2 hover:underline cursor-pointer">{data.title}</td>
-                            <td className="border border-gray-300 px-4 py-2">{data.description}</td>
-                            <td className="border border-gray-300 px-4 py-2 text-nowrap">
-                                <a
-                                    className="text-blue-500 hover:underline"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    href={data.link}
-                                >
-                                    <span className="hidden lg:block">ダウンロード</span>
-                                    <span className="lg:hidden flex justify-center md:justify-start text-xl"><RiDownload2Fill /></span>
-                                </a>
-                            </td>
-                        </tr>
-                    ))}
-                </AnimatePresence>
+                {winAppData.map((data) => (
+                    <tr key={data.id}>
+                        <td
+                            onClick={() => setModalData({ title: data.title, image: data.image })}
+                            className="border border-gray-300 px-4 py-2 hover:underline cursor-pointer">{data.title}</td>
+                        <td className="border border-gray-300 px-4 py-2">{data.description}</td>
+                        <td className="border border-gray-300 px-4 py-2 text-nowrap">
+                            <a
+                                className="text-blue-500 hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                href={data.link}
+                            >
+                                <span className="hidden lg:block">ダウンロード</span>
+                                <span className="lg:hidden flex justify-center md:justify-start text-xl"><RiDownload2Fill /></span>
+                            </a>
+                        </td>
+                    </tr>
+                ))}
             </tbody>
         </table>
     );

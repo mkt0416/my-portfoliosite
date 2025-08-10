@@ -3,8 +3,11 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Container from '../common/Container';
+import { useState } from 'react';
+import Loading from '../common/Loading';
 
 const ProfileTop = () => {
+    const [loading, setLoading] = useState(false);
     return (
         <Container>
             <section className='flex flex-col lg:flex-row gap-10 items-center relative'>
@@ -28,21 +31,25 @@ const ProfileTop = () => {
                         最近では、開発スキルの幅を広げるためにC#の学習も始めました。
                     </p>
                 </motion.div>
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.2 }}
-                >
-                    <Image
-                        style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-                        className='rounded-full object-cover border-4 border-indigo-500'
-                        src={'/images/profile.png'}
-                        alt='profile'
-                        width={400}
-                        height={400}
-                        priority
-                    />
-                </motion.div>
+                {loading
+                    ? <Loading image />
+                    : <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        <Image
+                            style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
+                            className='rounded-full object-cover border-4 border-indigo-500'
+                            src={'/images/profile.png'}
+                            alt='profile'
+                            width={400}
+                            height={400}
+                            priority
+                            onLoadingComplete={() => setLoading(false)}
+                        />
+                    </motion.div>
+                }
             </section>
         </Container>
     );

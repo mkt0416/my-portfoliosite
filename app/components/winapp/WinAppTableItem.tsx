@@ -15,15 +15,15 @@ const WinAppTableItem = ({ winAppData, setModalData }: Props) => {
                 <tr>
                     <th className="border border-gray-300 px-4 py-2">アプリ名</th>
                     <th className="border border-gray-300 px-4 py-2">アプリの説明</th>
-                    <th className="border border-gray-300 px-4 py-2">公開先</th>
+                    <th className="border border-gray-300 px-4 py-2 text-nowrap">公開先</th>
                 </tr>
             </thead>
             <tbody>
                 {winAppData.map((data) => (
                     <tr key={data.id}>
                         <td
-                            onClick={() => setModalData({ title: data.title, image: data.image })}
-                            className="border border-gray-300 px-4 py-2 hover:underline cursor-pointer">{data.title}</td>
+                            onClick={() => setModalData({ title: data.title, image: data.image, learning: data.learning })}
+                            className="border border-gray-300 px-4 py-2 hover:underline cursor-pointer text-nowrap">{data.title}</td>
                         <td className="border border-gray-300 px-4 py-2">{data.description}</td>
                         <td className="border border-gray-300 px-4 py-2 text-nowrap">
                             <a

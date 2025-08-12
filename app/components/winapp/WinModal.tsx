@@ -5,14 +5,13 @@ import { IoCloseSharp } from "react-icons/io5";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import { IoBulbOutline } from "react-icons/io5";
 import { FaRegHandPointRight } from "react-icons/fa";
-import { useState } from "react";
+import { motion } from 'framer-motion';
 
 type Props = {
     modalData: WinModalType | null;
     onclose: () => void;
 }
 const WinModal = ({ modalData, onclose }: Props) => {
-    const [loading, setLoading] = useState(true);
 
     if (!modalData) return null;
 
@@ -21,7 +20,13 @@ const WinModal = ({ modalData, onclose }: Props) => {
             onClick={onclose}
             className="fixed inset-0 flex justify-center items-center bg-black/60 px-8"
         >
-            <div className="bg-white dark:bg-gray-700 py-4 sm:py-8 px-6 sm:px-14 rounded-xl flex flex-col gap-8 relative">
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="bg-white dark:bg-gray-700 py-4 sm:py-8 px-6 sm:px-14 rounded-xl flex flex-col gap-8 relative"
+            >
                 <div className="flex items-center gap-2 text-base sm:text-2xl font-extrabold border-b-2 border-gray-200 pb-1">
                     <IoBulbOutline className="size-5 sm:size-8 text-yellow-400" />
                     <h1 className="">Learning Point</h1>
@@ -36,9 +41,13 @@ const WinModal = ({ modalData, onclose }: Props) => {
                         ))}
                     </ul>
                     <FaRegHandPointRight className="-rotate-45 size-8 sm:size-14 absolute bottom-14 sm:bottom-12 left-6 sm:left-10" />
-                    <div className="hidden lg:block">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="hidden lg:block">
                         <span className="flex justify-end mb-3 font-semibold text-xs">{modalData.title}</span>
-                        {loading && <p className="mb-20">読み込み中...</p>}
                         <Image
                             src={modalData.image}
                             alt="App-Image"
@@ -46,9 +55,8 @@ const WinModal = ({ modalData, onclose }: Props) => {
                             height={300}
                             priority
                             className="rounded-lg"
-                            onLoadingComplete={() => setLoading(false)}
                         />
-                    </div>
+                    </motion.div>
                 </div>
                 <div className="flex justify-center">
                     <button
@@ -59,7 +67,7 @@ const WinModal = ({ modalData, onclose }: Props) => {
                         閉じる
                     </button>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

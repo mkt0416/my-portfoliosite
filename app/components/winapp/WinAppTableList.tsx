@@ -5,6 +5,7 @@ import Container from "../common/Container";
 import SubTitle from "../common/SubTitle";
 import WinAppTableItem from "./WinAppTableItem";
 import WinModal from "./WinModal";
+import { AnimatePresence } from "framer-motion";
 
 const winAppData = [
     {
@@ -109,10 +110,12 @@ const WinAppTableList = () => {
                     setModalData={setModalData}
                 />
             </div>
-            <WinModal
-                modalData={modalData}
-                onclose={() => setModalData(null)}
-            />
+            <AnimatePresence>
+                <WinModal
+                    modalData={modalData}
+                    onclose={() => setModalData(null)}
+                />
+            </AnimatePresence>
         </Container>
     );
 };

@@ -5,13 +5,17 @@ import { IoCloseSharp } from "react-icons/io5";
 import { IoMdCheckboxOutline } from "react-icons/io";
 import { IoBulbOutline } from "react-icons/io5";
 import { FaRegHandPointRight } from "react-icons/fa";
+import { useState } from "react";
 
 type Props = {
     modalData: WinModalType | null;
     onclose: () => void;
 }
 const WinModal = ({ modalData, onclose }: Props) => {
+    const [loading, setLoading] = useState(true);
+
     if (!modalData) return null;
+
     return (
         <div
             onClick={onclose}
@@ -34,13 +38,15 @@ const WinModal = ({ modalData, onclose }: Props) => {
                     <FaRegHandPointRight className="-rotate-45 size-8 sm:size-14 absolute bottom-14 sm:bottom-12 left-6 sm:left-10" />
                     <div className="hidden lg:block">
                         <span className="flex justify-end mb-3 font-semibold text-xs">{modalData.title}</span>
+                        {loading && <p className="mb-20">読み込み中...</p>}
                         <Image
                             src={modalData.image}
                             alt="App-Image"
                             width={300}
-                            height={350}
+                            height={300}
                             priority
                             className="rounded-lg"
+                            onLoadingComplete={() => setLoading(false)}
                         />
                     </div>
                 </div>

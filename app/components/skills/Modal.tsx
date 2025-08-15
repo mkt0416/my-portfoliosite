@@ -14,7 +14,7 @@ const Modal = ({ modalData, onclose }: Props) => {
 
     return (
         <div
-            className="w-full h-full fixed inset-0 bg-black/65 z-40 flex justify-center items-center p-8"
+            className="w-full h-full fixed inset-0 bg-black/65 backdrop-blur-sm z-40 flex justify-center items-center p-8"
             onClick={onclose}
         >
             <motion.div
@@ -42,7 +42,7 @@ const Modal = ({ modalData, onclose }: Props) => {
                     </div>
                 )}
                 <button
-                    className={`text-sm sm:text-base text-white py-2 px-4 rounded-md 
+                    className={`text-sm sm:text-base text-white py-2 px-4 rounded-md
                     ${modalData.bgColor ? modalData.bgColor : 'bg-black'}`}
                     onClick={onclose}>
                     閉じる

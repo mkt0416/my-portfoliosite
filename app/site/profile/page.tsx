@@ -6,12 +6,8 @@ import Hobby from '@/app/components/profile/Hobby';
 const Page = () => {
     return (
         <>
-            <div className='mt-32'>
-                <ProfileTop />
-            </div>
-            <div className='mt-32'>
-                <TimeLine />
-            </div>
+            <ProfileTop />
+            <TimeLine />
             <div className='mt-32 mb-20'>
                 <Hobby />
             </div>

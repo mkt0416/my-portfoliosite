@@ -7,23 +7,25 @@ import '../../animation/animation.css';
 
 const ProfileTop = () => {
     return (
-        <div className='min-h-[650px]'>
+        <div className='min-h-screen flex justify-center items-start sm:items-center mt-5 sm:mt-0'>
             <Container>
-                <section className='flex flex-col lg:flex-row gap-10 items-center relative'>
+                <section className='flex flex-col md:flex-row gap-3 sm:gap-10 items-center relative'>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.2 }}
-                        className='flex-grow text-center lg:text-left max-lg:order-2'
+                        className='flex-grow text-center lg:text-left max-md:order-2'
                     >
-                        <div className='absolute left-16 top-0 w-5/12 h-96
-                     bg-gradient-to-tl from-indigo-100 to-indigo-200 dark:bg-gray-700 dark:from-transparent dark:to-transparent
-                    -z-10 shadow-2xl -skew-x-12 rounded-xl hidden lg:flex'></div>
-                        <h1 className='text-3xl md:text-5xl font-extrabold mb-5'>Makoto Saitoh</h1>
-                        <p className='max-w-2xl text-xs md:text-base text-gray-600 font-semibold leading-relaxed dark:text-gray-400'>
-                            私は開発者として駆け出しの者で、現在JavaScript、React、Next.jsを学習しています。
+                        <div className='absolute left-16 xl:top-10 lg:top-12 md:top-16 w-5/12 xl:h-80 lg:h-72
+                        bg-gradient-to-tl from-indigo-100 to-indigo-200 dark:bg-gray-700 dark:from-transparent dark:to-transparent
+                        shadow-2xl -skew-x-12 rounded-xl hidden md:flex -z-10'>
+                        </div>
+                        <h1 className='text-3xl md:text-4xl xl:text-5xl text-center md:text-left font-extrabold mb-5'>Makoto Saitoh</h1>
+                        <p className='max-w-2xl text-xs md:text-sm lg:text-base text-center md:text-left text-gray-600 font-semibold 
+                         leading-tight sm:leading-relaxed dark:text-gray-400'>
+                            私は開発者として駆け出しの者で現在JavaScript、React、Next.jsを学習しています。
                             <br />
-                            まだ学ぶべきことはたくさんありますが、開発者として成長することに情熱を持っており、
+                            まだ学ぶべきことはたくさんありますが、開発者として成長するこが目標であり、
                             <br />
                             一人前の信頼されるエンジニアになれるよう努力しています！
                             <br />
@@ -59,7 +61,7 @@ const ProfileTop = () => {
                 <li></li>
                 <li></li>
             </ul>
-        </div>
+        </div >
     );
 };
 

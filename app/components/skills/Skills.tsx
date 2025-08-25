@@ -29,8 +29,9 @@ const skillsItem = [
         title: 'HTML',
         textColor: 'text-orange-600',
         bgColor: 'bg-orange-600',
-        desc: '基本的なタグの使い方を学習中。思い通りにコーディングできるようになるのが目標です。',
-        proficiency: 35
+        desc: '基本的なHTMLタグの使い方を学習中で、ウェブページを構築するうえでの最低限の組み立てができるようになっています。今後は、思い通りにコーディングできることを目標としています。',
+        proficiency: 35,
+        experience: '2年',
     },
     {
         id: '2',
@@ -38,8 +39,9 @@ const skillsItem = [
         title: 'JavaScript',
         textColor: 'text-yellow-400',
         bgColor: 'bg-yellow-400',
-        desc: '変数、関数、配列などの基礎を学習中。より理解を深める事が目標です。',
-        proficiency: 15
+        desc: '変数、関数、配列などの基礎、また、非同期通信やDOM操作、イベント、map・filterメソッド、三項演算子などの応用的な操作を学習中です。より理解を深める事が目標です。',
+        proficiency: 15,
+        experience: '1年',
     },
     {
         id: '3',
@@ -47,8 +49,9 @@ const skillsItem = [
         title: 'TypeScript',
         textColor: 'text-blue-600',
         bgColor: 'bg-blue-600',
-        desc: '型の概念を学習し始めたばかり。JavaScriptとの違いを意識しています。',
+        desc: '型の概念を学習し始めたばかり。JavaScriptとの違いを意識しています。型の整合性をとるのには苦戦していますが、理解を深める事が目標です。',
         proficiency: 10,
+        experience: '半年',
     },
     {
         id: '4',
@@ -56,8 +59,9 @@ const skillsItem = [
         title: 'React',
         textColor: 'text-blue-400',
         bgColor: 'bg-blue-400',
-        desc: 'コンポーネントの作成やHooksの使い方を学んでいます。',
+        desc: 'useStateやuseEffectなどのフックの活用、コンポーネントに分割した再利用性の高いコード、React Router DOMを用いたルーティング、TypeScriptでのコーディングに取り組んできました。今後は、ユーザーインターフェースの優れたアプリを開発することを目標としています。',
         proficiency: 20,
+        experience: '1年',
     },
     {
         id: '5',
@@ -65,8 +69,9 @@ const skillsItem = [
         title: 'Nodejs',
         textColor: 'text-green-400',
         bgColor: 'bg-green-400',
-        desc: 'バックエンドの基礎を学習中。Expressを使ったAPI開発に挑戦しています。',
+        desc: 'Expressを使ったバックエンドの基礎を学習中。GET,POST,PUT,DELETEの基本的なCRUD操作に必要なAPI構築ができます。DBとの連携、JWTの実装、ルーティング（routes）、ビジネスロジック（controllers）、データモデル（models）に役割を分けて管理する手法を学びました。今後は複雑なAPIを構築できるようになるのが目標です',
         proficiency: 25,
+        experience: '1年',
     },
     {
         id: '6',
@@ -74,8 +79,9 @@ const skillsItem = [
         title: 'Tailwindcss',
         textColor: 'text-blue-400',
         bgColor: 'bg-blue-400',
-        desc: 'クラスを使ったデザインに慣れてきたところ。柔軟にデザインできるよう学習しています。',
+        desc: 'ユーティリティクラスを用いたデザインに慣れてきており。今後は、ユーザーインターフェースの優れたデザインできることを目標としています。',
         proficiency: 35,
+        experience: '半年',
     },
     {
         id: '7',
@@ -85,6 +91,7 @@ const skillsItem = [
         bgColor: 'bg-black',
         desc: 'ダイナミックルーティングやNext.jsのお作法を学習中。Reactと合わせて自由に使いこなしたいです。',
         proficiency: 20,
+        experience: '半年',
     },
     {
         id: '8',
@@ -92,8 +99,9 @@ const skillsItem = [
         title: 'MongoDB',
         textColor: 'text-green-500',
         bgColor: 'bg-green-500',
-        desc: 'ドキュメント型DBの使い方を学びながら、自在にデータ操作できるようなる事が目標です。',
+        desc: 'Expressとの連携やドキュメント型データベースの使い方を学びながら、データを自在に操作できるようになることを目標としています。',
         proficiency: 15,
+        experience: '1年',
     },
     {
         id: '9',
@@ -103,6 +111,7 @@ const skillsItem = [
         bgColor: 'bg-black',
         desc: 'デプロイの仕組みを学びながら、自作アプリを公開する練習をしています。',
         proficiency: 10,
+        experience: '半年',
     },
     {
         id: '10',
@@ -112,6 +121,7 @@ const skillsItem = [
         bgColor: 'bg-black',
         desc: 'Node.jsアプリの公開を通じて、ホスティングの流れを理解し始めています。',
         proficiency: 10,
+        experience: '半年',
     },
     {
         id: '11',
@@ -121,6 +131,7 @@ const skillsItem = [
         bgColor: 'bg-orange-600',
         desc: '基本的なコマンド操作を練習中。安心してコード管理できるようになる事が目標です。',
         proficiency: 15,
+        experience: '半年',
     },
 ];
 
@@ -131,6 +142,7 @@ export type ModalDataType = {
     textColor?: string | null;
     bgColor?: string | null;
     proficiency?: number | null;
+    experience: string;
 };
 
 const Skills = () => {

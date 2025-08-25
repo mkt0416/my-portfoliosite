@@ -11,6 +11,7 @@ type Props = {
         bgColor: string;
         desc: string;
         proficiency: number;
+        experience: string;
     };
     setModalData: (value: SetStateAction<ModalDataType | null>) => void;
 };
@@ -25,6 +26,7 @@ const SkillCard = ({ item, setModalData }: Props) => {
                 title: item.title,
                 desc: item.desc,
                 proficiency: item.proficiency,
+                experience: item.experience,
             })}
             data-aos="flip-left"
             data-aos-delay="500"

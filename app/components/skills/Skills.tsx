@@ -142,7 +142,7 @@ export type ModalDataType = {
     textColor?: string | null;
     bgColor?: string | null;
     proficiency?: number | null;
-    experience: string;
+    experience?: string;
 };
 
 const Skills = () => {

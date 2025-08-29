@@ -9,7 +9,7 @@ const AOS: any = require('aos');
 const timeLineItem = [
     {
         id: '1',
-        year: '1988',
+        year: '1987',
         title: 'I was born in Yamagata City.',
         jpTitle: '山形市で生まれる',
         description: '幼少期から体を動かすことが大好きでバスケットボールクラブに所属していました。'

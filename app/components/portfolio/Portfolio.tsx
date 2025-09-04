@@ -13,7 +13,7 @@ const Portfolio = ({ data }: Props) => {
     return (
         <Container>
             <SubTitle
-                text='Portfolio'
+                text='AppList'
                 description=' 以下は、実際のアプリケーション制作を通じて学習してきた成果物の一覧です。カードをクリックし詳細をご覧いただけます。'
             />
             <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>

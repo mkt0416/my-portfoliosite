@@ -15,13 +15,12 @@ const headerListItems = [
     { id: '1', link: '/', text: 'Home' },
     { id: '2', link: '/site/profile', text: 'Profile' },
     { id: '3', link: '/site/skills', text: 'Skills' },
-    { id: '4', link: '/site/portfolio', text: 'Portfolio' },
-    { id: '5', link: '/site/winapp', text: 'WinApp' },
-    { id: '6', link: '/site/blog', text: 'Blog' },
-    { id: '7', link: '/sns/snstop', text: 'SNS' },
-    { id: '8', link: '/site/music', text: 'Music' },
-    { id: '9', link: '/site/chat', text: 'Chat' },
-    { id: '10', link: '/site/contact', text: 'Contact' },
+    { id: '4', link: '/site/blog', text: 'Blog' },
+    { id: '5', link: '/sns/snstop', text: 'SNS' },
+    { id: '6', link: '/site/memo', text: 'Memo' },
+    { id: '7', link: '/site/music', text: 'Music' },
+    { id: '8', link: '/site/chat', text: 'Chat' },
+    { id: '9', link: '/site/contact', text: 'Contact' },
 ];
 
 const Header = () => {
@@ -30,11 +29,13 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const pathName = usePathname();
     const context = useContext(AuthContext);
+    const setCurrentUser = context?.setCurrentUser;
     const loggedIn = context?.loggedIn;
     const setLoggedIn = context?.setLoggedIn;
 
     const logout = () => {
         localStorage.removeItem('token');
+        setCurrentUser?.(null);
         if (setLoggedIn) {
             setLoggedIn(false);
         }

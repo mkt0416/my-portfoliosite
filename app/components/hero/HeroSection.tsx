@@ -45,7 +45,7 @@ const HeroSection = () => {
         <div className='bg-blue-100 dark:bg-gray-600 overflow-hidden'>
             <section className='w-full h-screen sm:h-[650px] max-w-screen-2xl mx-auto flex items-center justify-center px-8 md:px-12 lg:px-16'>
                 <div className='flex flex-col items-center'>
-                    <div className='w-full flex flex-col sm:flex-row items-center gap-5'>
+                    <div className='w-full flex flex-col md:flex-row items-center gap-5'>
                         <AnimatePresence mode='wait'>
                             <motion.div
                                 key={currentSlide}
@@ -73,12 +73,12 @@ const HeroSection = () => {
                                 transition={{ duration: 0.5 }}
                                 className='w-full text-center sm:text-left text-gray-600 dark:text-white'
                             >
-                                <h1 className='flex items-center justify-center sm:justify-start gap-2 text-3xl lg:text-4xl xl:text-6xl
+                                <h1 className='flex items-center justify-center md:justify-start gap-2 text-3xl lg:text-4xl xl:text-6xl
                                  font-extrabold mb-5'
                                 >
                                     {title} <span className='pt-2'>{icon && icon}</span>
                                 </h1>
-                                <p className='text-lg font-semibold mb-8'>{text}</p>
+                                <p className='md:text-lg text-center md:text-left font-semibold mb-8'>{text}</p>
                             </motion.div>
                         </AnimatePresence>
                     </div>

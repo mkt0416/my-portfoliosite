@@ -1,11 +1,12 @@
 
 import { ReactNode } from "react";
 import Card from "./Card";
-import { FaCode, FaFolderOpen, FaUserCheck, FaWindows } from "react-icons/fa";
+import { FaCode, FaUserCheck, FaWindows, FaGlobe } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import { GrChatOption } from "react-icons/gr";
 import { SiYoutubemusic, SiOpenai } from "react-icons/si";
 import { FiMail } from "react-icons/fi";
+import { SiNotion } from "react-icons/si";
 
 export type CardDataType = {
     id: string;
@@ -35,22 +36,6 @@ const cardData: CardDataType[] = [
     },
     {
         id: '3',
-        title: 'Portfolio',
-        desc: 'これまでに制作、学習した作品をご覧いただけます。',
-        link: '/site/portfolio',
-        icon: <FaFolderOpen />,
-        isAuth: false,
-    },
-    {
-        id: '4',
-        title: 'WinApp',
-        desc: '各種ウィンドウズアプリをダウンロードいただけます。',
-        link: '/site/winapp',
-        icon: <FaWindows />,
-        isAuth: false,
-    },
-    {
-        id: '5',
         title: 'Blog',
         desc: '日々の気づきや技術記事を投稿しています。（ログイン後に利用可能）。',
         link: '/site/blog',
@@ -59,7 +44,7 @@ const cardData: CardDataType[] = [
 
     },
     {
-        id: '6',
+        id: '4',
         title: 'SNS',
         desc: 'SNS機能をご利用いただけます（ログイン後に利用可能）。',
         link: '/sns/snstop',
@@ -67,7 +52,15 @@ const cardData: CardDataType[] = [
         isAuth: true,
     },
     {
-        id: '7',
+        id: '5',
+        title: 'Memo',
+        desc: 'メモアプリをご利用いただけます（ログイン後に利用可能）。',
+        link: '/site/memo',
+        icon: <SiNotion />,
+        isAuth: true,
+    },
+    {
+        id: '6',
         title: 'Music',
         desc: '楽曲検索機能ご利用いただけます（ログイン後に利用可能）。',
         link: '/site/music',
@@ -75,7 +68,7 @@ const cardData: CardDataType[] = [
         isAuth: true,
     },
     {
-        id: '8',
+        id: '7',
         title: 'Chat',
         desc: 'AIと自由に会話できるチャット機能です（ログイン後に利用可能）。',
         link: '/site/chat',
@@ -83,11 +76,27 @@ const cardData: CardDataType[] = [
         isAuth: true,
     },
     {
-        id: '9',
+        id: '8',
         title: 'Conatct',
         desc: 'お気軽にお問い合わせください。',
         link: '/site/contact',
         icon: <FiMail />,
+        isAuth: false,
+    },
+    {
+        id: '9',
+        title: 'WebApp',
+        desc: 'Webアプリ制作を通して学んだ内容です。',
+        link: '/site/portfolio',
+        icon: <FaGlobe />,
+        isAuth: false,
+    },
+    {
+        id: '10',
+        title: 'WinApp',
+        desc: 'Windowsアプリ制作を通して学んだ内容です。',
+        link: '/site/winapp',
+        icon: <FaWindows />,
         isAuth: false,
     },
 ];

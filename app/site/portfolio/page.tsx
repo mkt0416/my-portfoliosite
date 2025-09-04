@@ -13,7 +13,7 @@ const Page = async () => {
         <>
             <PageHero
                 image='/images/portfolio.svg'
-                title='Portfolio'
+                title='WebApp'
             />
             <div className='mt-20 mb-20'>
                 <Portfolio data={data.contents} />

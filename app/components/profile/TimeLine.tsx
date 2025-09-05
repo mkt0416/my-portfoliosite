@@ -12,21 +12,21 @@ const timeLineItem = [
         year: '1987',
         title: 'I was born in Yamagata City.',
         jpTitle: '山形市で生まれる',
-        description: '幼少期から体を動かすことが大好きでバスケットボールクラブに所属していました。'
+        description: '幼少期から体を動かすことが大好きでした。'
     },
     {
         id: '2',
-        year: '2002',
-        title: 'Start skateboarding.',
-        jpTitle: 'スケートボードを始める',
-        description: 'スケートボードと出会って以来、その魅力に引き込まれ、夢中で取り組んできました。'
+        year: '2000',
+        title: 'when I was a student.',
+        jpTitle: '学生時代',
+        description: '学生時代からテクノロジーには苦手意識があり、あまり触れることができませんでしたが、その経験が後にスキル向上への意欲につながりました。'
     },
     {
         id: '3',
         year: '2006',
         title: 'Entering society as a working adult.',
         jpTitle: '社会人として働き始める',
-        description: '働きながらもスケートボードを続け、充実した時間を積み重ねてきました。'
+        description: '社会に出て働く大変さを痛感しながらも、その経験を通して責任感や柔軟な対応力を身につけてきました。'
     },
     {
         id: '4',
@@ -40,7 +40,7 @@ const timeLineItem = [
         year: '2019',
         title: 'A child is born.',
         jpTitle: '子どもが生まれる',
-        description: '子育てや時間的な都合により自然とスケートボードから遠ざかりました。'
+        description: '初めての子育てに不安を感じつつも、子どもの成長に寄り添い、かけがえのない時間を大切にしてきました。'
     },
     {
         id: '6',

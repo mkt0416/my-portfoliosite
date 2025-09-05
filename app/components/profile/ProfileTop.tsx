@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Container from '../common/Container';
-import '../../animation/animation.css';
 
 const ProfileTop = () => {
     return (
@@ -28,8 +27,6 @@ const ProfileTop = () => {
                             まだ学ぶべきことはたくさんありますが、開発者として成長するこが目標であり、
                             <br />
                             一人前の信頼されるエンジニアになれるよう努力しています！
-                            <br />
-                            最近では、開発スキルの幅を広げるためにC#の学習も始めました。
                         </p>
                     </motion.div>
 
@@ -49,18 +46,6 @@ const ProfileTop = () => {
                     </motion.div>
                 </section>
             </Container>
-            <ul className="circles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
         </div >
     );
 };

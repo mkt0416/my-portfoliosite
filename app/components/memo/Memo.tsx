@@ -93,7 +93,7 @@ const Memo = ({ memoId }: { memoId: string }) => {
         <div className="p-8">
             <div className="flex items-center justify-between">
                 <input
-                    className="w-full md:text-2xl font-bold py-3 bg-gray-50 outline-none"
+                    className="w-full md:text-2xl font-bold py-3 bg-gray-50 dark:bg-gray-800 outline-none"
                     type="text"
                     value={title}
                     onChange={(e) => updateField("title", e.target.value)}
@@ -104,7 +104,7 @@ const Memo = ({ memoId }: { memoId: string }) => {
             </div>
             <div>
                 <textarea
-                    className="w-full text-sm md:text-base py-3 bg-gray-50 outline-none resize-none"
+                    className="w-full text-sm md:text-base py-3 bg-gray-50 dark:bg-gray-800 outline-none resize-none"
                     value={description}
                     onChange={(e) => updateField("description", e.target.value)}
                 />

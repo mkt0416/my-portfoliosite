@@ -95,7 +95,7 @@ const Sidebar = () => {
     };
 
     return (
-        <div className="w-36 md:w-72 bg-gray-200 pt-5 text-gray-700 h-screen overflow-y-scroll">
+        <div className="w-36 md:w-72 bg-gray-200 dark:bg-gray-600 pt-5 text-gray-700 dark:text-gray-200 h-screen overflow-y-scroll">
             <div className="flex items-center justify-between px-2 md:px-4">
                 <div className="flex items-center gap-1">
                     <FaUser className="md:size-5" />

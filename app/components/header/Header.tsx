@@ -1,7 +1,7 @@
 
 'use client'
 import { usePathname, useRouter } from 'next/navigation';
-import { AuthContext } from '@/app/context/AuthProvider';
+import { AppContext } from '@/app/context/ContextProvider';
 import { useContext, useEffect, useState } from 'react'
 import MobileMenu from './MobileMenu';
 import HumbergerMenu from './HumbergerMenu';
@@ -28,7 +28,7 @@ const Header = () => {
     const [activeLink, setActiveLink] = useState<string>('');
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const pathName = usePathname();
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const setCurrentUser = context?.setCurrentUser;
     const loggedIn = context?.loggedIn;
     const setLoggedIn = context?.setLoggedIn;

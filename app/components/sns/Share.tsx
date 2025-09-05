@@ -2,12 +2,12 @@
 'use client'
 import Image from "next/image";
 import { useContext, useState } from "react";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { FaImage } from "react-icons/fa";
 import { IoIosCreate } from "react-icons/io";
 
 const Share = () => {
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const [desc, setDesc] = useState('');
     const [imageFile, setImageFile] = useState<File | null>(null);

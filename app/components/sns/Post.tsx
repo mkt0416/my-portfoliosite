@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import SnsLoading from "./SnsLoading";
 import { PostType, UserType } from "@/app/lib/snsTypes";
 import { formatDate } from "@/app/lib/utils";
@@ -24,7 +24,7 @@ const Post = ({ post, loadingPost, fetchPost }: Props) => {
     const [user, setUser] = useState<UserType | null>(null);
     const [like, setLike] = useState(post.likes.length);
     const [isLiked, setIsLiked] = useState(false);
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
 
     useEffect(() => {

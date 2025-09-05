@@ -1,7 +1,7 @@
 
 'use client'
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import Post from "./Post";
 import { PostType } from "@/app/lib/snsTypes";
 
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const SnsTimeline = ({ username }: Props) => {
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const [loadingPost, setLoadingPost] = useState(true);
     const [posts, setPosts] = useState<PostType[]>([]);

@@ -2,7 +2,7 @@
 'use client'
 import { useRouter } from 'next/navigation';
 import { useContext, useState } from 'react'
-import { AuthContext } from '@/app/context/AuthProvider';
+import { AppContext } from '@/app/context/ContextProvider';
 import { FaUser } from 'react-icons/fa';
 import AuthLoading from './AuthLoading';
 import FormArea from './FormArea';
@@ -14,10 +14,8 @@ const LoginForm = () => {
     const [password, setPassword] = useState<string>('');
     const [nameErrText, setNameErrText] = useState<string>('');
     const [passwordErrText, setPasswordErrText] = useState<string>('');
-    const context = useContext(AuthContext);
-
+    const context = useContext(AppContext);
     if (!context) return null;
-
     const { setCurrentUser, setLoggedIn } = context;
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

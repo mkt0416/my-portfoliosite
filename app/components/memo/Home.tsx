@@ -1,12 +1,12 @@
 
 "use client";
 import { useRouter } from "next/navigation";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { useContext } from "react";
 
 const Home = () => {
     const router = useRouter();
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const memos = context?.memos;
     const setMemos = context?.setMemos;
 

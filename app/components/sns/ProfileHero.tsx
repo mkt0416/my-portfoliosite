@@ -1,7 +1,7 @@
 
 'use client'
 import Image from "next/image";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { useContext, useEffect, useState } from "react";
 import { UserType } from "@/app/lib/snsTypes";
 import Container from "../common/Container";
@@ -14,7 +14,7 @@ type Props = {
 };
 
 const ProfileHero = ({ username }: Props) => {
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState<UserType | null>(null);

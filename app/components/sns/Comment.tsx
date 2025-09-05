@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { CommentType, UserType } from "@/app/lib/snsTypes";
 import { format } from 'timeago.js';
 import { FaTrashAlt } from "react-icons/fa";
@@ -16,7 +16,7 @@ type Props = {
 };
 
 const Comment = ({ comment, postId, getComments }: Props) => {
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState<UserType | null>(null);

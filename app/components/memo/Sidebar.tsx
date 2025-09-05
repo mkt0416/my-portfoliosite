@@ -2,7 +2,7 @@
 "use client";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { useContext, useEffect } from "react";
 import { FaUser } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
@@ -13,7 +13,7 @@ import { DragDropContext, Draggable, Droppable, DropResult } from "@hello-pangea
 const Sidebar = () => {
     const { memoId } = useParams();
     const router = useRouter();
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const setCurrentUser = context?.setCurrentUser;
     const memos = context?.memos;

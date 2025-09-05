@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import SnsLoading from "./SnsLoading";
 import { FaImage } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
@@ -14,7 +14,7 @@ type Props = {
 
 const EditPost = ({ id }: Props) => {
     const router = useRouter();
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const [loading, setLoading] = useState(true);
     const [desc, setDesc] = useState('');

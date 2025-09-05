@@ -2,7 +2,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { ReactNode, useContext, useEffect, useState } from 'react';
-import { AuthContext } from '@/app/context/AuthProvider';
+import { AppContext } from '@/app/context/ContextProvider';
 import { jwtDecode } from 'jwt-decode';
 import Loading from './Loading';
 
@@ -14,7 +14,7 @@ type DecodedToken = {
 const AuthGuard = ({ children }: { children: ReactNode }) => {
     const router = useRouter();
     const [loading, setLoading] = useState<boolean>(true);
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
 
     const currentUser = context?.currentUser;
     const setCurrentUser = context?.setCurrentUser;

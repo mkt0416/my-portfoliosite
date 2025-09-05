@@ -1,6 +1,6 @@
 
 'use client'
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { useContext, useEffect, useState } from "react";
 import Following from "./Following";
 import { UserType } from "@/app/lib/snsTypes";
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Followings = ({ userId }: Props) => {
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const [loading, setLoading] = useState(true);
     const [followings, setFollowings] = useState<UserType[]>([]);

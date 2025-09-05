@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { M_PLUS_1 } from "next/font/google";
 import "./globals.css";
-import AuthProvider from "./context/AuthProvider";
+import ContextProvider from "./context/ContextProvider";
 import ProgressBar from "./components/common/ProgressBar";
 import TopMenuButton from "./components/common/TopMenuButton";
 
@@ -24,11 +24,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${m_plus_1.className} bg-slate-50 dark:bg-gray-800 dark:text-white`}>
-        <AuthProvider>
+        <ContextProvider>
           <ProgressBar />
           {children}
           <TopMenuButton />
-        </AuthProvider>
+        </ContextProvider>
       </body>
     </html>
   );

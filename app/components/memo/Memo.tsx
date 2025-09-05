@@ -1,13 +1,13 @@
 
 "use client";
 import { useRouter } from "next/navigation";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { useContext, useEffect, useRef, useState } from "react";
 import { FaTrashAlt } from "react-icons/fa"
 
 const Memo = ({ memoId }: { memoId: string }) => {
     const router = useRouter();
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const memos = context?.memos;
     const setMemos = context?.setMemos;
     const [title, setTitle] = useState("");

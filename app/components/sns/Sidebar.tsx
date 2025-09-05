@@ -2,7 +2,7 @@
 'use client'
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { useContext } from "react";
 import { FaUser, FaUserEdit, FaUserSlash } from "react-icons/fa";
 import { FaDesktop } from "react-icons/fa";
@@ -13,7 +13,7 @@ import { MdLogout } from "react-icons/md";
 const Sidebar = () => {
     const router = useRouter();
     const pathName = usePathname();
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     if (!context) return null;
     const { currentUser, setCurrentUser, setLoggedIn } = context;
     const sidebarItem = [

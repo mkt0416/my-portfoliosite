@@ -79,7 +79,7 @@ const skillsItem = [
         title: 'Tailwindcss',
         textColor: 'text-blue-400',
         bgColor: 'bg-blue-400',
-        desc: 'ユーティリティクラスを用いたデザインに慣れてきており。今後は、ユーザーインターフェースの優れたデザインできることを目標としています。',
+        desc: 'ユーティリティクラスを用いたデザインに慣れてきております。今後は、ユーザーインターフェースの優れたデザインできることを目標としています。',
         proficiency: 35,
         experience: '半年',
     },

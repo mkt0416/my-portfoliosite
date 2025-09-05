@@ -1,7 +1,7 @@
 
 'use client'
 import { useContext, useState } from "react";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { IoIosCreate } from "react-icons/io";
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const CommentForm = ({ postId, getComments }: Props) => {
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const [text, setText] = useState('');
 

@@ -20,7 +20,7 @@ type Memo = {
     createdAt: string;
 };
 
-type AuthContextType = {
+type AppContextType = {
     currentUser: User | null;
     loggedIn: boolean;
     memos: Memo[];
@@ -29,15 +29,15 @@ type AuthContextType = {
     setMemos: React.Dispatch<React.SetStateAction<Memo[]>>;
 };
 
-export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AppContext = createContext<AppContextType | undefined>(undefined);
 
-const AuthProvider = ({ children }: { children: ReactNode }) => {
+const ContextProvider = ({ children }: { children: ReactNode }) => {
     const [currentUser, setCurrentUser] = useState<User | null>(null);
     const [loggedIn, setLoggedIn] = useState(false);
     const [memos, setMemos] = useState<Memo[]>([]);
 
     return (
-        <AuthContext.Provider value={{
+        <AppContext.Provider value={{
             currentUser,
             loggedIn,
             memos,
@@ -47,8 +47,8 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         }}
         >
             {children}
-        </AuthContext.Provider>
+        </AppContext.Provider>
     );
 };
 
-export default AuthProvider;
+export default ContextProvider;

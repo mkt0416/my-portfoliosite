@@ -2,7 +2,7 @@
 'use client'
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { AuthContext } from "@/app/context/AuthProvider";
+import { AppContext } from "@/app/context/ContextProvider";
 import { useContext } from "react";
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 
 const Unsbscribe = ({ userId }: Props) => {
     const router = useRouter();
-    const context = useContext(AuthContext);
+    const context = useContext(AppContext);
     const currentUser = context?.currentUser;
     const setCurrentUser = context?.setCurrentUser;
     const setLoggedIn = context?.setLoggedIn;

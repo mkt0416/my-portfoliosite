@@ -9,13 +9,14 @@ import { FaDesktop } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { FaUsers } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
+import { logout } from "@/app/utils/logout";
 
 const Sidebar = () => {
     const router = useRouter();
     const pathName = usePathname();
     const context = useContext(AppContext);
     if (!context) return null;
-    const { currentUser, setCurrentUser, setLoggedIn } = context;
+    const { currentUser } = context;
     const sidebarItem = [
         {
             id: '1',
@@ -55,13 +56,6 @@ const Sidebar = () => {
         },
     ];
 
-    const logout = () => {
-        localStorage.removeItem('token');
-        setCurrentUser(null);
-        setLoggedIn(false);
-        router.push('/');
-    };
-
     return (
         <div className="hidden lg:block mr-10">
             {sidebarItem.map((item) => (
@@ -77,7 +71,7 @@ const Sidebar = () => {
                 </Link>
             ))}
             <button
-                onClick={logout}
+                onClick={() => logout(context, router)}
                 className="w-72 flex items-center gap-2 p-4 rounded-md hover:bg-gray-200 duration-300"
             >
                 <span className="text-lg">{<MdLogout />}</span>

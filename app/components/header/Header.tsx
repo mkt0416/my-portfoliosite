@@ -10,6 +10,7 @@ import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 import ThemeToggle from './ThemeToggle';
 import RegisterButton from './RegisterButton';
+import { logout } from '@/app/utils/logout';
 
 const headerListItems = [
     { id: '1', link: '/', text: 'Home' },
@@ -29,18 +30,8 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState<boolean>(false);
     const pathName = usePathname();
     const context = useContext(AppContext);
-    const setCurrentUser = context?.setCurrentUser;
     const loggedIn = context?.loggedIn;
     const setLoggedIn = context?.setLoggedIn;
-
-    const logout = () => {
-        localStorage.removeItem('token');
-        setCurrentUser?.(null);
-        if (setLoggedIn) {
-            setLoggedIn(false);
-        }
-        router.push('/');
-    };
 
     useEffect(() => {
         setActiveLink(pathName);
@@ -64,7 +55,7 @@ const Header = () => {
                     <HumbergerMenu setShowMenu={setShowMenu} />
                     <div className='flex items-center gap-4'>
                         <RegisterButton />
-                        {loggedIn ? <LogoutButton logout={logout} /> : <LoginButton />}
+                        {loggedIn ? <LogoutButton logout={() => logout(context, router)} /> : <LoginButton />}
                         <ThemeToggle />
                     </div>
                     {showMenu && (

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { AppContext } from "@/app/context/ContextProvider";
 import { useContext, useEffect } from "react";
+import { logout } from "@/app/utils/logout";
 import { FaUser } from "react-icons/fa";
 import { MdLogout } from "react-icons/md";
 import { FaRegPlusSquare } from "react-icons/fa";
@@ -15,13 +16,14 @@ const Sidebar = () => {
     const router = useRouter();
     const context = useContext(AppContext);
     const currentUser = context?.currentUser;
-    const setCurrentUser = context?.setCurrentUser;
     const memos = context?.memos;
     const setMemos = context?.setMemos;
-    const setLoggedIn = context?.setLoggedIn;
 
     useEffect(() => {
-        if (!setMemos) return;
+        if (!setMemos || !currentUser) return;
+
+        setMemos([]);
+
         const getAllMemos = async () => {
             try {
                 const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/memo`, {
@@ -56,13 +58,6 @@ const Sidebar = () => {
         } catch (err) {
             console.log(err);
         }
-    };
-
-    const logout = () => {
-        localStorage.removeItem("token");
-        setCurrentUser?.(null);
-        setLoggedIn?.(false);
-        router.push("/");
     };
 
     const onDragEnd = async (result: DropResult) => {
@@ -101,7 +96,7 @@ const Sidebar = () => {
                     <FaUser className="md:size-5" />
                     <h1 className="text-xs md:text-xl font-bold">{currentUser?.username}</h1>
                 </div>
-                <button onClick={logout}>
+                <button onClick={() => logout(context, router)}>
                     <MdLogout className="size-4 md:size-7" />
                 </button>
             </div>

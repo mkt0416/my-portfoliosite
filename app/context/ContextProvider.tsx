@@ -20,7 +20,7 @@ type Memo = {
     createdAt: string;
 };
 
-type AppContextType = {
+export type AppContextType = {
     currentUser: User | null;
     loggedIn: boolean;
     memos: Memo[];

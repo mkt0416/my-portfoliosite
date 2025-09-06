@@ -2,7 +2,7 @@
 'use client'
 import Link from "next/link";
 import { useEffect } from "react";
-import { CardDataType, HeroModalDataType } from "./CardSection";
+import { CardDataType, CardModalDataType } from "./CardSection";
 import { IoIosArrowDropright } from "react-icons/io";
 import { BsInfoCircle } from "react-icons/bs";
 import 'aos/dist/aos.css';
@@ -10,7 +10,7 @@ const AOS: any = require('aos');
 
 type Props = {
     card: CardDataType;
-    setModalData: React.Dispatch<React.SetStateAction<HeroModalDataType | null>>;
+    setModalData: React.Dispatch<React.SetStateAction<CardModalDataType | null>>;
 };
 
 const Card = ({ card, setModalData }: Props) => {

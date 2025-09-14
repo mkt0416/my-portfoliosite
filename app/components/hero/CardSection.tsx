@@ -2,13 +2,15 @@
 "use client";
 import { ReactNode, useState } from "react";
 import Card from "./Card";
+import HeroModal from "./CardModal";
 import { FaCode, FaUserCheck } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import { GrChatOption } from "react-icons/gr";
 import { SiYoutubemusic, SiOpenai } from "react-icons/si";
 import { FiMail } from "react-icons/fi";
 import { SiNotion } from "react-icons/si";
-import HeroModal from "./CardModal";
+import { FaGlobe } from "react-icons/fa";
+import { FaWindows } from "react-icons/fa";
 
 export type CardDataType = {
     id: string;
@@ -135,6 +137,32 @@ const cardData: CardDataType[] = [
             technologies: ["React", "EmailJS"],
             features: ["メール送信機能"],
             challenge: "Next.js と EmailJS を用いて問い合わせフォームを作成しました。ユーザーが入力した内容をフロントから直接送信できる仕組みを実装し、シンプルかつ使いやすいフォームを提供しています。"
+        },
+    },
+    {
+        id: '9',
+        title: 'WebApp',
+        desc: '制作した各種Webアプリです。',
+        link: '/site/portfolio',
+        icon: <FaGlobe />,
+        isAuth: false,
+        details: {
+            technologies: ["React", "Next.JS", "microCMS"],
+            features: ["ヘッドレスCMSによる制作物管理", "github連携", "UX/UI"],
+            challenge: "制作物を簡単に管理・配信できるよう、ヘッドレスCMS（microCMS）を活用して実装しました。"
+        },
+    },
+    {
+        id: '10',
+        title: 'WinApp',
+        desc: '制作した各種ウィンドウズアプリです。',
+        link: '/site/winapp',
+        icon: <FaWindows />,
+        isAuth: false,
+        details: {
+            technologies: ["React", "Next.js"],
+            features: ["ウィンドウズアプリのダウンロード", "github連携", "モーダル", "UX/UI"],
+            challenge: "ウィンドウズアプリをgithubリンクからダウンロードできるようにしています。"
         },
     },
 ];

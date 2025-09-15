@@ -14,7 +14,7 @@ const slides = [
     {
         image: "/images/slideimage2.svg",
         title: "What I Can Do",
-        text: "While I don’t have hands-on experience yet, I’m actively studying HTML, CSS, and JavaScript, and I’m beginning to explore both frontend development with React and backend technologies like Node.js and MongoDB. Recently, I’ve also started learning C# to broaden my development skills.",
+        text: "I’m actively studying HTML, CSS, and JavaScript, and I’m beginning to explore both frontend development with React and backend technologies like Node.js and MongoDB.",
         icon: <IoBulbOutline />
     },
     {

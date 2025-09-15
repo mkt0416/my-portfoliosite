@@ -22,11 +22,11 @@ const ProfileTop = () => {
                         <h1 className='text-3xl md:text-4xl xl:text-5xl text-center md:text-left font-extrabold mb-5'>Makoto Saitoh</h1>
                         <p className='max-w-2xl text-xs md:text-sm lg:text-base text-center md:text-left text-gray-600 font-semibold 
                          leading-tight sm:leading-relaxed dark:text-gray-400'>
-                            私は開発者として駆け出しの者で現在JavaScript、React、Next.jsを学習しています。
+                            私は趣味でプログラミングを学んでおり、楽しみながら技術を身につけています。
                             <br />
-                            まだ学ぶべきことはたくさんありますが、開発者として成長するこが目標であり、
+                            JavaScript、React、Next.js中心にWeb技術の習得に励んでいます。
                             <br />
-                            一人前の信頼されるエンジニアになれるよう努力しています！
+                            楽しみながら継続して技術習得に励むことを大切にしています！
                         </p>
                     </motion.div>
 

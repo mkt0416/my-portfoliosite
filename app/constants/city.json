@@ -1,0 +1,190 @@
+[
+    {
+        "City": "Yamagata",
+        "Slug": "yamagata"
+    },
+    {
+        "City": "Hokkaido",
+        "Slug": "hokkaido"
+    },
+    {
+        "City": "Aomori",
+        "Slug": "aomori"
+    },
+    {
+        "City": "Iwate",
+        "Slug": "iwate"
+    },
+    {
+        "City": "Miyagi",
+        "Slug": "miyagi"
+    },
+    {
+        "City": "Akita",
+        "Slug": "akita"
+    },
+    {
+        "City": "Fukushima",
+        "Slug": "fukushima"
+    },
+    {
+        "City": "Ibaraki",
+        "Slug": "ibaraki"
+    },
+    {
+        "City": "Tochigi",
+        "Slug": "tochigi"
+    },
+    {
+        "City": "Gunma",
+        "Slug": "gunma"
+    },
+    {
+        "City": "Saitama",
+        "Slug": "saitama"
+    },
+    {
+        "City": "Chiba",
+        "Slug": "chiba"
+    },
+    {
+        "City": "Tokyo",
+        "Slug": "tokyo"
+    },
+    {
+        "City": "Kanagawa",
+        "Slug": "kanagawa"
+    },
+    {
+        "City": "Niigata",
+        "Slug": "niigata"
+    },
+    {
+        "City": "Toyama",
+        "Slug": "toyama"
+    },
+    {
+        "City": "Ishikawa",
+        "Slug": "ishikawa"
+    },
+    {
+        "City": "Fukui",
+        "Slug": "fukui"
+    },
+    {
+        "City": "Yamanashi",
+        "Slug": "yamanashi"
+    },
+    {
+        "City": "Nagano",
+        "Slug": "nagano"
+    },
+    {
+        "City": "Gifu",
+        "Slug": "gifu"
+    },
+    {
+        "City": "Shizuoka",
+        "Slug": "shizuoka"
+    },
+    {
+        "City": "Aichi",
+        "Slug": "aichi"
+    },
+    {
+        "City": "Mie",
+        "Slug": "mie"
+    },
+    {
+        "City": "Shiga",
+        "Slug": "shiga"
+    },
+    {
+        "City": "Kyoto",
+        "Slug": "kyoto"
+    },
+    {
+        "City": "Osaka",
+        "Slug": "osaka"
+    },
+    {
+        "City": "Hyogo",
+        "Slug": "hyogo"
+    },
+    {
+        "City": "Nara",
+        "Slug": "nara"
+    },
+    {
+        "City": "Wakayama",
+        "Slug": "wakayama"
+    },
+    {
+        "City": "Tottori",
+        "Slug": "tottori"
+    },
+    {
+        "City": "Shimane",
+        "Slug": "shimane"
+    },
+    {
+        "City": "Okayama",
+        "Slug": "okayama"
+    },
+    {
+        "City": "Hiroshima",
+        "Slug": "hiroshima"
+    },
+    {
+        "City": "Yamaguchi",
+        "Slug": "yamaguchi"
+    },
+    {
+        "City": "Tokushima",
+        "Slug": "tokushima"
+    },
+    {
+        "City": "Kagawa",
+        "Slug": "kagawa"
+    },
+    {
+        "City": "Ehime",
+        "Slug": "ehime"
+    },
+    {
+        "City": "Kochi",
+        "Slug": "kochi"
+    },
+    {
+        "City": "Fukuoka",
+        "Slug": "fukuoka"
+    },
+    {
+        "City": "Saga",
+        "Slug": "saga"
+    },
+    {
+        "City": "Nagasaki",
+        "Slug": "nagasaki"
+    },
+    {
+        "City": "Kumamoto",
+        "Slug": "kumamoto"
+    },
+    {
+        "City": "Oita",
+        "Slug": "oita"
+    },
+    {
+        "City": "Miyazaki",
+        "Slug": "miyazaki"
+    },
+    {
+        "City": "Kagoshima",
+        "Slug": "kagoshima"
+    },
+    {
+        "City": "Okinawa",
+        "Slug": "okinawa"
+    }
+]

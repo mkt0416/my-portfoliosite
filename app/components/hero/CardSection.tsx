@@ -11,6 +11,11 @@ import { FiMail } from "react-icons/fi";
 import { SiNotion } from "react-icons/si";
 import { FaGlobe } from "react-icons/fa";
 import { FaWindows } from "react-icons/fa";
+import { AnimatePresence } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 export type CardDataType = {
     id: string;
@@ -64,7 +69,7 @@ const cardData: CardDataType[] = [
     {
         id: '3',
         title: 'Blog',
-        desc: 'ブログ機能です（ログイン後に利用可能）。',
+        desc: 'ブログ機能です。',
         link: '/site/blog',
         icon: <FaFilePen />,
         isAuth: true,
@@ -77,7 +82,7 @@ const cardData: CardDataType[] = [
     {
         id: '4',
         title: 'SNS',
-        desc: 'SNS機能です（ログイン後に利用可能）。',
+        desc: 'SNS機能です。',
         link: '/sns/snstop',
         icon: <GrChatOption />,
         isAuth: true,
@@ -90,7 +95,7 @@ const cardData: CardDataType[] = [
     {
         id: '5',
         title: 'Memo',
-        desc: 'メモアプリ機能です（ログイン後に利用可能）。',
+        desc: 'メモアプリ機能です。',
         link: '/site/memo',
         icon: <SiNotion />,
         isAuth: true,
@@ -103,7 +108,7 @@ const cardData: CardDataType[] = [
     {
         id: '6',
         title: 'Music',
-        desc: '楽曲を検索できる機能です（ログイン後に利用可能）。',
+        desc: '楽曲を検索できる機能です。',
         link: '/site/music',
         icon: <SiYoutubemusic />,
         isAuth: true,
@@ -116,7 +121,7 @@ const cardData: CardDataType[] = [
     {
         id: '7',
         title: 'Chat',
-        desc: 'AIと自由に会話できるチャット機能です（ログイン後に利用可能）。',
+        desc: 'AIと自由に会話できるチャット機能です。',
         link: '/site/chat',
         icon: <SiOpenai />,
         isAuth: true,
@@ -171,15 +176,15 @@ const CardSection = () => {
     const [modalData, setModalData] = useState<CardModalDataType | null>(null);
 
     return (
-        <section className='w-full min-h-screen max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16
+        <section className='w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-16
            text-gray-600 dark:text-white my-20 relative'
         >
             <div className="hidden sm:flex absolute inset-0 top-32 bg-blue-100 dark:bg-gray-600 max-w-md 
-            md:max-w-lg lg:max-w-3xl xl:max-w-5xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10"
+            md:max-w-lg lg:max-w-3xl xl:max-w-5xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10 shadow-2xl"
             />
             <h2 className="text-xl md:text-4xl font-extrabold mb-4 text-center">Explore My Portfolio</h2>
             <p className="font-semibold text-center">各ページの紹介とリンクをご覧ください。</p>
-            <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-x-40 lg:gap-y-20">
+            <div className="hidden mt-20 md:grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-x-40 lg:gap-y-20">
                 {cardData.map((card) => (
                     <Card
                         key={card.id}
@@ -188,10 +193,31 @@ const CardSection = () => {
                     />
                 ))}
             </div>
-            <HeroModal
-                modalData={modalData}
-                onclose={() => setModalData(null)}
-            />
+            <div className="block md:hidden mt-10">
+                <Swiper
+                    spaceBetween={20}
+                    slidesPerView={1.0}
+                    centeredSlides={true}
+                    pagination={{ clickable: true }}
+                    modules={[Pagination]}
+                >
+                    {cardData.map((card) => (
+                        <SwiperSlide key={card.id} className="mb-12">
+                            <Card
+                                key={card.id}
+                                card={card}
+                                setModalData={setModalData}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
+            <AnimatePresence>
+                <HeroModal
+                    modalData={modalData}
+                    onclose={() => setModalData(null)}
+                />
+            </AnimatePresence>
         </section >
     );
 };

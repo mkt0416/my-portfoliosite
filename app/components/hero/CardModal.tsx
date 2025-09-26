@@ -1,5 +1,6 @@
 
 import { CardModalDataType } from "./CardSection";
+import { motion } from "framer-motion";
 import { FaCheckSquare } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
@@ -14,10 +15,16 @@ const CardModal = ({ modalData, onclose }: Props) => {
     return (
         <div
             onClick={onclose}
-            className="fixed inset-0 bg-black/65 backdrop-blur-sm flex justify-center items-center px-8"
+            className="fixed inset-0 bg-black/65 backdrop-blur-sm flex justify-center items-center px-8 z-50"
         >
-            <div className="max-w-2xl flex flex-col gap-5 bg-white p-8 rounded-xl relative
-            dark:bg-gray-600 dark:text-white">
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                className="max-w-2xl flex flex-col gap-5 bg-white p-8 rounded-xl relative
+             dark:bg-gray-600 dark:text-white"
+            >
                 <button
                     onClick={onclose}
                     className="absolute top-5 right-5 hover:bg-gray-300 rounded duration-300"
@@ -57,7 +64,7 @@ const CardModal = ({ modalData, onclose }: Props) => {
                     </div>
                     <p className="text-sm md:text-base">{modalData.details.challenge}</p>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };

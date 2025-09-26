@@ -42,7 +42,7 @@ const HeroSection = () => {
     const { image, title, text, icon } = slides[currentSlide];
 
     return (
-        <div className='bg-blue-100 dark:bg-gray-600 overflow-hidden'>
+        <div className='bg-gradient-to-bl from-purple-300 to-blue-300 dark:bg-none dark:bg-gray-600 overflow-hidden'>
             <section className='w-full h-screen sm:h-[650px] max-w-screen-2xl mx-auto flex items-center justify-center px-8 md:px-12 lg:px-16'>
                 <div className='flex flex-col items-center'>
                     <div className='w-full flex flex-col md:flex-row items-center gap-5'>

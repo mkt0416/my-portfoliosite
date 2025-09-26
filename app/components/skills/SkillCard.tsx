@@ -30,11 +30,11 @@ const SkillCard = ({ item, setModalData }: Props) => {
             })}
             data-aos="flip-left"
             data-aos-delay="500"
-            style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
-            className='w-full bg-white/90 dark:bg-gray-600/90 rounded-xl p-8 flex flex-col items-center hover:bg-blue-50 duration-300'
+            className='w-full bg-white/90 dark:bg-gray-600/90 rounded-xl p-8 flex flex-col items-center hover:bg-blue-50 duration-300
+            md:shadow-2xl'
         >
-            <span className={`text-7xl sm:text-9xl ${item.textColor}`}>{item.icon}</span>
-            <h3 className='text-xl sm:text-3xl text-gray-600 dark:text-white font-bold mt-5'>{item.title}</h3>
+            <span className={`text-9xl ${item.textColor}`}>{item.icon}</span>
+            <h3 className='text-3xl text-gray-600 dark:text-white font-bold mt-5'>{item.title}</h3>
         </div>
     );
 };

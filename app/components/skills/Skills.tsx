@@ -21,6 +21,10 @@ import {
 } from "react-icons/si";
 import { FaNode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from 'swiper/modules';
 
 const skillsItem = [
     {
@@ -166,7 +170,7 @@ const Skills = () => {
                 <div>
                     <VscVscode size={600} className='text-blue-600 absolute -bottom-10 -right-10 hidden lg:flex' />
                 </div>
-                <div className='mt-10 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-10 cursor-pointer'>
+                <div className='mt-10 hidden md:grid grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-10 cursor-pointer'>
                     {skillsItem.map((item) => (
                         <SkillCard
                             key={item.id}
@@ -175,6 +179,25 @@ const Skills = () => {
                         />
                     ))}
                 </div>
+            </div>
+            <div className='block md:hidden mt-10'>
+                <Swiper
+                    spaceBetween={25}
+                    slidesPerView={1.0}
+                    centeredSlides={true}
+                    pagination={{ clickable: true }}
+                    modules={[Pagination]}
+                >
+                    {skillsItem.map((item) => (
+                        <SwiperSlide key={item.id} className='mb-12'>
+                            <SkillCard
+                                key={item.id}
+                                item={item}
+                                setModalData={setModalData}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
             <AnimatePresence>
                 <Modal

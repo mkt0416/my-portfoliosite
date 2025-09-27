@@ -7,9 +7,11 @@ import News, { Article } from "./components/news/News";
 
 const getNews = async (): Promise<Article[]> => {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/news`, {
-            cache: "no-store",
-        });
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/news`,
+            {
+                next: { revalidate: 3600 },
+            }
+        );
         const jsonData = await response.json();
         return jsonData.news || [];
     } catch (err) {

@@ -30,8 +30,8 @@ const NewsSectiotn = ({ data, setModalData }: Props) => {
                         : data.title}
                 </h3>
                 <p className="leading-relaxed mb-5">
-                    {data.text.length >= 200
-                        ? data.text.slice(0, 200) + "..."
+                    {data.text.length >= 150
+                        ? data.text.slice(0, 150) + "..."
                         : data.text}
                 </p>
                 <button

@@ -1,7 +1,6 @@
 
 "use client";
-import { useEffect, useState } from "react";
-import { dummyArticles } from "@/app/constants/dummy";
+import { useState } from "react";
 import NewsSectiotn from "./NewsSectiotn";
 import NewsModal from "./NewsModal";
 import { Pagination } from "swiper/modules";
@@ -23,30 +22,8 @@ export type ModalData = {
     title: string | null;
 };
 
-const News = () => {
-    const [articles, setArticles] = useState<Article[]>(dummyArticles);
-    const [loading, setLoading] = useState(false);
+const News = ({ articles }: { articles: Article[] }) => {
     const [modalData, setModalData] = useState<ModalData | null>(null);
-
-    useEffect(() => {
-        const getNews = async () => {
-            setLoading(true);
-            try {
-                const response = await fetch(
-                    `${process.env.NEXT_PUBLIC_BASE_URL}/news`
-                );
-                const jsonData = await response.json();
-                if (jsonData.news) {
-                    setArticles(jsonData.news || []);
-                }
-            } catch (err) {
-                console.log(err);
-            } finally {
-                setLoading(false);
-            }
-        };
-        getNews();
-    }, []);
 
     return (
         <div className="bg-blue-100 dark:bg-gray-600 py-10 md:py-20">
@@ -57,12 +34,7 @@ const News = () => {
                 <h2 className="text-xl md:text-4xl font-extrabold mb-10 text-center">
                     Daily News
                 </h2>
-
-                {loading ? (
-                    <div className="w-full h-96 flex items-center justify-center">
-                        <div className="w-12 h-12 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
-                    </div>
-                ) : articles.length > 0 ? (
+                {articles.length > 0 ? (
                     <Swiper
                         spaceBetween={100}
                         slidesPerView={1.0}

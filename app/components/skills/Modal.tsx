@@ -47,7 +47,7 @@ const Modal = ({ modalData, onclose }: Props) => {
                 <div className="inline-block text-center">
                     <button
                         className={`text-sm sm:text-base text-white py-2 px-4 rounded-md
-                    ${modalData.bgColor ? modalData.bgColor : 'bg-black'}`}
+                        ${modalData.bgColor ? modalData.bgColor : 'bg-black'}`}
                         onClick={onclose}>
                         閉じる
                     </button>

@@ -23,7 +23,7 @@ const CardModal = ({ modalData, onclose }: Props) => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
                 className="max-w-2xl flex flex-col gap-5 bg-white p-8 rounded-xl relative
-             dark:bg-gray-600 dark:text-white"
+              dark:bg-gray-600 dark:text-white"
             >
                 <button
                     onClick={onclose}

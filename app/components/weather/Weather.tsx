@@ -9,10 +9,14 @@ import cityJson from "../../constants/city.json";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const Weather = () => {
+type Props = {
+    initialWeather: WeatherDay[];
+};
+
+const Weather = ({ initialWeather }: Props) => {
     const [loading, setLoading] = useState(false);
     const [city, setCity] = useState("Yamagata");
-    const [weatherData, setWetherData] = useState<WeatherDay[]>([]);
+    const [weatherData, setWetherData] = useState<WeatherDay[]>(initialWeather);
 
     useEffect(() => {
         const getWeather = async () => {
@@ -26,7 +30,9 @@ const Weather = () => {
                 console.log(err);
             }
         };
-        getWeather();
+        if (city !== "Yamagata") {
+            getWeather();
+        }
     }, [city]);
 
     return (

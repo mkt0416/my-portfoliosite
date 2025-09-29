@@ -5,10 +5,7 @@ import Card from "./Card";
 import HeroModal from "./CardModal";
 import { FaCode, FaUserCheck } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
-import { GrChatOption } from "react-icons/gr";
-import { SiYoutubemusic, SiOpenai } from "react-icons/si";
 import { FiMail } from "react-icons/fi";
-import { SiNotion } from "react-icons/si";
 import { FaGlobe } from "react-icons/fa";
 import { FaWindows } from "react-icons/fa";
 import { AnimatePresence } from "framer-motion";
@@ -23,7 +20,6 @@ export type CardDataType = {
     desc: string;
     link: string;
     icon: ReactNode;
-    isAuth: boolean;
     details: {
         technologies: string[];
         features: string[];
@@ -46,7 +42,6 @@ const cardData: CardDataType[] = [
         desc: '私についてのプロフィールをご紹介します。',
         link: '/site/profile',
         icon: <FaUserCheck />,
-        isAuth: false,
         details: {
             technologies: ["Next.js", "React", "tailWindCSS", "AOS", "framer-motion"],
             features: ["UX/UI"],
@@ -59,7 +54,6 @@ const cardData: CardDataType[] = [
         desc: '使用している技術や学習中の技術をご紹介します。',
         link: '/site/skills',
         icon: <FaCode />,
-        isAuth: false,
         details: {
             technologies: ["Next.js", "React", "tailWindCSS", "AOS", "framer-motion"],
             features: ["UX/UI", "モーダル"],
@@ -72,7 +66,6 @@ const cardData: CardDataType[] = [
         desc: 'ブログ機能です。',
         link: '/site/blog',
         icon: <FaFilePen />,
-        isAuth: true,
         details: {
             technologies: ["Next.js", "React", "microCMS", "tailWindCSS",],
             features: ["CMS連携", "ページネーション", "キーワード検索"],
@@ -81,63 +74,10 @@ const cardData: CardDataType[] = [
     },
     {
         id: '4',
-        title: 'SNS',
-        desc: 'SNS機能です。',
-        link: '/sns/snstop',
-        icon: <GrChatOption />,
-        isAuth: true,
-        details: {
-            technologies: ["React", "Context API", "Express", "MongoDB", "bcryptjs", "JWT", "tailWindCSS",],
-            features: ["API連携", "CRUD機能", "認証機能", "グローバル変数による状態管理"],
-            challenge: "フォロー・いいね機能を実装し、APIとグローバル変数を活用してユーザー間の関係性を動的に管理できるようにしました。"
-        },
-    },
-    {
-        id: '5',
-        title: 'Memo',
-        desc: 'メモアプリ機能です。',
-        link: '/site/memo',
-        icon: <SiNotion />,
-        isAuth: true,
-        details: {
-            technologies: ["React", "Context API", "Express", "MongoDB", "bcryptjs", "JWT", "@hello-pangea/dnd", "tailWindCSS",],
-            features: ["API連携", "CRUD機能", "認証機能", "グローバル変数による状態管理", "ドラッグアンドドロップ"],
-            challenge: "ドラッグアンドドロップでメモの並び替えを実装し、直感的に管理できるよう工夫しました。APIとグローバル変数を活用して、認証済みユーザーのデータを保持しています。"
-        },
-    },
-    {
-        id: '6',
-        title: 'Music',
-        desc: '楽曲を検索できる機能です。',
-        link: '/site/music',
-        icon: <SiYoutubemusic />,
-        isAuth: true,
-        details: {
-            technologies: ["React", "Express", "SpotifyAPI", "tailWindCSS",],
-            features: ["外部API連携", "ページネーション", "キーワード検索"],
-            challenge: "Spotify API を活用し、キーワード検索やページネーション機能を備えた楽曲検索アプリを構築しました。外部 API との連携により、リアルタイムで楽曲情報を取得できるようにしています。"
-        },
-    },
-    {
-        id: '7',
-        title: 'Chat',
-        desc: 'AIと自由に会話できるチャット機能です。',
-        link: '/site/chat',
-        icon: <SiOpenai />,
-        isAuth: true,
-        details: {
-            technologies: ["React", "Express", "OpenAIAPI", "tailWindCSS",],
-            features: ["外部API連携", "chatGPT機能"],
-            challenge: "Express をバックエンドに導入し、OpenAI API のリクエスト・レスポンス処理をサーバー側で管理。フロントは安全に API を呼び出すだけの設計とし、リアルタイムで応答する ChatGPT 機能を構築しました。"
-        },
-    },
-    {
-        id: '8',
         title: 'Conatct',
         desc: '問い合わせフォーム機能です。',
         link: '/site/contact',
         icon: <FiMail />,
-        isAuth: false,
         details: {
             technologies: ["React", "EmailJS"],
             features: ["メール送信機能"],
@@ -145,12 +85,11 @@ const cardData: CardDataType[] = [
         },
     },
     {
-        id: '9',
-        title: 'WebApp',
+        id: '5',
+        title: 'Portfolio',
         desc: '制作した各種Webアプリです。',
         link: '/site/portfolio',
         icon: <FaGlobe />,
-        isAuth: false,
         details: {
             technologies: ["React", "Next.JS", "microCMS"],
             features: ["ヘッドレスCMSによる制作物管理", "github連携", "UX/UI"],
@@ -158,12 +97,11 @@ const cardData: CardDataType[] = [
         },
     },
     {
-        id: '10',
+        id: '6',
         title: 'WinApp',
         desc: '制作した各種ウィンドウズアプリです。',
         link: '/site/winapp',
         icon: <FaWindows />,
-        isAuth: false,
         details: {
             technologies: ["React", "Next.js"],
             features: ["ウィンドウズアプリのダウンロード", "github連携", "モーダル", "UX/UI"],

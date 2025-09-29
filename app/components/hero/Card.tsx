@@ -46,9 +46,6 @@ const Card = ({ card, setModalData }: Props) => {
                 <h3>{card.title}</h3>
             </div>
             <p className="text-center md:text-left font-semibold text-sm md:text-base">{card.desc}</p>
-            {card.isAuth && (
-                <p className="text-xs sm:text-sm font-semibold absolute top-6 left-5">※ログイン後利用可能です。</p>
-            )}
             <div className="flex flex-col lg:flex-row items-center gap-2 xl:gap-8">
                 <Link href={card.link} className="flex items-center hover:underline hover:text-blue-500
                 text-sm md:text-base"

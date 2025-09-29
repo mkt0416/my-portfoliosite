@@ -8,7 +8,7 @@ import Sidebar from "@/app/components/sns/Sidebar";
 const Page = () => {
     return (
         <>
-            <PageHero image="/images/sns.svg" title="SNS" />
+            <PageHero image="/images/sns.svg" title="Circle" />
             <Container>
                 <div className="mt-10 pb-20 flex">
                     <Sidebar />

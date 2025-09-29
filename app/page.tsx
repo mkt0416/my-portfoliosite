@@ -2,9 +2,15 @@
 import Header from "./components/header/Header";
 import HeroSection from "./components/hero/HeroSection";
 import Weather from "./components/weather/Weather";
+import News, { Article } from "./components/news/News";
+import SiteLog from "./components/hero/SiteLog";
+import Notee from "./components/hero/Notee";
+import Circle from "./components/hero/Circle";
 import CardSection from "./components/hero/CardSection";
 import { WeatherDay } from "./lib/weather";
-import News, { Article } from "./components/news/News";
+import Talksy from "./components/hero/Talksy";
+import TuneFindr from "./components/hero/TuneFindr";
+
 
 const getWeather = async (city: string): Promise<WeatherDay[]> => {
     try {
@@ -46,6 +52,11 @@ const Page = async () => {
             <HeroSection />
             <Weather initialWeather={weatherData} />
             <News articles={articles} />
+            <SiteLog />
+            <Notee />
+            <Circle />
+            <Talksy />
+            <TuneFindr />
             <CardSection />
         </>
     );

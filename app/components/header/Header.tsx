@@ -17,11 +17,9 @@ const headerListItems = [
     { id: '2', link: '/site/profile', text: 'Profile' },
     { id: '3', link: '/site/skills', text: 'Skills' },
     { id: '4', link: '/site/blog', text: 'Blog' },
-    { id: '5', link: '/sns/snstop', text: 'SNS' },
-    { id: '6', link: '/site/memo', text: 'Memo' },
-    { id: '7', link: '/site/music', text: 'Music' },
-    { id: '8', link: '/site/chat', text: 'Chat' },
-    { id: '9', link: '/site/contact', text: 'Contact' },
+    { id: '5', link: '/site/portfolio', text: 'Portfolio' },
+    { id: '6', link: '/site/winapp', text: 'WinApp' },
+    { id: '7', link: '/site/contact', text: 'Contact' },
 ];
 
 const Header = () => {

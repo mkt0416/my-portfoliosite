@@ -53,14 +53,6 @@ const Card = ({ card, setModalData }: Props) => {
                     <p>ページを見る</p>
                     <IoIosArrowDropright className="pt-1 size-6" />
                 </Link>
-                {card.isAuth && (
-                    <Link href={'/auth/register'} className="flex items-center hover:underline hover:text-blue-500
-                    text-sm md:text-base"
-                    >
-                        <p>新規登録はこちら</p>
-                        <IoIosArrowDropright className="pt-1 size-6" />
-                    </Link>
-                )}
             </div>
         </div>
     );

@@ -82,7 +82,7 @@ const ProfileHero = ({ username }: Props) => {
             {loading
                 ? <SnsLoading />
                 : (
-                    <div className="relative w-full h-[300px]">
+                    <div className="relative w-full h-[200px] md:h-[300px]">
                         <Image
                             className="object-cover"
                             src={user?.coverPicture
@@ -94,7 +94,7 @@ const ProfileHero = ({ username }: Props) => {
                         />
                         <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2">
                             <Image
-                                className="w-40 h-40 object-cover rounded-full border-4 border-yellow-400"
+                                className="w-32 md:w-40 h-32 md:h-40 object-cover rounded-full border-4 border-yellow-400"
                                 src={user?.profilePicture
                                     ? user.profilePicture
                                     : '/images/persons/noAvatar.png'

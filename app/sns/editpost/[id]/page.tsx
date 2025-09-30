@@ -1,6 +1,6 @@
 
 import Container from "@/app/components/common/Container";
-import PageHero from "@/app/components/common/PageHero";
+import CoverPicture from "@/app/components/sns/CoverPicture";
 import EditPost from "@/app/components/sns/EditPost";
 import Navbar from "@/app/components/sns/Navbar";
 import Sidebar from "@/app/components/sns/Sidebar";
@@ -15,7 +15,7 @@ const Page = ({ params }: Props) => {
     const id = params.id;
     return (
         <>
-            <PageHero image="/images/sns.svg" title="EditPost" />
+            <CoverPicture text="EditPost" />
             <Container>
                 <div className="flex mt-10 pb-20">
                     <Sidebar />

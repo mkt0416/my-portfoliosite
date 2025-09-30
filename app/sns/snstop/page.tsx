@@ -1,14 +1,14 @@
 
 import Container from "@/app/components/common/Container";
-import PageHero from "@/app/components/common/PageHero";
 import AllPosts from "@/app/components/sns/AllPosts";
+import CoverPicture from "@/app/components/sns/CoverPicture";
 import Navbar from "@/app/components/sns/Navbar";
 import Sidebar from "@/app/components/sns/Sidebar";
 
 const Page = () => {
     return (
         <>
-            <PageHero image="/images/sns.svg" title="Circle" />
+            <CoverPicture text="Top" />
             <Container>
                 <div className="mt-10 pb-20 flex">
                     <Sidebar />

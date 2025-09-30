@@ -20,14 +20,14 @@ const SiteLog = () => {
                     <p className="text-base md:text-lg mb-10">地図に作業内容や感想を残せる、現場管理専用アプリです。</p>
                     <div className="flex items-center justify-center md:justify-start gap-5">
                         <Link
-                            className="text-base md:text-lg bg-blue-700 text-white py-2 md:py-3 px-4 md:px-5 rounded-md
+                            className="text-base bg-blue-700 text-white py-2 md:py-3 px-4 md:px-5 rounded-md
                           hover:bg-blue-600 duration-300"
                             href={"/site/map"}
                         >
                             利用する
                         </Link>
                         <Link
-                            className="text-base md:text-lg border border-blue-700 text-blue-700 py-2 md:py-3 px-4 md:px-5 rounded-md
+                            className="border border-blue-700 text-blue-700 py-2 md:py-3 px-4 md:px-5 rounded-md
                           hover:bg-blue-100 duration-300"
                             href={"/auth/login"}
                         >

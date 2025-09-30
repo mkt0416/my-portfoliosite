@@ -118,7 +118,7 @@ const CardSection = () => {
            text-gray-600 dark:text-white my-20 relative'
         >
             <div className="hidden sm:flex absolute inset-0 top-32 bg-blue-100 dark:bg-gray-600 max-w-md 
-            md:max-w-lg lg:max-w-3xl xl:max-w-5xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10 shadow-2xl"
+            md:max-w-lg lg:max-w-3xl xl:max-w-5xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10"
             />
             <h2 className="text-xl md:text-4xl font-extrabold mb-4 text-center">Explore My Portfolio</h2>
             <p className="font-semibold text-center">各ページの紹介とリンクをご覧ください。</p>

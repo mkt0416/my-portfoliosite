@@ -6,9 +6,9 @@ import Container from '../common/Container';
 
 const ProfileTop = () => {
     return (
-        <div className='min-h-screen h-fit flex justify-center items-start sm:items-center mt-5 sm:mt-0 mb-10'>
+        <div className='min-h-screen h-fit flex justify-center items-start sm:items-center mt-20 sm:mt-0 mb-10'>
             <Container>
-                <section className='flex flex-col md:flex-row gap-3 sm:gap-10 items-center relative'>
+                <section className='flex flex-col md:flex-row gap-10 items-center relative'>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -21,8 +21,7 @@ const ProfileTop = () => {
                         >
                         </div>
                         <h1 className='text-3xl md:text-4xl xl:text-5xl text-center md:text-left font-extrabold mb-5'>Makoto Saitoh</h1>
-                        <p className='max-w-2xl text-xs md:text-sm lg:text-base text-center md:text-left text-gray-600 font-semibold 
-                         leading-tight sm:leading-relaxed dark:text-gray-400'>
+                        <p className='max-w-2xl text-center md:text-left text-gray-600 font-semibold leading-relaxed dark:text-gray-400'>
                             私は趣味でプログラミングを学んでおり、楽しみながら技術を身につけています。
                             <br />
                             JavaScript、React、Next.js中心にWeb技術の習得に励んでいます。

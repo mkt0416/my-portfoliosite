@@ -21,15 +21,15 @@ const TuneFindr = () => {
                         <p className="text-base md:text-lg mb-10">新しい音楽との出会いを、あなたの毎日に。</p>
                         <div className="flex items-center justify-center md:justify-start gap-5">
                             <Link
-                                className="text-base md:text-lg bg-blue-700 text-white py-2 md:py-3 px-4 md:px-5 rounded-md
-                          hover:bg-blue-600 duration-300"
+                                className="bg-blue-700 text-white py-2 md:py-3 px-4 md:px-5 rounded-md
+                              hover:bg-blue-600 duration-300"
                                 href={"/site/music"}
                             >
                                 利用する
                             </Link>
                             <Link
-                                className="text-base md:text-lg border border-blue-700 text-blue-700 py-2 md:py-3 px-4 md:px-5 rounded-md
-                          hover:bg-blue-100 duration-300"
+                                className="border border-blue-700 text-blue-700 py-2 md:py-3 px-4 md:px-5 rounded-md
+                              hover:bg-blue-100 duration-300"
                                 href={"/auth/login"}
                             >
                                 ログイン

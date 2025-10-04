@@ -1,39 +1,21 @@
 
 'use client'
 import { createContext, ReactNode, useState } from 'react';
-
-type User = {
-    _id: string;
-    username: string;
-    desc: string;
-    profilePicture: string;
-    coverPicture: string;
-    followers: string[];
-    followings: string[];
-};
-
-type Memo = {
-    _id: string;
-    icon: string;
-    title: string;
-    description: string;
-    createdAt: string;
-};
-
-type Location = {
-    lat: number;
-    lng: number;
-} | null;
+import { User } from '../lib/User';
+import { Memo } from '../lib/memo';
+import { Location, Works } from '../lib/map';
 
 export type AppContextType = {
     currentUser: User | null;
     loggedIn: boolean;
     memos: Memo[];
     location: Location;
+    works: Works[];
     setCurrentUser: React.Dispatch<React.SetStateAction<User | null>>;
     setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
     setMemos: React.Dispatch<React.SetStateAction<Memo[]>>;
-    setLocation: React.Dispatch<React.SetStateAction<Location>>
+    setLocation: React.Dispatch<React.SetStateAction<Location>>;
+    setWorks: React.Dispatch<React.SetStateAction<Works[]>>;
 };
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -43,6 +25,7 @@ const ContextProvider = ({ children }: { children: ReactNode }) => {
     const [loggedIn, setLoggedIn] = useState(false);
     const [memos, setMemos] = useState<Memo[]>([]);
     const [location, setLocation] = useState<Location>(null);
+    const [works, setWorks] = useState<Works[]>([]);
 
     return (
         <AppContext.Provider value={{
@@ -50,10 +33,12 @@ const ContextProvider = ({ children }: { children: ReactNode }) => {
             loggedIn,
             memos,
             location,
+            works,
             setCurrentUser,
             setLoggedIn,
             setMemos,
             setLocation,
+            setWorks,
         }}
         >
             {children}

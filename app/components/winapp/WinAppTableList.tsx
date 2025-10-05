@@ -2,7 +2,6 @@
 'use client'
 import { useState } from "react";
 import Container from "../common/Container";
-import SubTitle from "../common/SubTitle";
 import WinAppTableItem from "./WinAppTableItem";
 import WinModal from "./WinModal";
 import { AnimatePresence } from "framer-motion";
@@ -100,10 +99,8 @@ const WinAppTableList = () => {
 
     return (
         <Container>
-            <SubTitle
-                text="App List"
-                description="Webと並行してC#でのWindowsアプリ開発にも挑戦中です。"
-            />
+            <h1 className="text-xl md:text-3xl font-extrabold mb-4">Wiondows App Downloader</h1>
+            <p>リンクをクリックして、ダウンロードページをご覧ください。</p>
             <div className="overflow-x-auto mt-10">
                 <WinAppTableItem
                     winAppData={winAppData}

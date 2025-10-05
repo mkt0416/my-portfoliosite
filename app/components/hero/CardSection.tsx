@@ -7,7 +7,6 @@ import { FaCode, FaUserCheck } from "react-icons/fa";
 import { FaFilePen } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 import { FaGlobe } from "react-icons/fa";
-import { FaWindows } from "react-icons/fa";
 import { AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -74,18 +73,6 @@ const cardData: CardDataType[] = [
     },
     {
         id: '4',
-        title: 'Conatct',
-        desc: '問い合わせフォーム機能です。',
-        link: '/site/contact',
-        icon: <FiMail />,
-        details: {
-            technologies: ["React", "EmailJS"],
-            features: ["メール送信機能"],
-            challenge: "Next.js と EmailJS を用いて問い合わせフォームを作成しました。ユーザーが入力した内容をフロントから直接送信できる仕組みを実装し、シンプルかつ使いやすいフォームを提供しています。"
-        },
-    },
-    {
-        id: '5',
         title: 'Portfolio',
         desc: '制作した各種Webアプリです。',
         link: '/site/portfolio',
@@ -97,17 +84,18 @@ const cardData: CardDataType[] = [
         },
     },
     {
-        id: '6',
-        title: 'WinApp',
-        desc: '制作した各種ウィンドウズアプリです。',
-        link: '/site/winapp',
-        icon: <FaWindows />,
+        id: '5',
+        title: 'Conatct',
+        desc: '問い合わせフォーム機能です。',
+        link: '/site/contact',
+        icon: <FiMail />,
         details: {
-            technologies: ["React", "Next.js"],
-            features: ["ウィンドウズアプリのダウンロード", "github連携", "モーダル", "UX/UI"],
-            challenge: "ウィンドウズアプリをgithubリンクからダウンロードできるようにしています。"
+            technologies: ["React", "EmailJS"],
+            features: ["メール送信機能"],
+            challenge: "Next.js と EmailJS を用いて問い合わせフォームを作成しました。ユーザーが入力した内容をフロントから直接送信できる仕組みを実装し、シンプルかつ使いやすいフォームを提供しています。"
         },
     },
+
 ];
 
 const CardSection = () => {
@@ -118,11 +106,11 @@ const CardSection = () => {
            text-gray-600 dark:text-white my-20 relative'
         >
             <div className="hidden md:flex absolute inset-0 top-32 bg-blue-100 dark:bg-gray-600 max-w-md 
-            md:max-w-lg lg:max-w-3xl xl:max-w-5xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10"
+            md:max-w-2xl lg:max-w-3xl xl:max-w-6xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10"
             />
             <h2 className="text-xl md:text-4xl font-extrabold mb-4 text-center">Explore My Portfolio</h2>
             <p className="font-semibold text-center">各ページの紹介とリンクをご覧ください。</p>
-            <div className="hidden mt-20 md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
+            <div className="hidden mt-20 md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {cardData.map((card) => (
                     <Card
                         key={card.id}

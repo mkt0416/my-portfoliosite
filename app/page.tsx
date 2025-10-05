@@ -7,10 +7,10 @@ import SiteLog from "./components/hero/SiteLog";
 import Notee from "./components/hero/Notee";
 import Circle from "./components/hero/Circle";
 import CardSection from "./components/hero/CardSection";
-import { WeatherDay } from "./lib/weather";
 import Talksy from "./components/hero/Talksy";
 import TuneFindr from "./components/hero/TuneFindr";
-
+import AppBox from "./components/hero/AppBox";
+import { WeatherDay } from "./lib/weather";
 
 const getWeather = async (city: string): Promise<WeatherDay[]> => {
     try {
@@ -57,6 +57,7 @@ const Page = async () => {
             <Circle />
             <Talksy />
             <TuneFindr />
+            <AppBox />
             <CardSection />
         </>
     );

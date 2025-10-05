@@ -4,6 +4,7 @@ import "./globals.css";
 import ContextProvider from "./context/ContextProvider";
 import ProgressBar from "./components/common/ProgressBar";
 import TopMenuButton from "./components/common/TopMenuButton";
+import Footer from "./components/footer/Footer";
 
 const m_plus_1 = M_PLUS_1({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
           <ProgressBar />
           {children}
           <TopMenuButton />
+          <Footer />
         </ContextProvider>
       </body>
     </html>

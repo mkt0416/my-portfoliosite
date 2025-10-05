@@ -31,20 +31,20 @@ const ThemeToggle = () => {
         >
             {isDark
                 ? (
-                    <span className='flex items-center font-semibold text-indigo-500 border border-indigo-500 p-1 text-sm
-                      sm:p-2 rounded-md hover:bg-indigo-100 duration-300'
+                    <span className='flex items-center font-semibold text-indigo-500 border border-indigo-500
+                      py-2 px-4 rounded-md hover:bg-indigo-100 duration-300'
                     >
                         <p className="hidden sm:flex">Ligth</p>
-                        <MdOutlineLightMode className=" size-4 sm:size-5" />
+                        <MdOutlineLightMode className="size-5" />
                     </span>
                 )
                 : (
                     <span
-                        className='flex items-center font-semibold text-indigo-500 border border-indigo-500 p-1 text-sm
-                        sm:p-2 rounded-md hover:bg-indigo-100 duration-300'
+                        className='flex items-center font-semibold text-indigo-500 border border-indigo-500 
+                        py-2 px-4 rounded-md hover:bg-indigo-100 duration-300'
                     >
                         <p className="hidden sm:flex">Dark</p>
-                        <MdOutlineDarkMode className="size-4 sm:size-5" />
+                        <MdOutlineDarkMode className="size-5" />
                     </span>
                 )
             }

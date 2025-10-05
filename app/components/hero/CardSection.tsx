@@ -117,12 +117,12 @@ const CardSection = () => {
         <section className='w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-16
            text-gray-600 dark:text-white my-20 relative'
         >
-            <div className="hidden sm:flex absolute inset-0 top-32 bg-blue-100 dark:bg-gray-600 max-w-md 
+            <div className="hidden md:flex absolute inset-0 top-32 bg-blue-100 dark:bg-gray-600 max-w-md 
             md:max-w-lg lg:max-w-3xl xl:max-w-5xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10"
             />
             <h2 className="text-xl md:text-4xl font-extrabold mb-4 text-center">Explore My Portfolio</h2>
             <p className="font-semibold text-center">各ページの紹介とリンクをご覧ください。</p>
-            <div className="hidden mt-20 md:grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-x-40 lg:gap-y-20">
+            <div className="hidden mt-20 md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 ">
                 {cardData.map((card) => (
                     <Card
                         key={card.id}

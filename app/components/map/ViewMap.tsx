@@ -44,7 +44,15 @@ const ViewMap = () => {
             {!isLoaded
                 ? <Loading />
                 : (
-                    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={13}>
+                    <GoogleMap
+                        mapContainerStyle={containerStyle}
+                        center={center}
+                        zoom={13}
+                        options={{
+                            scrollwheel: true,
+                            gestureHandling: "auto",
+                        }}
+                    >
                         {location && (
                             <Marker
                                 position={center}

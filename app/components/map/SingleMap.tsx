@@ -21,6 +21,10 @@ const SingleMap = ({ location, siteName }: {
                     mapContainerStyle={containerStyle}
                     center={location}
                     zoom={16}
+                    options={{
+                        scrollwheel: true,
+                        gestureHandling: "auto",
+                    }}
                 >
                     <Marker
                         position={location}

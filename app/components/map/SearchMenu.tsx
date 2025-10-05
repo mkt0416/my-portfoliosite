@@ -10,6 +10,7 @@ type Props = {
     onRangeSelect: (start: Date | null, end: Date | null) => void;
     keyword: string | null;
     setKeyWord: React.Dispatch<React.SetStateAction<string | null>>;
+    setVisibleWork: React.Dispatch<React.SetStateAction<number>>;
     searchWorks: () => Promise<void>;
     getAllWorks: () => Promise<void>;
 };
@@ -19,6 +20,7 @@ const SeachMenu = ({
     onRangeSelect,
     keyword,
     setKeyWord,
+    setVisibleWork,
     searchWorks,
     getAllWorks,
 }: Props) => {
@@ -102,7 +104,10 @@ const SeachMenu = ({
                         検索
                     </button>
                     <button
-                        onClick={getAllWorks}
+                        onClick={() => {
+                            getAllWorks();
+                            setVisibleWork(6);
+                        }}
                         className="py-2 px-4 text-sm sm:text-base text-blue-600 border border-blue-600 bg-blue-50
                         rounded-md hover:bg-blue-100 duration-300 dark:text-gray-200 dark:bg-blue-700 dark:border-blue-200 dark:bg-none
                       dark:hover:bg-blue-600"

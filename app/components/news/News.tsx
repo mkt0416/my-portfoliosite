@@ -53,7 +53,7 @@ const News = ({ articles }: { articles: Article[] }) => {
                         ))}
                     </Swiper>
                 ) : (
-                    <p className="font-semibold text-center">記事がありません。</p>
+                    <p className="font-semibold text-center">記事を読み込み中...</p>
                 )}
             </section>
             <NewsModal modalData={modalData} onclose={() => setModalData(null)} />

@@ -50,8 +50,8 @@ const Page = async () => {
         <>
             <Header />
             <HeroSection />
-            <Weather initialWeather={weatherData} />
             <News articles={articles} />
+            <Weather initialWeather={weatherData} />
             <SiteLog />
             <Notee />
             <Circle />

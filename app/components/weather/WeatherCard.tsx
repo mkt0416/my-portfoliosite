@@ -13,8 +13,8 @@ type Props = {
 const WeatherCard = ({ data }: Props) => {
     return (
         <li
-            className="w-full flex flex-col items-center md:gap-4 xl:px-20 bg-gradient-to-t from-purple-300 to-blue-300
-            p-8 rounded-3xl dark:bg-none dark:bg-gray-600 md:shadow-2xl"
+            className="w-full flex flex-col items-center md:gap-4 xl:px-20 bg-gray-600/60 border-2
+            text-white p-8 rounded-3xl md:shadow-2xl"
             key={data.date}
         >
             <h3 className="text-xl md:text-2xl font-semibold">{formatDate(data.date)}</h3>

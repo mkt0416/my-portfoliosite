@@ -26,12 +26,12 @@ const News = ({ articles }: { articles: Article[] }) => {
     const [modalData, setModalData] = useState<ModalData | null>(null);
 
     return (
-        <div className="bg-blue-100 dark:bg-gray-600 py-10 md:py-20">
+        <div className="dark:bg-gray-500 py-10 md:py-20">
             <section
                 className="w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16
               text-gray-600 dark:text-white"
             >
-                <h2 className="text-xl md:text-4xl font-extrabold mb-10 text-center">
+                <h2 className="text-xl md:text-4xl font-extrabold mb-10">
                     Daily News
                 </h2>
                 {articles.length > 0 ? (

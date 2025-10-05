@@ -11,7 +11,7 @@ type Props = {
 
 const Card = ({ card, setModalData }: Props) => {
     return (
-        <div className="w-full flex flex-col items-center gap-5 bg-indigo-300/30  dark:bg-indigo-900
+        <div className="w-full flex flex-col items-center gap-5 bg-indigo-300/30  dark:bg-indigo-900/50
         py-20 px-4 rounded-2xl relative md:mb-0 h-72 md:h-auto md:shadow-xl"
         >
             <button

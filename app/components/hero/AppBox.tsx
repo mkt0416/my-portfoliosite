@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const AppBox = () => {
     return (
-        <div className="dark:bg-gray-500 py-20">
+        <div className="bg-gray-100 dark:bg-gray-500 py-20">
             <section className='w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-32
            text-gray-600 dark:text-white relative'>
                 <h2 className="text-2xl md:text-4xl font-extrabold mb-10 lg:mb-20 text-center lg:text-left">AppBox</h2>

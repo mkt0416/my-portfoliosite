@@ -1,121 +1,70 @@
 
 "use client";
-import { ReactNode, useState } from "react";
 import Card from "./Card";
-import HeroModal from "./CardModal";
-import { FaCode, FaUserCheck } from "react-icons/fa";
-import { FaFilePen } from "react-icons/fa6";
-import { FiMail } from "react-icons/fi";
-import { FaGlobe } from "react-icons/fa";
-import { AnimatePresence } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import profileImage from "../../../public/images/undraw_profile.svg";
+import skillsImage from "../../../public/images/undraw_designing-components.svg";
+import blogImage from "../../../public/images/undraw_add-notes.svg";
+import portfolioImage from "../../../public/images/undraw_crypto-portfolio.svg";
+import contactImage from "../../../public/images/undraw_contact-us.svg";
 
 export type CardDataType = {
     id: string;
     title: string;
-    desc: string;
     link: string;
-    icon: ReactNode;
-    details: {
-        technologies: string[];
-        features: string[];
-        challenge: string;
-    }
-};
-
-export type CardModalDataType = {
-    details: {
-        technologies: string[];
-        features: string[];
-        challenge: string;
-    }
+    image: string;
 };
 
 const cardData: CardDataType[] = [
     {
         id: '1',
         title: 'Profile',
-        desc: '私についてのプロフィールをご紹介します。',
         link: '/site/profile',
-        icon: <FaUserCheck />,
-        details: {
-            technologies: ["Next.js", "React", "tailWindCSS", "AOS", "framer-motion"],
-            features: ["UX/UI"],
-            challenge: "Next.js と TailwindCSS を用いてプロフィールページを作成。AOS によるアニメーションで、直感的に閲覧できる UI を実装しました。"
-        },
+        image: profileImage,
     },
     {
         id: '2',
         title: 'Skills',
-        desc: '使用している技術や学習中の技術をご紹介します。',
         link: '/site/skills',
-        icon: <FaCode />,
-        details: {
-            technologies: ["Next.js", "React", "tailWindCSS", "AOS", "framer-motion"],
-            features: ["UX/UI", "モーダル"],
-            challenge: "Next.js と TailwindCSS によりレスポンシブなスキル一覧を構築。AOS でアニメーションを追加し、モーダル機能で詳細情報を確認できる UX/UI を実装しました。"
-        },
+        image: skillsImage,
     },
     {
         id: '3',
         title: 'Blog',
-        desc: 'ブログ機能です。',
         link: '/site/blog',
-        icon: <FaFilePen />,
-        details: {
-            technologies: ["Next.js", "React", "microCMS", "tailWindCSS",],
-            features: ["CMS連携", "ページネーション", "キーワード検索"],
-            challenge: "ブログ記事を簡単に管理・配信できるよう、ヘッドレスCMS（microCMS）を活用して実装しました。"
-        },
+        image: blogImage,
     },
     {
         id: '4',
         title: 'Portfolio',
-        desc: '制作した各種Webアプリです。',
         link: '/site/portfolio',
-        icon: <FaGlobe />,
-        details: {
-            technologies: ["React", "Next.JS", "microCMS"],
-            features: ["ヘッドレスCMSによる制作物管理", "github連携", "UX/UI"],
-            challenge: "制作物を簡単に管理・配信できるよう、ヘッドレスCMS（microCMS）を活用して実装しました。"
-        },
+        image: portfolioImage,
     },
     {
         id: '5',
         title: 'Conatct',
-        desc: '問い合わせフォーム機能です。',
         link: '/site/contact',
-        icon: <FiMail />,
-        details: {
-            technologies: ["React", "EmailJS"],
-            features: ["メール送信機能"],
-            challenge: "Next.js と EmailJS を用いて問い合わせフォームを作成しました。ユーザーが入力した内容をフロントから直接送信できる仕組みを実装し、シンプルかつ使いやすいフォームを提供しています。"
-        },
+        image: contactImage,
     },
-
 ];
 
 const CardSection = () => {
-    const [modalData, setModalData] = useState<CardModalDataType | null>(null);
-
     return (
         <section className='w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-16
            text-gray-600 dark:text-white my-20 relative'
         >
-            <div className="hidden md:flex absolute inset-0 top-32 bg-blue-100 dark:bg-gray-600 max-w-md 
+            <div className="hidden md:flex absolute inset-0 top-20 bg-blue-100 dark:bg-gray-600 max-w-md 
             md:max-w-2xl lg:max-w-3xl xl:max-w-6xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10"
             />
-            <h2 className="text-xl md:text-4xl font-extrabold mb-4 text-center">Explore My Portfolio</h2>
-            <p className="font-semibold text-center">各ページの紹介とリンクをご覧ください。</p>
+            <h2 className="text-xl md:text-4xl font-extrabold mb-4 text-center">Admin Information</h2>
             <div className="hidden mt-20 md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {cardData.map((card) => (
                     <Card
                         key={card.id}
                         card={card}
-                        setModalData={setModalData}
                     />
                 ))}
             </div>
@@ -132,18 +81,11 @@ const CardSection = () => {
                             <Card
                                 key={card.id}
                                 card={card}
-                                setModalData={setModalData}
                             />
                         </SwiperSlide>
                     ))}
                 </Swiper>
             </div>
-            <AnimatePresence>
-                <HeroModal
-                    modalData={modalData}
-                    onclose={() => setModalData(null)}
-                />
-            </AnimatePresence>
         </section >
     );
 };

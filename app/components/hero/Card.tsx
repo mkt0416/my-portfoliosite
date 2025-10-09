@@ -1,45 +1,28 @@
 
 import Link from "next/link";
-import { CardDataType, CardModalDataType } from "./CardSection";
-import { IoIosArrowDropright } from "react-icons/io";
-import { BsInfoCircle } from "react-icons/bs";
+import Image from "next/image";
+import { CardDataType } from "./CardSection";
 
 type Props = {
     card: CardDataType;
-    setModalData: React.Dispatch<React.SetStateAction<CardModalDataType | null>>;
 };
 
-const Card = ({ card, setModalData }: Props) => {
+const Card = ({ card }: Props) => {
     return (
-        <div className="w-full flex flex-col items-center gap-5 bg-indigo-300/30  dark:bg-indigo-900/50
-        py-20 px-4 rounded-2xl relative md:mb-0 h-72 md:h-auto md:shadow-xl"
+        <Link
+            href={card.link}
+            className="w-full flex flex-col justify-between gap-3 items-center hover:scale-105 duration-300 bg-indigo-300 py-6
+            rounded-xl shadow-xl"
         >
-            <button
-                onClick={() => setModalData({
-                    details: {
-                        technologies: card.details.technologies,
-                        features: card.details.features,
-                        challenge: card.details.challenge,
-                    },
-                })}
-                className="absolute top-5 right-5"
-            >
-                <BsInfoCircle className="size-8" />
-            </button>
-            <div className="flex items-center gap-1 text-3xl sm:text-4xl xl:text-5xl font-extrabold">
-                <span>{card.icon}</span>
-                <h3>{card.title}</h3>
-            </div>
-            <p className="text-center md:text-left font-semibold text-sm md:text-base">{card.desc}</p>
-            <div className="flex flex-col lg:flex-row items-center gap-2 xl:gap-8">
-                <Link href={card.link} className="flex items-center hover:underline hover:text-blue-500
-                text-sm md:text-base"
-                >
-                    <p>ページを見る</p>
-                    <IoIosArrowDropright className="pt-1 size-6" />
-                </Link>
-            </div>
-        </div>
+            <Image
+                className="h-56"
+                src={card.image}
+                alt="cardimage"
+                width={200}
+                height={200}
+            />
+            <h2 className="text-2xl md:text-4xl font-extrabold">{card.title}</h2>
+        </Link>
     );
 };
 

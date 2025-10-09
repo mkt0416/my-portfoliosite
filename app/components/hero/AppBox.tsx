@@ -8,8 +8,8 @@ const AppBox = () => {
             <section className='w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-32
            text-gray-600 dark:text-white relative'>
                 <h2 className="text-2xl md:text-4xl font-extrabold mb-10 lg:mb-20 text-center lg:text-left">AppBox</h2>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-                    <div className="max-md:order-2">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
+                    <div className="max-lg:order-2">
                         <h1 className="text-xl md:text-4xl font-bold mb-5"><span className="text-blue-700">「便利も、ワクワクも」</span>
                             、クリックひとつ。</h1>
                         <p className="text-base md:text-lg mb-2">定番のツールから、遊び心あふれるユーティリティまで。</p>

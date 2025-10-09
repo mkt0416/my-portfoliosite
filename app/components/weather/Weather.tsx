@@ -40,19 +40,19 @@ const Weather = ({ initialWeather }: Props) => {
         <div className="relative py-20">
             <Image
                 className="object-cover object-bottom"
-                src={"/images/sea.jpg"}
+                src={"/images/sky.jpg"}
                 alt="cover-iamge"
                 fill
             />
             <section className='w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16
            text-gray-600 dark:text-white relative'
             >
-                <h2 className="text-2xl text-gray-600 dark:text-white md:text-4xl font-extrabold mb-10 text-left">
+                <h2 className="text-2xl text-gray-600 md:text-4xl font-extrabold mb-10 text-left">
                     3Day Weather Forecast
                 </h2>
                 <select
                     className="w-full max-w-md mx-auto p-3 rounded-3xl text-xl outline-none
-                    font-semibold bg-gray-600/60 border-2 text-white appearance-none"
+                    font-semibold bg-white/40 dark:bg-gray-600/60 appearance-none"
                     onChange={(e) => setCity(e.target.value)}
                 >
                     {cityJson.map((city, index) => (

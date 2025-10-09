@@ -9,7 +9,7 @@ const Talksy = () => {
            text-gray-200 dark:text-white relative'>
                 <h2 className="text-2xl md:text-4xl font-extrabold mb-10 lg:mb-20 text-center">Talksy</h2>
                 <div className="flex flex-col items-center justify-between lg:gap-20 gap-10">
-                    <div className="max-md:order-2">
+                    <div className="max-lg:order-2">
                         <h1 className="text-xl md:text-4xl font-bold mb-5">あなたのそばに、 <span className="text-blue-500">いつでも話せるAIを。</span></h1>
                         <p className="text-base md:text-lg mb-2">TalksyはChatGPTクローンとして生まれた、フレンドリーで頼れるAIチャットアプリです。</p>
                         <p className="text-base md:text-lg mb-2">アイデアを整理したいときも、雑談したいときも、知識を広げたいときも。</p>

@@ -9,7 +9,7 @@ const Notee = () => {
            text-gray-600 dark:text-white relative'>
                 <h2 className="text-2xl md:text-4xl font-extrabold mb-10 lg:mb-20 text-center">Notee</h2>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
-                    <div className="max-md:order-2">
+                    <div className="max-lg:order-2">
                         <h1 className="text-xl md:text-4xl font-bold mb-5"> <span className="text-blue-700">思いついたら、</span>すぐに書ける。</h1>
                         <p className="text-base md:text-lg mb-2">ノートもタスクも、ひとつの画面でシンプルに管理。</p>
                         <p className="text-base md:text-lg mb-2">難しい操作はなく、直感的に使えるから続けやすい。</p>

@@ -100,7 +100,7 @@ const WinAppTableList = () => {
     return (
         <Container>
             <h1 className="text-xl md:text-3xl font-extrabold mb-4">Wiondows App Downloader</h1>
-            <p>リンクをクリックして、ダウンロードページをご覧ください。</p>
+            <p className="text-xs lg:text-base">リンクをクリックして、ダウンロードページをご覧ください。</p>
             <div className="overflow-x-auto mt-10">
                 <WinAppTableItem
                     winAppData={winAppData}

@@ -33,9 +33,7 @@ const Chat = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    message: trimmed,
-                })
+                body: JSON.stringify({ message: trimmed })
             });
             const jsonData = await response.json();
             setMessage((prev) => [...prev, { text: jsonData.reply, sender: 'bot' }]);
@@ -47,38 +45,38 @@ const Chat = () => {
     };
 
     return (
-        <div className="mt-20 w-full max-w-screen-md mx-auto px-8">
-            <div className="flex flex-col">
-                <h1 className="text-center text-lg sm:text-2xl font-bold">お手伝いできることはありますか？</h1>
-                <div className=" pb-40">
-                    {message.map((msg, index) => (
-                        <div
-                            className={msg.sender === 'user'
-                                ? 'text-right'
-                                : 'text-left'
-                            }
-                            key={index}
-                        >
-                            <div className="mt-20 inline-block bg-gray-200 dark:bg-gray-500 rounded-xl p-4">
-                                {msg.text}
-                            </div>
+        <div className="min-h-screen flex flex-col mt-20 px-8 max-w-screen-md mx-auto">
+            <div className="flex-1 overflow-y-auto pb-40">
+                <h1 className="text-center text-lg sm:text-2xl font-bold mb-10">
+                    お手伝いできることはありますか？
+                </h1>
+
+                {message.map((msg, index) => (
+                    <div
+                        className={msg.sender === 'user' ? 'text-right' : 'text-left'}
+                        key={index}
+                    >
+                        <div className="mt-10 inline-block bg-gray-200 dark:bg-gray-500 rounded-xl p-4">
+                            {msg.text}
                         </div>
-                    ))}
-                    {loading && (
-                        <div className="text-left">
-                            <div className="mt-20 inline-block bg-gray-200 dark:bg-gray-500 rounded-xl p-4 animate-pulse">
-                                回答を作成中...
-                            </div>
+                    </div>
+                ))}
+
+                {loading && (
+                    <div className="text-left">
+                        <div className="mt-10 inline-block bg-gray-200 dark:bg-gray-500 rounded-xl p-4 animate-pulse">
+                            回答を作成中...
                         </div>
-                    )}
-                    <div ref={bottomRef}></div>
-                </div>
+                    </div>
+                )}
+
+                <div ref={bottomRef}></div>
             </div>
-            <div className="fixed bottom-5 left-0 right-0 max-w-screen-md mx-auto px-8">
-                <form
-                    onSubmit={sendMessage}
-                    className="relative"
-                >
+            <form
+                onSubmit={sendMessage}
+                className="sticky bottom-0 dark:bg-gray-800 p-4 dark:border-gray-600"
+            >
+                <div className="relative">
                     <textarea
                         value={inputMessage}
                         onChange={(e) => setInputMessage(e.target.value)}
@@ -92,8 +90,8 @@ const Chat = () => {
                     >
                         <FaPaperPlane />
                     </button>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     );
 };

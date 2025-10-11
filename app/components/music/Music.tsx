@@ -61,7 +61,7 @@ const Music = () => {
     };
 
     return (
-        <div className="w-full container mx-auto px-8">
+        <div className="w-full container mx-auto px-8 mb-20">
             <SearchInput
                 setKeyword={setKeyword}
                 searchSongs={searchSongs}

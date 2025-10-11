@@ -12,7 +12,7 @@ const Card = ({ card }: Props) => {
         <Link
             href={card.link}
             className="w-full flex flex-col xl:flex-row justify-between gap-3 items-center xl:items-start
-             hover:scale-105 duration-300 p-6 bg-indigo-300 rounded-xl"
+             hover:scale-105 duration-300 p-6 bg-indigo-300/40 rounded-xl"
         >
             <h2 className="text-2xl md:text-4xl font-extrabold">{card.title}</h2>
             <Image

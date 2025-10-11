@@ -72,7 +72,7 @@ const ContactForm = () => {
                 />
                 <button
                     type='submit'
-                    className='w-full text-xl text-white font-semibold bg-slate-500 hover:bg-slate-600 duration-300
+                    className='w-full text-xl text-white font-semibold bg-gray-500 hover:bg-gray-600 duration-300
                     px-10 py-3 rounded shadow-xl'
                 >
                     送信

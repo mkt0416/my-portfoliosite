@@ -8,16 +8,16 @@ import { IoRocketOutline, IoBulbOutline } from "react-icons/io5";
 const slides = [
     {
         title: "Hello World!!",
-        text: "私は、クリーンコードや思慮深いデザインについて学び始めたばかりの初心者開発者です。より経験豊富な開発者から学び、成長していきたいと考えています。"
+        text: "I'm a beginner developer who is just starting to learn about clean code and thoughtful design. I'm eager to improve and learn from more experienced developers."
     },
     {
         title: "What I Can Do",
-        text: "私は現在、HTML・CSS・JavaScriptを積極的に学習しており、Reactを使ったフロントエンド開発や、Node.js・MongoDBといったバックエンド技術の習得にも取り組み始めています。",
+        text: "I’m actively studying HTML, CSS, and JavaScript, and I’m beginning to explore both frontend development with React and backend technologies like Node.js and MongoDB.",
         icon: <IoBulbOutline />
     },
     {
         title: "Always Growing",
-        text: "私は毎日学び続け、成長するために全力を尽くしています。まだ学ぶべきことはたくさんありますが、他の人から信頼され、真に価値を生み出せる開発者になることを目標としています。",
+        text: "I’m still learning every day and doing my best to grow. While I still have a lot to learn, my goal is to become a developer who is trusted by others and can truly make a difference.",
         icon: <IoRocketOutline />
     },
 ];

@@ -21,7 +21,7 @@ const headerListItems = [
     { id: '6', link: '/site/contact', text: 'Contact' },
 ];
 
-const Header = () => {
+const Header = ({ isHero }: { isHero?: boolean }) => {
     const router = useRouter();
     const [activeLink, setActiveLink] = useState<string>('');
     const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -42,7 +42,7 @@ const Header = () => {
     }, []);
 
     return (
-        <header id='home' className='py-6 sm:py-8'>
+        <header id='home' className={`py-6 sm:py-8 relative z-50 ${isHero ? "bg-black/40 text-white" : "text-gray-600"}`}>
             <div className='w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16'>
                 <div className='flex justify-between items-center'>
                     <Navigation

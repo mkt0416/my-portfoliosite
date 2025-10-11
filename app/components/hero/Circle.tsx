@@ -19,6 +19,7 @@ const Circle = () => {
                     <h1 className="text-xl md:text-4xl font-bold mb-5">今日の発見を、<span className="text-blue-700">すぐにシェアしよう。</span></h1>
                     <p className="text-base md:text-lg mb-2">Circleは、気軽に思いや写真をシェアできるSNS。</p>
                     <p className="text-base md:text-lg mb-2">シンプルな操作で、写真やメッセージをすぐに共有できます。</p>
+                    <p className="text-base md:text-lg mb-2">利用者同士でちょっと息抜きできる、ほっとする場所。</p>
                     <p className="text-base md:text-lg mb-10">絆をもっと近くに感じる、そんな場所をつくりました。</p>
                     <div className="flex items-center justify-center md:justify-start gap-5">
                         <Link

@@ -17,7 +17,8 @@ const SiteLog = () => {
                 <div>
                     <h1 className="text-xl md:text-4xl font-bold mb-5"> <span className="text-blue-700">「どこで、何をしたか」</span>をもう忘れない。</h1>
                     <p className="text-base md:text-lg mb-2">現場の記録を地図に残すことで、情報整理がもっと楽に。</p>
-                    <p className="text-base md:text-lg mb-10">地図に作業内容や感想を残せる、現場管理専用アプリです。</p>
+                    <p className="text-base md:text-lg mb-2">地図に作業内容や感想を残せる、現場管理専用アプリです。</p>
+                    <p className="text-base md:text-lg mb-10">記録した情報は、あなたの経験とともに積み重なる大切な財産に。</p>
                     <div className="flex items-center justify-center md:justify-start gap-5">
                         <Link
                             className="text-base bg-blue-700 text-white py-2 md:py-3 px-4 md:px-5 rounded-md

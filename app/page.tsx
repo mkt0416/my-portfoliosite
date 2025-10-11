@@ -11,6 +11,7 @@ import Talksy from "./components/hero/Talksy";
 import TuneFindr from "./components/hero/TuneFindr";
 import AppBox from "./components/hero/AppBox";
 import { WeatherDay } from "./lib/weather";
+import Footer from "./components/footer/Footer";
 
 const getWeather = async (city: string): Promise<WeatherDay[]> => {
     try {
@@ -48,7 +49,7 @@ const Page = async () => {
 
     return (
         <>
-            <Header />
+            <Header isHero={true} />
             <HeroSection />
             <News articles={articles} />
             <Weather initialWeather={weatherData} />
@@ -59,6 +60,7 @@ const Page = async () => {
             <TuneFindr />
             <AppBox />
             <CardSection />
+            <Footer />
         </>
     );
 };

@@ -18,7 +18,8 @@ const TuneFindr = () => {
                     <div>
                         <h1 className="text-xl md:text-4xl font-bold mb-5"> <span className="text-blue-700">次のお気に入りの一曲を、</span>もっと簡単に。</h1>
                         <p className="text-base md:text-lg mb-2">TuneFindrはSpotify APIを利用した楽曲検索アプリです。</p>
-                        <p className="text-base md:text-lg mb-10">新しい音楽との出会いを、あなたの毎日に。</p>
+                        <p className="text-base md:text-lg mb-2">新しい音楽との出会いを、あなたの毎日に。</p>
+                        <p className="text-base md:text-lg mb-10">仕事の合間に、気分をリセットする1曲を見つけてみませんか？</p>
                         <div className="flex items-center justify-center md:justify-start gap-5">
                             <Link
                                 className="bg-blue-700 text-white py-2 md:py-3 px-4 md:px-5 rounded-md

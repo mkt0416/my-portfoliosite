@@ -7,7 +7,7 @@ const Page = () => {
     return (
         <>
             <PageHero
-                image='/images/skills.svg'
+                image='/images/skills.jpg'
                 title={'Skills'}
             />
             <div className='mt-20'>

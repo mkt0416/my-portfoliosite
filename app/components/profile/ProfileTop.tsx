@@ -6,7 +6,7 @@ import Container from '../common/Container';
 
 const ProfileTop = () => {
     return (
-        <div className='min-h-screen h-fit flex justify-center items-start sm:items-center mt-20 sm:mt-0 mb-10'>
+        <div className='flex justify-center items-start sm:items-center my-20'>
             <Container>
                 <section className='flex flex-col md:flex-row gap-10 items-center relative'>
                     <motion.div
@@ -17,11 +17,13 @@ const ProfileTop = () => {
                     >
                         <div className='absolute left-16 xl:top-10 lg:top-12 md:top-16 w-5/12 xl:h-80 lg:h-72
                         bg-gradient-to-tl from-indigo-100 to-indigo-200 dark:bg-gray-700 dark:from-transparent dark:to-transparent
-                        shadow-2xl -skew-x-12 rounded-xl hidden md:flex -z-10'
+                        -skew-x-12 rounded-xl hidden md:flex -z-10'
                         >
                         </div>
-                        <h1 className='text-3xl md:text-4xl xl:text-5xl text-center md:text-left font-extrabold mb-5'>Makoto Saitoh</h1>
-                        <p className='max-w-2xl text-center md:text-left text-gray-600 font-semibold leading-relaxed dark:text-gray-400'>
+                        <h1 className='text-3xl md:text-4xl xl:text-5xl text-gray-600 dark:text-gray-300 text-center md:text-left font-extrabold mb-5'>
+                            My Name is Makoto Saitoh
+                        </h1>
+                        <p className='max-w-2xl text-center md:text-left text-gray-600 font-semibold leading-relaxed dark:text-gray-300'>
                             私は趣味でプログラミングを学んでおり、楽しみながら技術を身につけています。
                             <br />
                             JavaScript、React、Next.js中心にWeb技術の習得に励んでいます。
@@ -36,7 +38,7 @@ const ProfileTop = () => {
                         transition={{ duration: 0.2 }}
                     >
                         <Image
-                            className='rounded-full object-cover shadow-2xl -z-10'
+                            className='rounded-full object-cover'
                             src={'/images/profile.png'}
                             alt='profile'
                             width={400}

@@ -6,7 +6,7 @@ const Page = () => {
     return (
         <>
             <PageHero
-                image='/images/contact.svg'
+                image='/images/contact.jpg'
                 title='Contact'
             />
             <div className='mt-32 mb-20'>

@@ -59,7 +59,7 @@ const CardSection = () => {
             <div className="hidden md:flex absolute inset-0 top-20 bg-blue-100 dark:bg-gray-600 max-w-md 
             md:max-w-2xl lg:max-w-3xl xl:max-w-6xl mx-auto h-full rounded-tr-xl rounded-tl-xl -z-10"
             />
-            <h2 className="text-xl md:text-4xl font-extrabold mb-4 text-center">Admin Information</h2>
+            <h2 className="text-2xl md:text-4xl font-extrabold mb-4 text-center">Admin Information</h2>
             <div className="hidden mt-20 md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 {cardData.map((card) => (
                     <Card

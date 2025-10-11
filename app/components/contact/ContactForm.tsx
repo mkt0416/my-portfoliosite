@@ -72,9 +72,8 @@ const ContactForm = () => {
                 />
                 <button
                     type='submit'
-                    style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                     className='w-full text-xl text-white font-semibold bg-slate-500 hover:bg-slate-600 duration-300
-                    px-10 py-3 rounded'
+                    px-10 py-3 rounded shadow-xl'
                 >
                     送信
                 </button>

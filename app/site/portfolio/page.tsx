@@ -12,8 +12,8 @@ const Page = async () => {
     return (
         <>
             <PageHero
-                image='/images/portfolio.svg'
-                title='WebApp'
+                image='/images/portfolio.jpg'
+                title='Portfolio'
             />
             <div className='mt-20 mb-20'>
                 <Portfolio data={data.contents} />

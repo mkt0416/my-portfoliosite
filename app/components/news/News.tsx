@@ -31,7 +31,7 @@ const News = ({ articles }: { articles: Article[] }) => {
                 className="w-full max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-16
               text-gray-600 dark:text-white"
             >
-                <h2 className="text-xl md:text-4xl font-extrabold mb-10">
+                <h2 className="text-2xl md:text-4xl font-extrabold mb-10">
                     Daily News
                 </h2>
                 {articles.length > 0 ? (

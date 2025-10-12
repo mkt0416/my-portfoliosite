@@ -13,7 +13,7 @@ const HeroSection = () => {
                     className="object-cover object-left-top"
                 />
                 <div className="absolute inset-0 bg-black/60" />
-                <div className="absolute h-full text-white max-w-screen-xl flex flex-col justify-center"
+                <div className="absolute h-full text-white max-w-screen-xl flex flex-col justify-center xl:mt-20"
                 >
                     <h1 className="text-3xl md:text-5xl lg:text-7xl font-extrabold mb-10">
                         Explore the universe of creative web apps.

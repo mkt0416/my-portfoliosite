@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
 import 'aos/dist/aos.css';
+import Link from 'next/link';
 const AOS: any = require('aos');
 
 const hobbyItem = [
@@ -28,7 +29,8 @@ const hobbyItem = [
         image: '/images/hobby-image3.svg',
         title: 'Cat',
         jpTitle: '猫',
-        description: '飼い猫と過ごす時間も趣味のひとつです。猫とくっついてのんびりするのが最高のリラックス方法です！'
+        description: '飼い猫と過ごす時間も趣味のひとつです。猫とくっついてのんびりするのが最高のリラックス方法です！',
+        cat: true
     },
 ];
 
@@ -67,7 +69,16 @@ const Hobby = () => {
                     >
                         <h2 className='text-3xl font-bold'>{item.title}</h2>
                         <span className='text-gray-400 text-sm'>{item.jpTitle}</span>
-                        <p className='mt-5'>{item.description}</p>
+                        <p className='mt-5'>
+                            {item.description}
+                        </p>
+                        {item.cat && (
+                            <p className='mt-4 text-blue-600 hover:underline'>
+                                <Link href={"/site/cat"}>
+                                    🐈猫ギャラリーを見る
+                                </Link>
+                            </p>
+                        )}
                     </div>
                 </div>
             ))}

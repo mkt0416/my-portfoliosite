@@ -19,6 +19,7 @@ const headerListItems = [
     { id: '4', link: '/site/blog', text: 'Blog' },
     { id: '5', link: '/site/portfolio', text: 'Portfolio' },
     { id: '6', link: '/site/contact', text: 'Contact' },
+    { id: '7', link: '/site/cat', text: 'Cat' },
 ];
 
 const Header = ({ isHero }: { isHero?: boolean }) => {

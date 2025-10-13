@@ -1,0 +1,337 @@
+[
+    {
+        "Name": "Abyssinian",
+        "breed_id": "abys",
+        "origin": "Egypt"
+    },
+    {
+        "Name": "Aegean",
+        "breed_id": "aege",
+        "origin": "Greece"
+    },
+    {
+        "Name": "American Bobtail",
+        "breed_id": "abob",
+        "origin": "United States"
+    },
+    {
+        "Name": "American Curl",
+        "breed_id": "acur",
+        "origin": "United States"
+    },
+    {
+        "Name": "American Shorthair",
+        "breed_id": "asho",
+        "origin": "United States"
+    },
+    {
+        "Name": "American Wirehair",
+        "breed_id": "awir",
+        "origin": "United States"
+    },
+    {
+        "Name": "Arabian Mau",
+        "breed_id": "amau",
+        "origin": "United Arab Emirates"
+    },
+    {
+        "Name": "Australian Mist",
+        "breed_id": "amis",
+        "origin": "Australia"
+    },
+    {
+        "Name": "Balinese",
+        "breed_id": "bali",
+        "origin": "United States"
+    },
+    {
+        "Name": "Bambino",
+        "breed_id": "bamb",
+        "origin": "United States"
+    },
+    {
+        "Name": "Bengal",
+        "breed_id": "beng",
+        "origin": "United States"
+    },
+    {
+        "Name": "Birman",
+        "breed_id": "birm",
+        "origin": "France"
+    },
+    {
+        "Name": "Bombay",
+        "breed_id": "bomb",
+        "origin": "United States"
+    },
+    {
+        "Name": "British Longhair",
+        "breed_id": "bslo",
+        "origin": "United Kingdom"
+    },
+    {
+        "Name": "British Shorthair",
+        "breed_id": "bsho",
+        "origin": "United Kingdom"
+    },
+    {
+        "Name": "Burmese",
+        "breed_id": "bure",
+        "origin": "Burma"
+    },
+    {
+        "Name": "Burmilla",
+        "breed_id": "buri",
+        "origin": "United Kingdom"
+    },
+    {
+        "Name": "California Spangled",
+        "breed_id": "cspa",
+        "origin": "United States"
+    },
+    {
+        "Name": "Chantilly-Tiffany",
+        "breed_id": "ctif",
+        "origin": "United States"
+    },
+    {
+        "Name": "Chartreux",
+        "breed_id": "char",
+        "origin": "France"
+    },
+    {
+        "Name": "Chausie",
+        "breed_id": "chau",
+        "origin": "Egypt"
+    },
+    {
+        "Name": "Cheetoh",
+        "breed_id": "chee",
+        "origin": "United States"
+    },
+    {
+        "Name": "Colorpoint Shorthair",
+        "breed_id": "csho",
+        "origin": "United States"
+    },
+    {
+        "Name": "Cornish Rex",
+        "breed_id": "crex",
+        "origin": "United Kingdom"
+    },
+    {
+        "Name": "Cymric",
+        "breed_id": "cymr",
+        "origin": "Canada"
+    },
+    {
+        "Name": "Cyprus",
+        "breed_id": "cypr",
+        "origin": "Cyprus"
+    },
+    {
+        "Name": "Devon Rex",
+        "breed_id": "drex",
+        "origin": "United Kingdom"
+    },
+    {
+        "Name": "Donskoy",
+        "breed_id": "dons",
+        "origin": "Russia"
+    },
+    {
+        "Name": "Dragon Li",
+        "breed_id": "lihu",
+        "origin": "China"
+    },
+    {
+        "Name": "Egyptian Mau",
+        "breed_id": "emau",
+        "origin": "Egypt"
+    },
+    {
+        "Name": "European Burmese",
+        "breed_id": "ebur",
+        "origin": "Burma"
+    },
+    {
+        "Name": "Exotic Shorthair",
+        "breed_id": "esho",
+        "origin": "United States"
+    },
+    {
+        "Name": "Havana Brown",
+        "breed_id": "hbro",
+        "origin": "United Kingdom"
+    },
+    {
+        "Name": "Himalayan",
+        "breed_id": "hima",
+        "origin": "United States"
+    },
+    {
+        "Name": "Japanese Bobtail",
+        "breed_id": "jbob",
+        "origin": "Japan"
+    },
+    {
+        "Name": "Javanese",
+        "breed_id": "java",
+        "origin": "United States"
+    },
+    {
+        "Name": "Khao Manee",
+        "breed_id": "khao",
+        "origin": "Thailand"
+    },
+    {
+        "Name": "Korat",
+        "breed_id": "kora",
+        "origin": "Thailand"
+    },
+    {
+        "Name": "Kurilian",
+        "breed_id": "kuri",
+        "origin": "Russia"
+    },
+    {
+        "Name": "LaPerm",
+        "breed_id": "lape",
+        "origin": "Thailand"
+    },
+    {
+        "Name": "Maine Coon",
+        "breed_id": "mcoo",
+        "origin": "United States"
+    },
+    {
+        "Name": "Malayan",
+        "breed_id": "mala",
+        "origin": "United Kingdom"
+    },
+    {
+        "Name": "Manx",
+        "breed_id": "manx",
+        "origin": "Isle of Man"
+    },
+    {
+        "Name": "Munchkin",
+        "breed_id": "munc",
+        "origin": "United States"
+    },
+    {
+        "Name": "Nebelung",
+        "breed_id": "nebe",
+        "origin": "United States"
+    },
+    {
+        "Name": "Norwegian Forest Cat",
+        "breed_id": "norw",
+        "origin": "Norway"
+    },
+    {
+        "Name": "Ocicat",
+        "breed_id": "ocic",
+        "origin": "United States"
+    },
+    {
+        "Name": "Oriental",
+        "breed_id": "orie",
+        "origin": "United States"
+    },
+    {
+        "Name": "Persian",
+        "breed_id": "pers",
+        "origin": "Iran (Persia)"
+    },
+    {
+        "Name": "Pixie-bob",
+        "breed_id": "pixi",
+        "origin": "United States"
+    },
+    {
+        "Name": "Ragamuffin",
+        "breed_id": "raga",
+        "origin": "United States"
+    },
+    {
+        "Name": "Ragdoll",
+        "breed_id": "ragd",
+        "origin": "United States"
+    },
+    {
+        "Name": "Russian Blue",
+        "breed_id": "rblu",
+        "origin": "Russia"
+    },
+    {
+        "Name": "Savannah",
+        "breed_id": "sava",
+        "origin": "United States"
+    },
+    {
+        "Name": "Scottish Fold",
+        "breed_id": "sfol",
+        "origin": "United Kingdom"
+    },
+    {
+        "Name": "Selkirk Rex",
+        "breed_id": "srex",
+        "origin": "United States"
+    },
+    {
+        "Name": "Siamese",
+        "breed_id": "siam",
+        "origin": "Thailand"
+    },
+    {
+        "Name": "Siberian",
+        "breed_id": "sibe",
+        "origin": "Russia"
+    },
+    {
+        "Name": "Singapura",
+        "breed_id": "sing",
+        "origin": "Singapore"
+    },
+    {
+        "Name": "Snowshoe",
+        "breed_id": "snow",
+        "origin": "United States"
+    },
+    {
+        "Name": "Somali",
+        "breed_id": "soma",
+        "origin": "Somalia"
+    },
+    {
+        "Name": "Sphynx",
+        "breed_id": "sphy",
+        "origin": "Canada"
+    },
+    {
+        "Name": "Tonkinese",
+        "breed_id": "tonk",
+        "origin": "Canada"
+    },
+    {
+        "Name": "Toyger",
+        "breed_id": "toyg",
+        "origin": "United States"
+    },
+    {
+        "Name": "Turkish Angora",
+        "breed_id": "tang",
+        "origin": "Turkey"
+    },
+    {
+        "Name": "Turkish Van",
+        "breed_id": "tvan",
+        "origin": "Turkey"
+    },
+    {
+        "Name": "York Chocolate",
+        "breed_id": "ycho",
+        "origin": "United States"
+    }
+]

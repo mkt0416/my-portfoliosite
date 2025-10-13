@@ -10,6 +10,7 @@ import skillsImage from "../../../public/images/undraw_designing-components.svg"
 import blogImage from "../../../public/images/undraw_add-notes.svg";
 import portfolioImage from "../../../public/images/undraw_crypto-portfolio.svg";
 import contactImage from "../../../public/images/undraw_contact-us.svg";
+import catImage from "../../../public/images/undraw_cat.svg";
 
 export type CardDataType = {
     id: string;
@@ -48,6 +49,12 @@ const cardData: CardDataType[] = [
         title: 'Conatct',
         link: '/site/contact',
         image: contactImage,
+    },
+    {
+        id: '6',
+        title: 'Cat',
+        link: '/site/cat',
+        image: catImage,
     },
 ];
 

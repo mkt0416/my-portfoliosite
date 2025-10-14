@@ -27,12 +27,15 @@ const CatAdmin = () => {
                     <div className="absolute -bottom-3 -left-3">
                         <FaPaw className="size-20 lg:size-28 text-pink-400" />
                     </div>
+                    <div className="absolute -top-5 -right-5">
+                        <FaPaw className="size-14 lg:size-20 text-pink-400" />
+                    </div>
                 </div>
 
                 <div>
                     <h2 className="font-bold text-3xl md:text-4xl lg:text-6xl flex items-center gap-1 mb-5">
                         <FaCat />
-                        MINT
+                        Mint
                     </h2>
                     <p className="leading-relaxed">2017年4月生まれの女の子のキジトラです。
                         少し臆病なところもありますが、慣れるととても甘えん坊。
@@ -44,7 +47,7 @@ const CatAdmin = () => {
                 <div className="max-md:order-2">
                     <h2 className="font-bold text-3xl md:text-4xl lg:text-6xl flex items-center gap-1 mb-5">
                         <FaCat />
-                        RIN
+                        Rin
                     </h2>
                     <p className="leading-relaxed">
                         2017年6月生まれの長い毛が美しい三毛の女の子。
@@ -64,6 +67,9 @@ const CatAdmin = () => {
                     />
                     <div className="absolute -bottom-3 -right-3">
                         <FaPaw className="size-20 lg:size-28 text-yellow-400" />
+                    </div>
+                    <div className="absolute -top-3 -left-1">
+                        <FaPaw className="size-14 lg:size-20 text-yellow-400" />
                     </div>
                 </div>
             </div>

@@ -94,6 +94,9 @@ const CatsGallery = ({ initialCats }: { initialCats: Cats[] }) => {
         });
         const jsonData = await response.json();
         setCats(jsonData);
+        setBreed("");
+        setOrigin("");
+        setVisibleCats(9);
         setLoading(false);
     };
 

@@ -110,7 +110,7 @@ const CatFavorites = () => {
                     )
             }
             <div className="flex justify-center mt-10">
-                <Link href={"/site/cat"} className="text-blue-600 hover:underline text-sm sm:text-base">
+                <Link href={"/site/cat/gallery"} className="text-blue-600 hover:underline text-sm sm:text-base">
                     ギャラリーへ戻る
                 </Link>
             </div>

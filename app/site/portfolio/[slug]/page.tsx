@@ -1,8 +1,7 @@
 
+import { notFound } from 'next/navigation';
+import { portfolioData } from '@/app/components/portfolio/portfolioData';
 import PortfolioDetail from '@/app/components/portfolio/PortfolioDetail';
-import { getPortfolioDetail } from '@/app/lib/microcms';
-
-export const revalidate = 0;
 
 type Props = {
     params: {
@@ -11,11 +10,15 @@ type Props = {
 };
 
 const Page = async ({ params }: Props) => {
-    const data = await getPortfolioDetail(params.slug);
+    const detailData = portfolioData.find((item) => item.id === params.slug)
+
+    if (!detailData) {
+        notFound();
+    }
 
     return (
         <div className='mt-32 mb-20'>
-            <PortfolioDetail data={data} />
+            <PortfolioDetail data={detailData} />
         </div>
     );
 };

@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Portfolio } from '@/app/lib/microcms';
+import { Portfolio } from './portfolioData';
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from 'react-icons/fi';
 import { IoArrowUndoCircle } from "react-icons/io5";
@@ -27,29 +27,29 @@ const PortfolioDetail = ({ data }: Props) => {
                 <Image
                     style={{ boxShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)" }}
                     className='w-full rounded-lg shadow-md'
-                    src={data.image.url}
+                    src={data.image}
                     alt='image'
-                    width={data.image.width}
-                    height={data.image.height}
+                    width={600}
+                    height={600}
                     priority
                 />
                 <p className='max-w-screen-xl'>{data.description}</p>
                 <div className='flex flex-wrap justify-center items-center gap-5 text-lg font-semibold mt-10'>
                     <UrlLink
-                        href={data.projecturlfrontend}
+                        href={data.projectUrl}
                         text='URL'
                     >
                         <FiExternalLink />
                     </UrlLink>
                     <UrlLink
-                        href={data.githuburlfrontend}
+                        href={data.githubUrl}
                         text='URL'
                     >
                         <FaGithub />
                     </UrlLink>
-                    {data.githuburlbackend && (
+                    {data.githubUrlBackend && (
                         <UrlLink
-                            href={data.githuburlbackend}
+                            href={data.githubUrlBackend}
                             text='BackendURL'
                         >
                             <FaGithub />

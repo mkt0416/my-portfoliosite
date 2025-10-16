@@ -1,15 +1,11 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import type { Portfolio } from '@/app/lib/microcms';
 import SubTitle from '../common/SubTitle';
 import Container from '../common/Container';
+import { portfolioData } from './portfolioData';
 
-type Props = {
-    data: Portfolio[];
-};
-
-const Portfolio = ({ data }: Props) => {
+const Portfolio = () => {
     return (
         <Container>
             <SubTitle
@@ -17,7 +13,7 @@ const Portfolio = ({ data }: Props) => {
                 description=' 以下は、実際のアプリケーション制作を通じて学習してきた成果物の一覧です。カードをクリックし詳細をご覧いただけます。'
             />
             <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                {data.map((article) => (
+                {portfolioData.map((article) => (
                     <Link
                         href={`/site/portfolio/${article.id}`}
                         key={article.id}
@@ -26,10 +22,10 @@ const Portfolio = ({ data }: Props) => {
                     >
                         <Image
                             className='w-full rounded-lg mb-2'
-                            src={article.image.url}
+                            src={article.image}
                             alt='image'
-                            width={article.image.width}
-                            height={article.image.height}
+                            width={600}
+                            height={600}
                             priority
                         />
                         <h2 className='text-xl text-gray-600 dark:text-white font-bold'>{article.title}</h2>

@@ -19,14 +19,10 @@ export type Blog = {
     category: Category;
 } & MicroCMSListContent;
 
-export type Portfolio = {
+export type CatBlog = {
     image: MicroCMSImage,
     title: string,
     description: string,
-    projecturlfrontend: string,
-    githuburlfrontend: string,
-    githuburlbackend?: string,
-    githuburl: string,
 } & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -42,17 +38,17 @@ const client = createClient({
     apiKey: process.env.MICROCMS_APIKEY,
 });
 
-export const getPortfolioList = async (queries?: MicroCMSQueries) => {
-    const listData = await client.getList<Portfolio>({
-        endpoint: 'portfolio',
+export const getCatBlogList = async (queries?: MicroCMSQueries) => {
+    const listData = await client.getList<CatBlog>({
+        endpoint: 'cat-blog',
         queries,
     });
     return listData;
 };
 
-export const getPortfolioDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-    const listDetail = await client.getListDetail<Portfolio>({
-        endpoint: 'portfolio',
+export const getCatBlogDetail = async (contentId: string, queries?: MicroCMSQueries) => {
+    const listDetail = await client.getListDetail<CatBlog>({
+        endpoint: 'cat-blog',
         contentId,
         queries,
     });

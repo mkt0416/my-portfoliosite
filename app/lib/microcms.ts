@@ -22,7 +22,7 @@ export type Blog = {
 export type CatBlog = {
     image: MicroCMSImage,
     title: string,
-    description: string,
+    textBody: string,
 } & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {

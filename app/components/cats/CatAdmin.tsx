@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaCat, FaPaw } from "react-icons/fa";
+import { IoIosArrowDropright } from "react-icons/io";
 
 const CatAdmin = () => {
     return (
@@ -9,6 +10,11 @@ const CatAdmin = () => {
             <p className="text-center max-w-2xl mx-auto leading-relaxed mb-20">
                 このページでは、管理者が大切にしている2匹の愛猫を紹介します。<br />
                 どちらも性格や見た目に個性があり、毎日を明るくしてくれる存在です。<br />
+                また、管理者は猫たちとの日常や思い出を綴った{" "}
+                <Link href={"/site/cat/catBlog"} className="text-blue-600 font-semibold hover:underline">
+                    猫ブログ
+                </Link>
+                も運営しています。<br />
                 さらに、世界中のさまざまな猫たちの写真もギャラリーで紹介しています。<br />
                 かわいい仕草や表情に癒されながら、世界の猫の魅力を一緒に感じてください🐱✨
             </p>
@@ -73,13 +79,20 @@ const CatAdmin = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt-16 flex justify-end">
-                <Link href={"/site/cat/gallery"} className="text-blue-600 font-semibold hover:underline">
-                    😸ギャラリーへ→
-                </Link>
+            <div className="mt-16 flex justify-center sm:justify-end">
+                <div className="flex items-center gap-5">
+                    <Link href={"/site/cat/gallery"} className="flex items-center gap-1 text-blue-600 font-semibold hover:underline">
+                        😸ギャラリーへ
+                        <IoIosArrowDropright className="size-6 pt-1" />
+                    </Link>
+                    <Link href={"/site/cat/catBlog"} className="flex items-center gap-1 text-blue-600 font-semibold hover:underline">
+                        😽猫ブログへ
+                        <IoIosArrowDropright className="size-6 pt-1" />
+                    </Link>
+                </div>
             </div>
         </section>
     );
 };
 
-export default CatAdmin
+export default CatAdmin;

@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Cats } from "@/app/site/cat/gallery/page";
 import catsJson from "../../constants/cats.json";
 import { FcLike } from "react-icons/fc";
@@ -172,33 +173,40 @@ const CatsGallery = ({ initialCats }: { initialCats: Cats[] }) => {
                     )
                     : (
                         (
-                            <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 mt-10">
-                                {cats.slice(0, visibleCats).map((cat) => (
-                                    <li key={cat.id} className="relative">
-                                        <Link
-                                            href={`/site/cat/${cat.id}`}
+                            <AnimatePresence>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 mt-10">
+                                    {cats.slice(0, visibleCats).map((cat) => (
+                                        <motion.li
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ duration: 0.5 }}
+                                            key={cat.id} className="relative"
                                         >
-                                            <Image
-                                                src={cat.url}
-                                                alt="cat"
-                                                width={450}
-                                                height={450}
-                                                priority
-                                                className="w-full h-56 sm:h-72 object-cover rounded-3xl"
-                                            />
-                                            <p>{ }</p>
-                                        </Link>
-                                        <div className="absolute top-2 right-2 rounded-full bg-white/80 px-2 py-1">
-                                            <button onClick={() => toggleLike(cat.id)}>
-                                                {likedCats.includes(cat.id)
-                                                    ? <FcLike className="size-5" />
-                                                    : <AiOutlineLike className="size-5 dark:text-gray-700" />
-                                                }
-                                            </button>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
+                                            <Link
+                                                href={`/site/cat/${cat.id}`}
+                                            >
+                                                <Image
+                                                    src={cat.url}
+                                                    alt="cat"
+                                                    width={450}
+                                                    height={450}
+                                                    priority
+                                                    className="w-full h-56 sm:h-72 object-cover rounded-3xl"
+                                                />
+                                                <p>{ }</p>
+                                            </Link>
+                                            <div className="absolute top-2 right-2 rounded-full bg-white/80 px-2 py-1">
+                                                <button onClick={() => toggleLike(cat.id)}>
+                                                    {likedCats.includes(cat.id)
+                                                        ? <FcLike className="size-5" />
+                                                        : <AiOutlineLike className="size-5 dark:text-gray-700" />
+                                                    }
+                                                </button>
+                                            </div>
+                                        </motion.li>
+                                    ))}
+                                </ul>
+                            </AnimatePresence>
                         )
                     )
             }

@@ -15,7 +15,7 @@ const Pagenation = ({ totalCount, current = 1, basePath = '/site/blog' }: Props)
     );
 
     return (
-        <div className='mt-10 mb-10'>
+        <div className='py-10'>
             <ul className='flex items-center justify-center gap-5'>
                 {page.map((p) => (
                     <li key={p}>

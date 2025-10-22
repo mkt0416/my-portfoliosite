@@ -16,7 +16,7 @@ const getSingleSets = async (id: string): Promise<Sets> => {
     return jsonData;
 };
 
-export const getRamdomSets = async (): Promise<Sets[]> => {
+const getRamdomSets = async (): Promise<Sets[]> => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/lego/random/sets`, {
         cache: "no-store",
     })
@@ -24,7 +24,7 @@ export const getRamdomSets = async (): Promise<Sets[]> => {
     return jsonData;
 };
 
-export const getRamdomFigs = async (): Promise<Sets[]> => {
+const getRamdomFigs = async (): Promise<Sets[]> => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/lego/random/minifigs`, {
         cache: "no-store",
     })

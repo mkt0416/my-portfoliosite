@@ -2,7 +2,7 @@
 import LegoSets from "@/app/components/lego/LegoSets";
 import { Themes } from "@/app/lib/lego";
 
-export const getTheme = async (): Promise<Themes[]> => {
+const getTheme = async (): Promise<Themes[]> => {
     try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/lego/theme`, {
             cache: "no-store",

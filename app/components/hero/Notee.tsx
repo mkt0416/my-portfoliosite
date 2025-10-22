@@ -6,7 +6,8 @@ const Notee = () => {
     return (
         <div className="bg-gray-200 dark:bg-gray-500 py-20">
             <section className='w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-16
-           text-gray-600 dark:text-white relative'>
+           text-gray-600 dark:text-white relative'
+            >
                 <h2 className="text-2xl md:text-4xl font-extrabold mb-10 lg:mb-20 text-center">Notee</h2>
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
                     <div className="max-lg:order-2">

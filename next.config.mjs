@@ -20,6 +20,9 @@ const nextConfig = {
 
                 hostname: "cdn2.thecatapi.com",
             },
+            {
+                hostname: "cdn.rebrickable.com",
+            },
         ],
     },
 };

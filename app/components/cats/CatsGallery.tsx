@@ -104,7 +104,7 @@ const CatsGallery = ({ initialCats }: { initialCats: Cats[] }) => {
     return (
         <section className="w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-32 py-20 text-gray-600 dark:text-gray-200">
             <h1 className="text-center text-3xl sm:text-5xl font-extrabold mb-20">🐾CatGallery</h1>
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-5">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
                 <div>
                     <h2 className="ml-4 font-bold mb-3">🐱 品種名で検索</h2>
                     <select

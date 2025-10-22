@@ -6,7 +6,8 @@ const TuneFindr = () => {
     return (
         <div className="py-20">
             <section className='w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-32
-           text-gray-600 dark:text-white relative'>
+           text-gray-600 dark:text-white relative'
+            >
                 <h2 className="text-2xl md:text-4xl font-extrabold mb-10 lg:mb-20 text-center lg:text-left">TuneFindr</h2>
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
                     <Image

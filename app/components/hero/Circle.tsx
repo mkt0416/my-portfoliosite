@@ -5,7 +5,8 @@ import Link from "next/link";
 const Circle = () => {
     return (
         <section className='w-full max-w-screen-2xl h-auto mx-auto px-8 md:px-12 lg:px-16
-           text-gray-600 dark:text-white py-20 relative'>
+           text-gray-600 dark:text-white py-20 relative'
+        >
             <h2 className="text-2xl md:text-4xl font-extrabold mb-10 lg:mb-20 text-center">Circle</h2>
             <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
                 <Image

@@ -8,7 +8,7 @@ type Props = {
     };
 };
 
-const getSingleSets = async (id: string): Promise<Parts> => {
+const getSingleParts = async (id: string): Promise<Parts> => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/lego/parts/${id}`, {
         cache: "no-store",
     });
@@ -17,7 +17,7 @@ const getSingleSets = async (id: string): Promise<Parts> => {
 };
 
 const page = async ({ params }: Props) => {
-    const singleParts = await getSingleSets(params.partNum);
+    const singleParts = await getSingleParts(params.partNum);
 
     return (
         <>

@@ -9,7 +9,7 @@ const page = () => {
         <div className="min-h-screen">
             <PageHero
                 image="/images/cat.jpg"
-                title="Hoby"
+                title="Hobby"
             />
             <section className="w-full max-w-screen-lg min-h-screen mx-auto px-4 sm:px-8 pt-20 text-gray-600 dark:text-gray-200">
                 <div className="flex flex-col items-center gap-16">

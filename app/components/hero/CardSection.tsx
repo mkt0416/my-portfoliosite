@@ -52,8 +52,8 @@ const cardData: CardDataType[] = [
     },
     {
         id: '6',
-        title: 'Hoby',
-        link: '/site/hoby',
+        title: 'Hobby',
+        link: '/site/hobby',
         image: catImage,
     },
 ];

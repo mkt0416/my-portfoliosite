@@ -43,8 +43,8 @@ const LegoSideBar = () => {
 
     return (
         <>
-            <div className="hidden lg:flex flex-col w-60 xl:w-72 min-h-screen pt-10 bg-yellow-100 dark:bg-yellow-800  text-gray-600
-             dark:text-gray-200"
+            <div className="hidden lg:flex flex-col w-60 xl:w-72 min-h-screen pt-10 bg-yellow-100 dark:bg-yellow-800 
+             text-gray-600 dark:text-gray-200"
             >
                 <div className="flex items-center gap-1 text-xl xl:text-2xl font-bold pl-5">
                     <PiLego className="text-yellow-500" />
@@ -69,11 +69,14 @@ const LegoSideBar = () => {
                     ))}
                 </ul>
             </div>
-            <div className="w-full lg:hidden fixed bottom-0 text-gray-600 dark:text-gray-200 bg-yellow-200 dark:bg-yellow-700 py-4 z-50">
-                <ul className="flex flex-wrap items-center justify-center gap-5">
+            <div className="w-full lg:hidden absolute top-20 text-gray-600 dark:text-gray-200 bg-yellow-200
+             dark:bg-yellow-700 px-5 py-2 sm:py-4 z-40"
+            >
+                <ul className="flex flex-wrap items-center justify-between gap-2">
                     {sideBarData.map((data) => (
                         <li
                             key={data.id}
+                            className={`px-4  ${activeLink === data.link && "bg-yellow-400 dark:bg-yellow-600 rounded-full py-1"} `}
                         >
                             <Link
                                 href={data.link}

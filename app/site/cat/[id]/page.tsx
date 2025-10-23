@@ -1,5 +1,6 @@
 
 import CatDetail from "@/app/components/cats/CatDetail";
+import { fetchCats } from "@/app/lib/cats";
 
 type Props = {
     params: {
@@ -20,9 +21,14 @@ const fetchCatDetail = async (CatId: string) => {
 const page = async ({ params }: Props) => {
     const catId = params.id;
     const cat = await fetchCatDetail(catId);
+    const cats = await fetchCats();
+
     return (
         <div>
-            <CatDetail cat={cat} />
+            <CatDetail
+                cat={cat}
+                cats={cats}
+            />
         </div>
     );
 };

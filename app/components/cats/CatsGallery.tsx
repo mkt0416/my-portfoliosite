@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Cats } from "@/app/site/cat/gallery/page";
+import { Cats } from "@/app/lib/cats";
 import catsJson from "../../constants/cats.json";
 import { FcLike } from "react-icons/fc";
 import { AiOutlineLike } from "react-icons/ai";
@@ -193,7 +193,6 @@ const CatsGallery = ({ initialCats }: { initialCats: Cats[] }) => {
                                                     priority
                                                     className="w-full h-56 sm:h-72 object-cover rounded-3xl"
                                                 />
-                                                <p>{ }</p>
                                             </Link>
                                             <div className="absolute top-2 right-2 rounded-full bg-white/80 px-2 py-1">
                                                 <button onClick={() => toggleLike(cat.id)}>

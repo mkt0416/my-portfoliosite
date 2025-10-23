@@ -1,9 +1,14 @@
 
+"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Cats } from "@/app/site/cat/gallery/page";
+import { Cats } from "@/app/lib/cats";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
-const CatDetail = ({ cat }: { cat: Cats }) => {
+const CatDetail = ({ cat, cats }: { cat: Cats, cats: Cats[] }) => {
     const breed = cat.breeds?.[0];
 
     return (
@@ -11,17 +16,17 @@ const CatDetail = ({ cat }: { cat: Cats }) => {
          dark:text-gray-200"
         >
             <div className="flex flex-col items-start gap-10">
-                <h1 className="text-3xl font-bold">品種名: {breed?.name}</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold">品種名: {breed?.name}</h1>
                 <Image
                     src={cat.url}
                     alt="cat"
                     width={450}
                     height={450}
                     priority
-                    className="w-full h-full object-cover rounded-md shadow-xl"
+                    className="w-full object-cover rounded-md shadow-xl"
                 />
                 <div className="flex flex-col items-start gap-5">
-                    <h2 className="text-3xl font-bold">発祥地: {breed?.origin}</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold">発祥地: {breed?.origin}</h2>
                     <div className="text-lg font-semibold">
                         <p>{breed?.description}</p>
                     </div>
@@ -39,6 +44,38 @@ const CatDetail = ({ cat }: { cat: Cats }) => {
                         ギャラリーへ戻る
                     </Link>
                 </div>
+            </div>
+            <div className="mt-10 w-full">
+                <h2 className="mb-5">こちらの猫もチェック😸</h2>
+                <Swiper
+                    spaceBetween={30}
+                    centeredSlides={false}
+                    pagination={false}
+                    modules={[Pagination]}
+                    breakpoints={{
+                        0: { slidesPerView: 2 },
+                        640: { slidesPerView: 2.5 },
+                        768: { slidesPerView: 3 },
+                        1024: { slidesPerView: 3.5 },
+                        1280: { slidesPerView: 4 },
+                    }}
+                >
+                    {cats.map((cat) => (
+                        <SwiperSlide key={cat.id}>
+                            <Link
+                                href={`/site/cat/${cat.id}`}
+                            >
+                                <Image
+                                    src={cat.url}
+                                    alt="cat-image"
+                                    width={200}
+                                    height={200}
+                                    className="w-full h-32 sm:h-40 object-cover rounded-xl"
+                                />
+                            </Link>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
     );

@@ -69,7 +69,7 @@ const LegoMinifig = ({ themes }: { themes: Themes[] }) => {
     };
 
     return (
-        <section className="w-full max-w-screen-2xl min-h-screen mx-auto px-4 sm:px-8 py-20 text-gray-600 dark:text-gray-200">
+        <section className="w-full max-w-screen-2xl min-h-screen mx-auto px-4 sm:px-8 pt-24 pb-10 text-gray-600 dark:text-gray-200">
             <div className="flex flex-wrap items-center gap-5">
                 <SelectArea
                     initialText="ミニフィグのテーマを選択"

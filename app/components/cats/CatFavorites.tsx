@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Cats } from "@/app/site/cat/gallery/page";
+import { Cats } from "@/app/lib/cats";
 import { FcLike } from "react-icons/fc";
 import { FaTrashAlt } from "react-icons/fa";
 

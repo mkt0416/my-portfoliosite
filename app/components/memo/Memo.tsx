@@ -90,7 +90,7 @@ const Memo = ({ memoId }: { memoId: string }) => {
     };
 
     return (
-        <div className="p-8">
+        <div className="px-8 pt-16 md:pt-8">
             <div className="flex items-center justify-between">
                 <input
                     className="w-full md:text-2xl font-bold py-3 bg-gray-50 dark:bg-gray-800 outline-none"
@@ -99,7 +99,7 @@ const Memo = ({ memoId }: { memoId: string }) => {
                     onChange={(e) => updateField("title", e.target.value)}
                 />
                 <button onClick={deleteMemo}>
-                    <FaTrashAlt className="text-red-500 md:size-8" />
+                    <FaTrashAlt className="text-red-500 size-6 md:size-8" />
                 </button>
             </div>
             <div>

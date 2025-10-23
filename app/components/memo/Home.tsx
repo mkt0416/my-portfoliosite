@@ -34,7 +34,7 @@ const Home = () => {
                 className="text-blue-500 text-sm md:text-lg border border-blue-500 rounded-md py-2 px-4
               hover:bg-blue-50 duration-300 cursor-pointer"
             >
-                メモを作成
+                Create Memo
             </button>
         </div>
     );

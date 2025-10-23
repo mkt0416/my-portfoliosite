@@ -1,4 +1,6 @@
 
+export const dynamic = "force-dynamic";
+
 import LegoMinifig from "@/app/components/lego/LegoMinifig";
 import { getTheme } from "@/app/lib/lego";
 

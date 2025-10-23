@@ -1,4 +1,6 @@
 
+export const dynamic = "force-dynamic";
+
 import LegoSets from "@/app/components/lego/LegoSets";
 import { getTheme } from "@/app/lib/lego";
 

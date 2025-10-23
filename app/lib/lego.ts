@@ -35,7 +35,7 @@ export type Parts = PartsFromSearch | PartsFromTheme;
 export const getTheme = async (): Promise<Themes[]> => {
     try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/lego/theme`, {
-            cache: "no-store",
+            next: { revalidate: 86400 },
         });
         const jsonData = await response.json();
         const results: Themes[] = jsonData || [];

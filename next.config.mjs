@@ -16,13 +16,6 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'cdn.weatherapi.com',
             },
-            {
-
-                hostname: "cdn2.thecatapi.com",
-            },
-            {
-                hostname: "cdn.rebrickable.com",
-            },
         ],
     },
 };

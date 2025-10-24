@@ -1,6 +1,5 @@
 
 import Link from "next/link";
-import Image from "next/image";
 import Placeholder from "./Placeholder";
 import { Sets } from "@/app/lib/lego";
 
@@ -20,11 +19,8 @@ const GridArea = ({ basePath = "/site/lego/sets", data, visibleData }: Props) =>
                 >
                     {set.set_img_url
                         ? (
-                            <Image
-                                src={set.set_img_url}
-                                alt={set.name || set.set_name || "LEGO image"}
-                                width={450}
-                                height={450}
+                            <img
+                                src={set.set_img_url} alt={set.name || set.set_name}
                                 className="w-full h-32 sm:h-80 rounded-2xl shadow-xl object-cover"
                             />
                         ) : (

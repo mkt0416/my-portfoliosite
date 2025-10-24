@@ -1,7 +1,6 @@
 
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { Cats } from "@/app/lib/cats";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
@@ -17,12 +16,9 @@ const CatDetail = ({ cat, cats }: { cat: Cats, cats: Cats[] }) => {
         >
             <div className="flex flex-col items-start gap-10">
                 <h1 className="text-2xl sm:text-3xl font-bold">品種名: {breed?.name}</h1>
-                <Image
+                <img
                     src={cat.url}
                     alt="cat"
-                    width={450}
-                    height={450}
-                    priority
                     className="w-full object-cover rounded-md shadow-xl"
                 />
                 <div className="flex flex-col items-start gap-5">
@@ -65,11 +61,9 @@ const CatDetail = ({ cat, cats }: { cat: Cats, cats: Cats[] }) => {
                             <Link
                                 href={`/site/cat/${cat.id}`}
                             >
-                                <Image
+                                <img
                                     src={cat.url}
                                     alt="cat-image"
-                                    width={200}
-                                    height={200}
                                     className="w-full h-32 sm:h-40 object-cover rounded-xl"
                                 />
                             </Link>

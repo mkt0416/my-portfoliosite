@@ -1,6 +1,5 @@
 
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { TbLego } from "react-icons/tb";
 import { PiLego } from "react-icons/pi";
@@ -23,12 +22,10 @@ const GridImage = () => {
             <ul className="grid grid-cols-3 grid-rows-3 w-full h-full">
                 {legoImage.map((image) => (
                     <li key={image.id}>
-                        <Image
+                        <img
                             className="w-full h-full object-cover brightness-50"
                             src={image.image}
-                            alt="lego-image"
-                            width={450}
-                            height={450}
+                            alt="LEGO image"
                         />
                     </li>
                 ))}

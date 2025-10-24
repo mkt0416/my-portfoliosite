@@ -1,7 +1,6 @@
 
 "use client";
 import Link from "next/link"
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cats } from "@/app/lib/cats";
@@ -185,12 +184,9 @@ const CatsGallery = ({ initialCats }: { initialCats: Cats[] }) => {
                                             <Link
                                                 href={`/site/cat/${cat.id}`}
                                             >
-                                                <Image
+                                                <img
                                                     src={cat.url}
                                                     alt="cat"
-                                                    width={450}
-                                                    height={450}
-                                                    priority
                                                     className="w-full h-56 sm:h-72 object-cover rounded-3xl"
                                                 />
                                             </Link>

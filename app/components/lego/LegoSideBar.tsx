@@ -25,12 +25,6 @@ const sideBarData = [
         icon: <TbLego />,
         link: "/site/lego/minifig",
     },
-    {
-        id: "4",
-        text: "パーツで検索",
-        icon: <TbLego />,
-        link: "/site/lego/parts",
-    },
 ];
 
 const LegoSideBar = () => {

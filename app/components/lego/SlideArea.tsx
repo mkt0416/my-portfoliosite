@@ -1,6 +1,5 @@
 
 "use client";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Sets } from "@/app/lib/lego";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -37,11 +36,9 @@ const SlideArea = ({ randomSets, randomFigs }: { randomSets: Sets[], randomFigs:
                             >
                                 {set.set_img_url
                                     ? (
-                                        <Image
+                                        <img
                                             src={set.set_img_url || "/images/posts/no-image.png"}
                                             alt={set.set_name || "LEGO image"}
-                                            width={200}
-                                            height={200}
                                             className="w-full h-40 sm:h-56 max-w-md object-cover rounded-xl shadow-xl"
                                         />
                                     ) : (
@@ -82,11 +79,9 @@ const SlideArea = ({ randomSets, randomFigs }: { randomSets: Sets[], randomFigs:
                             >
                                 {fig.set_img_url
                                     ? (
-                                        <Image
+                                        <img
                                             src={fig.set_img_url || "/images/posts/no-image.png"}
                                             alt={fig.set_name || "LEGO image"}
-                                            width={200}
-                                            height={200}
                                             className="w-full h-40 sm:h-56 max-w-md object-cover rounded-xl shadow-xl"
                                         />
                                     )

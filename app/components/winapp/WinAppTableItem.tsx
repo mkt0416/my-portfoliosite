@@ -22,7 +22,7 @@ const WinAppTableItem = ({ winAppData, setModalData }: Props) => {
                 {winAppData.map((data) => (
                     <tr key={data.id}>
                         <td
-                            onClick={() => setModalData({ title: data.title, image: data.image, learning: data.learning })}
+                            onClick={() => setModalData({ title: data.title, learning: data.learning })}
                             className="border border-gray-300 px-4 py-2 hover:underline cursor-pointer text-nowrap">{data.title}</td>
                         <td className="border border-gray-300 px-4 py-2">{data.description}</td>
                         <td className="border border-gray-300 px-4 py-2 text-nowrap">

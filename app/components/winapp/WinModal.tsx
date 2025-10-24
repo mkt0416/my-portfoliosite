@@ -1,5 +1,4 @@
 
-import Image from "next/image";
 import { WinModalType } from "./WinAppTableList";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoMdCheckboxOutline } from "react-icons/io";
@@ -49,17 +48,6 @@ const WinModal = ({ modalData, onclose }: Props) => {
                         ))}
                     </ul>
                     <FaRegHandPointRight className="-rotate-45 size-8 sm:size-12 absolute bottom-7 left-6 sm:left-10" />
-                    <div className="hidden lg:block">
-                        <span className="flex justify-end mb-3 font-semibold text-xs">{modalData.title}</span>
-                        <Image
-                            src={modalData.image}
-                            alt="App-Image"
-                            width={300}
-                            height={300}
-                            priority
-                            className="rounded-lg"
-                        />
-                    </div>
                 </div>
             </motion.div>
         </div>

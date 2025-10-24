@@ -16,26 +16,10 @@ export type Sets = {
     year: number;
 };
 
-export type PartsFromSearch = {
-    name: string;
-    part_cat_id: number
-    part_img_url: string;
-    part_num: string;
-    part_url: string;
-    year_from: number;
-    year_to: number;
-};
-
-export type PartsFromTheme = {
-    part: PartsFromSearch;
-};
-
-export type Parts = PartsFromSearch | PartsFromTheme;
-
 export const getTheme = async (): Promise<Themes[]> => {
     try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/lego/theme`, {
-            next: { revalidate: 86400 },
+            cache: "no-store",
         });
         const jsonData = await response.json();
         const results: Themes[] = jsonData || [];

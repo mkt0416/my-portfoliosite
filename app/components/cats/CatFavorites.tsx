@@ -1,7 +1,6 @@
 
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Cats } from "@/app/lib/cats";
 import { FcLike } from "react-icons/fc";
@@ -86,12 +85,9 @@ const CatFavorites = () => {
                                         <Link
                                             href={`/site/cat/${cat.id}`}
                                         >
-                                            <Image
+                                            <img
                                                 src={cat.url}
                                                 alt="cat"
-                                                width={450}
-                                                height={450}
-                                                priority
                                                 className="w-full h-56 sm:h-72 object-cover rounded-3xl"
                                             />
                                             <p>{ }</p>

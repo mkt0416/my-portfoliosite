@@ -1,6 +1,5 @@
 
 "use client";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Sets } from "@/app/lib/lego";
 import Placeholder from "./Placeholder";
@@ -24,12 +23,9 @@ const SingleData = ({ data, randomSets, randomFigs }: Props) => {
                 <h1 className=" text-2xl md:text-4xl font-bold">{data.name || data.set_name}</h1>
                 {data.set_img_url
                     ? (
-                        <Image
+                        <img
                             src={data.set_img_url}
-                            alt={data.name}
-                            width={500}
-                            height={500}
-                            priority
+                            alt={data.name || "LEGO image"}
                             className="w-full h-full object-cover rounded-xl shadow-xl"
                         />
                     ) : (

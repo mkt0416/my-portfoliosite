@@ -12,10 +12,6 @@ const nextConfig = {
             {
                 hostname: 'i.scdn.co',
             },
-            {
-                protocol: 'https',
-                hostname: 'cdn.weatherapi.com',
-            },
         ],
     },
 };

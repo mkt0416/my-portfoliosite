@@ -1,5 +1,4 @@
 
-import Image from "next/image";
 import { formatDate } from "@/app/lib/utils";
 import { BsCloudRainHeavyFill } from "react-icons/bs";
 import { FaTemperatureArrowDown, FaTemperatureArrowUp } from "react-icons/fa6";
@@ -18,11 +17,10 @@ const WeatherCard = ({ data }: Props) => {
             key={data.date}
         >
             <h3 className="text-xl md:text-2xl font-semibold">{formatDate(data.date)}</h3>
-            <Image
+            <img
                 src={`https:${data.day.condition.icon}`}
                 alt="icon"
-                width={100}
-                height={100}
+                className="w-20 h-20"
             />
             <div className="flex flex-col gap-2 font-semibold">
                 <div className="flex items-baseline gap-2 border-b border-gray-600 dark:border-gray-200 text-sm md:text-base">

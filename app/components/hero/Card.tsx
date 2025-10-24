@@ -16,7 +16,7 @@ const Card = ({ card }: Props) => {
         >
             <h2 className="text-2xl md:text-4xl font-extrabold">{card.title}</h2>
             <Image
-                className="h-56 w-56 md:w-40"
+                className="h-56 w-56 md:w-40 border-2 rounded-xl px-4"
                 src={card.image}
                 alt="cardimage"
                 width={150}

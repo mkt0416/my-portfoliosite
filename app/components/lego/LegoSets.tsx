@@ -76,7 +76,6 @@ const LegoSets = ({ themes }: { themes: Themes[] }) => {
                     themes={themes}
                     themeId={themeId}
                     setThemeId={setThemeId}
-
                 />
                 <InputArea
                     keyword={keyword}

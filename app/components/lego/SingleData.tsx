@@ -46,12 +46,10 @@ const SingleData = ({ data, randomSets, randomFigs }: Props) => {
                     Rebrickableで見る
                 </a>
             </div>
-
             <SlideArea
                 randomSets={randomSets}
                 randomFigs={randomFigs}
             />
-
             <div className="flex justify-end mt-5">
                 <button
                     onClick={() => router.push("/site/lego/sets")}

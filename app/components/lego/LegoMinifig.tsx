@@ -27,7 +27,7 @@ const LegoMinifig = ({ themes }: { themes: Themes[] }) => {
             try {
                 const response = await fetch(
                     `${process.env.NEXT_PUBLIC_BASE_URL}/lego/minifigs?themeId=${themeId}`, {
-                    cache: "no-store",
+                    next: { revalidate: 86400 },
                 });
                 const jsonData = await response.json();
                 setMinifigs(jsonData);
@@ -47,7 +47,7 @@ const LegoMinifig = ({ themes }: { themes: Themes[] }) => {
         try {
             const response = await fetch(
                 `${process.env.NEXT_PUBLIC_BASE_URL}/lego/search/minifigs?keyword=${encodeURIComponent(keyword)}`, {
-                cache: "no-store",
+                next: { revalidate: 3600 },
             });
             const jsonData = await response.json();
             setMinifigs(jsonData);

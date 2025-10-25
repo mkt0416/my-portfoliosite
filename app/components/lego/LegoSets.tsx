@@ -27,7 +27,7 @@ const LegoSets = ({ themes }: { themes: Themes[] }) => {
             try {
                 const response = await fetch(
                     `${process.env.NEXT_PUBLIC_BASE_URL}/lego/sets?themeId=${themeId}`, {
-                    cache: "no-store",
+                    next: { revalidate: 86400 },
                 });
                 const jsonData = await response.json();
                 setSets(jsonData);
@@ -47,7 +47,7 @@ const LegoSets = ({ themes }: { themes: Themes[] }) => {
         try {
             const response = await fetch(
                 `${process.env.NEXT_PUBLIC_BASE_URL}/lego/search/sets?keyword=${encodeURIComponent(keyword)}`, {
-                cache: "no-store",
+                next: { revalidate: 3600 },
             });
             const jsonData = await response.json();
             setSets(jsonData);

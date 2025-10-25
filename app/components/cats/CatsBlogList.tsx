@@ -76,7 +76,7 @@ const CatsBlogList = ({ data }: Props) => {
 
                                 <div className="bg-white/90 dark:bg-gray-500 rounded-3xl shadow-xl hover:scale-105 duration-300">
                                     <Image
-                                        className="rounded-tr-3xl rounded-tl-3xl object-cover"
+                                        className="w-full h-52 sm:h-60 rounded-tr-3xl rounded-tl-3xl object-cover"
                                         src={article.image.url}
                                         alt="image"
                                         width={1200}
@@ -84,19 +84,20 @@ const CatsBlogList = ({ data }: Props) => {
                                         priority
                                     />
                                     <div className="p-5 flex flex-col items-center gap-2 relative">
-                                        <h2 className="text-lg md:text-xl font-bold">{article.title}</h2>
+                                        <h2 className="md:text-lg font-bold">{article.title}</h2>
                                         <Link
                                             href={`/site/cat/catBlog/${article.id}`}
-                                            className="font-semibold flex items-center hover:text-blue-600 hover:underline"
+                                            className="text-sm sm:text-base font-semibold flex items-center hover:text-blue-600 
+                                            hover:underline"
                                         >
                                             ブログ詳細
                                             <IoIosArrowDropright className="size-6 pt-1" />
                                         </Link>
 
-                                        <div className="absolute top-14 sm:top-6 right-2 sm:right-6">
+                                        <div className="absolute top-14 right-2 sm:right-6">
                                             <FaPaw className="size-7" />
                                         </div>
-                                        <div className="absolute top-14 sm:top-6 left-2 sm:left-6">
+                                        <div className="absolute top-14 left-2 sm:left-6">
                                             <FaPaw className="size-7" />
                                         </div>
                                     </div>

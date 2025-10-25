@@ -10,8 +10,10 @@ type Props = {
 
 const CatsBlogDetail = ({ data }: Props) => {
     return (
-        <section className="w-full max-w-screen-lg h-auto mx-auto px-8 md:px-12 lg:px-32 py-20 text-gray-600 dark:text-gray-200">
-            <div className="flex flex-col items-start gap-10 bg-white/90 dark:bg-gray-500/90 rounded-3xl p-10 border-2 border-pink-400">
+        <section className="w-full max-w-screen-lg h-auto mx-auto px-2 md:px-12 lg:px-32 py-20 text-gray-600 dark:text-gray-200">
+            <div className="flex flex-col items-start gap-5 sm:gap-10 bg-white/90 dark:bg-gray-500/90 rounded-3xl
+             py-5 sm:py-10 px-3 sm:px-10"
+            >
                 <h1 className="text-lg sm:text-xl md:text-3xl font-bold">{data.title}</h1>
                 <Image
                     src={data.image.url}
